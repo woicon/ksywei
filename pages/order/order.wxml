@@ -1,0 +1,3 @@
+<!--pages/order/order.wxml-->
+<import src="../../pages/template/footbar/footbar.wxml"/>
+<template is="footbar" data="{{page:'order'}}"></template>

@@ -1,0 +1,5 @@
+<!--pages/member/member.wxml-->
+
+
+<import src="../../pages/template/footbar/footbar.wxml"/>
+<template is="footbar" data="{{page:'member'}}"/>

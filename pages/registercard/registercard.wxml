@@ -1,0 +1,20 @@
+<view class="registercard">
+  <view class="vipcard">
+     <view class="cardinfo">
+      <view class="icon ico-vippay"></view>
+      <text>西少爷肉夹馍</text>
+     </view>
+     <view class="cardid">NO:{{cardid}}</view>
+  </view>
+  <view class="registerform">
+    <view class="line">
+      <input placeholder="输入手机号" type="number" maxlength="13"/>
+    </view>
+    <view class="line">
+      <input placeholder="输入验证码"  type="number" maxlength="4"/>
+      <view wx:if="{{codestat}}" class="phonecode" bindtap="getverification" >获取验证码</view>
+      <view wx:else class="phonecode disable">{{endtime}}后获取验证码</view>
+    </view>
+    <view class="blockbtn">领取会员卡</view>
+  </view>
+</view>

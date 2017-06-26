@@ -1,0 +1,88 @@
+<!--index.wxml-->
+  <scroll-view  class="menuCat" scroll-y="true">
+  <block wx:for="{{menuCat}}" wx:key="siderMenu">
+  <view data-cat="{{item.categoryNo}}" data-index="{{index}}" bindtap="showMenu" class="menuItm {{index==tabStat?'catActive':''}}">{{item.categoryName}}
+    <block wx:for="{{catAmout}}" wx:key="menucat" wx:for-index="catindex" wx:for-item="catitem">
+      <view wx:if="{{item.categoryNo==catindex}}" hover="true" hover-class="menuhover" class="allAmount catAmout">{{catitem}}</view>
+    </block>
+  </view>
+  </block>
+  </scroll-view>
+  <scroll-view class="menuContent" scroll-y="true">
+  <block wx:for="{{menuCat}}" wx:for-item="citm" wx:key="cat">
+    <view class="menuCont {{index==tabStat? 'menuActive':''}}" id="{{citm.categoryNo}}">
+      <block wx:for="{{menuContent}}" wx:for-item="sitm" wx:key="skuList">
+        <view class="skuItem" wx:if="{{citm.categoryNo==sitm.categoryNo}}"
+                    bindtap="cart"                      
+                    id="{{sitm.itemNo}}"
+                    data-skucat = "{{citm.categoryNo}}"
+                    data-skustat = "{{cartList[sitm.itemNo].skuStat||false}}"
+                    data-skuitem ="{{cartList[sitm.itemNo]||sitm}}"
+                    data-skuamout ="{{cartList[sitm.itemNo].skuAmout||0}}"
+                    data-skutotal ="{{cartList[sitm.itemNo].skuTotal||0}}">
+             <image class="skuImg" src="{{sitm.itemPic}}"></image>
+             <view class="skuInfo">
+                  <text class="skuTitle">{{sitm.itemName}}</text>
+                  <view class="skuPrice">¥<text>{{sitm.salePrice}}</text></view>
+             </view>
+              <view class="cartBtnGroup">
+                  <block wx:for="{{cartList}}" wx:key="*index">
+                    <block  wx:if="{{index==sitm.itemNo}}">
+                    <view  id="minBtn" class="minBtn" hover="true" hover-class="btnHover">-</view>
+                    <view wx:if="{{index==sitm.itemNo}}" class="skuAmout">{{item.skuAmout||0}}</view>
+                    </block>
+                  </block>
+                  <view class="addBtn" id="addBtn" hover="true" hover-class="btnHover">+</view>
+               </view>
+          </view>
+      </block>
+      </view>
+  </block>
+  </scroll-view>
+  <view class="footer">
+      <view class="cartAmount {{cartToggle?'openCart':''}}" bindtap="toggleCart">
+         <view class="icon ico-cart"></view>
+         <view class="allAmount">{{allAmout||0}}</view>
+      </view>
+      <view class="footerPrice {{cartToggle?'openTotal':''}}">
+      
+        <text wx:if="{{allTotal!=0}}" class="totalPrice">{{allTotal||0}}</text>
+      </view>
+      <view bindtap="{{allAmout==0?'':'submitOrder'}}" class="subOrder {{allAmout==0?'noOrder':''}}" >选好了</view>
+</view>
+
+
+    <scroll-view scroll-y="true" class="cartListBox {{cartToggle?'showCart':''}}" id="cartBox">
+          <view bindtap="cleanCart" class="ico-delico cleanCart {{allAmout!=0?'showClean':''}}">清空购物车</view>
+          <block wx:if="{{allAmout!=0}}">
+            <block wx:for="{{cartList}}" wx:key="carts">
+            <view class="skuItem"
+                      bindtap="cart"                      
+                      id="{{item.itemNo}}"
+                      data-skustat = "{{cartList[item.itemNo].skuStat||false}}"
+                      data-skuitem ="{{cartList[item.itemNo]||sitm}}"
+                      data-skuamout ="{{cartList[item.itemNo].skuAmout||0}}"
+                      data-skutotal ="{{cartList[item.itemNo].skuTotal||0}}">
+                <image class="skuImg" src="{{item.itemPic}}"></image>
+                <view class="skuInfo">
+                      <text class="skuTitle">{{item.itemName}}</text>
+                      <view class="skuPrice">¥<text>{{item.salePrice}}</text></view>
+                </view>
+                <view class="cartBtnGroup">
+                      <view  id="minBtn" hover="true" hover-class="cartBtnHover" class="minBtn">-</view>
+                      <view class="skuAmout">{{item.skuAmout}}</view>
+                      <view class="addBtn" hover="true" hover-class="cartBtnHover" id="addBtn">+</view>
+                </view>
+              </view>
+              </block>
+            </block>
+            <block wx:else>
+                <view class="ico-cart emptyCart">
+                 <text> 购物车是空的哟哟！</text>
+                </view>
+                
+            </block>
+    </scroll-view>
+   
+  <view class="mask {{mask?'showMask':''}}"  bindtap="toggleCart">
+  </view>

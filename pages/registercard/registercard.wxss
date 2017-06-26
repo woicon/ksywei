@@ -1,0 +1,18 @@
+.vipcard{
+  margin:40rpx;background:#333;padding:30rpx;border-radius:20rpx;
+  height:300rpx;position:relative;
+  animation:sliderInUp .5s ease-in;
+}
+.cardinfo{
+  display:flex;color:#fff;align-items:center;
+}
+.cardinfo text{font-size:32rpx;}
+.cardinfo .icon{width:60rpx;height:60rpx;background:yellow;color:#333;border-radius:400rpx;text-align:center;line-height:60rpx;font-size:44rpx;margin-right:12rpx;}
+.cardid{align-self:flex-end;color:#fff;position:absolute;left:30rpx;bottom:32rpx;}
+.registerform{margin:40rpx;}
+.line{position:relative;}
+.line input{border-bottom:1px solid #eee;padding:30rpx 0;font-size:32rpx;}
+.phonecode{position:absolute;right:0;top:50%;display:inline-block;padding:0 16rpx;
+background:#eee;border-radius:4rpx;line-height:60rpx;margin-top:-30rpx;z-index:100;}
+.phonecode.disable{color:#999;}
+

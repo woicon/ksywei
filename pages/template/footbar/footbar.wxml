@@ -1,0 +1,17 @@
+<!-- footbar.wxml -->
+<template name="footbar">
+  <view class="footbar">
+    <navigator url="/pages/index/index" class="{{(page=='index')?'active':''}}" opopen-type="switchTab" hover-class="footer-hover">
+    <view class="icon ico-home"></view>
+    首页</navigator>
+    <navigator url="/pages/order/order" class="{{(page=='order')?'active':''}}" opopen-type="switchTab"  hover-class="footer-hover">
+    <view class="icon ico-order"></view>
+    订单</navigator>
+    <navigator url="/pages/coupons/coupons" class="{{(page=='coupons')?'active':''}}" opopen-type="switchTab" hover-class="footer-hover">
+    <view class="icon ico-coup"></view>
+    卡劵</navigator>
+    <navigator url="/pages/member/member" class="{{(page=='member')?'active':''}}" opopen-type="switchTab" hover-class="footer-hover">
+    <view class="icon ico-user"></view>
+    我的</navigator>
+  </view> 
+</template>

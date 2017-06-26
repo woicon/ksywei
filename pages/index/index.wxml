@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="indexad">
+    
+    <view class="head_img">
+      <image src="{{shopinfo.shopimg}}" mode="aspectFill"></image>
+    </view>
+    <view class="head_name">
+      <text class="head_name_title">{{shopinfo.shopname}}</text>
+      <view class="location">
+      {{shopinfo.shoplocaltion}}
+      </view>
+      <view class="ico-phone" bindtap="callShop">{{shopinfo.shoptel}}</view>
+    </view>
+    <view class="indexlist">
+      <navigator class="list_item" url="/pages/orders/orders">
+            <view class="list_first">
+            <view class="icon ico-order"></view>
+           <text class="list_text">自助点餐</text>
+           </view>
+           <view class="list_btn">点餐</view>
+       </navigator>
+
+      <navigator class="list_item" url="/pages/registercard/registercard">
+           <view class="list_first">
+          <view class="icon ico-card"></view>
+          <text class="list_text">领取会员卡</text>
+          </view>
+          <view class="list_btn">领取</view>
+       </navigator>
+
+       <navigator class="list_item" url="/pages/pay/pay">
+          <view class="list_first">
+            <view class="icon ico-mymoney"></view>
+           <text class="list_text">消费买单</text>
+          </view>
+           <view class="list_btn">买单</view>
+       </navigator>
+    </view>
+
+    <view class="couplist">
+    
+       <view class="coupcard">
+       <text></text>
+       </view>
+    </view>
+
+  </view>
+
+
+<import src="../../pages/template/footbar/footbar.wxml"/>
+<template is="footbar" data="{{page:'index'}}"/>
+ 
+</view>

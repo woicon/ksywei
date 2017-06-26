@@ -1,0 +1,19 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/order/order",
+    "pages/coupons/coupons",
+    "pages/member/member",
+    "pages/pay/pay",
+    "pages/registercard/registercard",
+    "pages/orders/orders",
+    "pages/order/orderIng",
+    "pages/fp/fp",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"#444",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle":"black"
+  }
+}

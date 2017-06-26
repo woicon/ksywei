@@ -1,0 +1,23 @@
+/**index.wxss**/
+
+.head_img{height:200px;}
+.head_img image{width:100%;height:200px;}
+
+.list_item{
+  display: flex;align-items:center;padding:20rpx;justify-content:space-between;
+}
+.location{
+  color:#999;margin-top:10rpx;
+}
+.list_text{
+  font-size:28rpx;
+}
+.list_first{
+  display:flex;align-items: center;
+}
+.list_item .icon{font-size:40rpx;margin-right:8rpx;}
+.list_btn{border-radius:200rpx;backround-color:#EA5E00;padding:12rpx 20rpx;font-size:24rpx;
+  background:#EA5E00;color:#fff;
+}
+.head_name{padding:30rpx;}
+.head_name text{line-height:38rpx;display:block;}

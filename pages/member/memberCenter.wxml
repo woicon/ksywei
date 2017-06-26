@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="header">
+    <text>提交订单</text>
+    </view>
+    
+    <scroll-view class="orderView">
+    
+    </scroll-view>
+
+    <view class="footer">
+    
+    </view>
+</view>
