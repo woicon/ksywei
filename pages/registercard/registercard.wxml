@@ -8,7 +8,7 @@
   </view>
   <view class="registerform">
     <view class="line">
-      <input placeholder="输入手机号" type="number" maxlength="13"/>
+      <input placeholder="输入手机号" type="number" maxlength="11"/>
     </view>
     <view class="line">
       <input placeholder="输入验证码"  type="number" maxlength="4"/>

@@ -7,7 +7,6 @@ Page({
   },
   //倒计时
   getverification:function(){
-
       if(this.data.codestat){
         var time = this.data.endtime;
         this.setData({

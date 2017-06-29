@@ -1,0 +1,31 @@
+<!-- couponsCard.wxml -->
+<!-- 优惠券卡片 
+  index: int       id号
+  type: string     类型
+  value: string    面值
+  stat:boolean     是否领用状态
+  range: string    使用范围
+  time:string      有效期
+  color:string     卡片颜色
+-->
+<template name="couponscard">
+  <view class="couponsCard {{color}}" id="card{{color}}">
+    <view class="value"><text>¥</text>{{value}}</view>
+    <text>有效期：{{time}}</text>
+    <text class="range">{{rang}}</text>
+    <view wx:if="{{stat}}" class="stat">已领取</view>
+    <view wx:else class="stat" bindtap="obtainCoupon">领取</view>
+  </view>
+</template>
+
+<template name="coupon">
+  <view class="couponsCard {{color}}" id="card{{color}}">
+    <view class="value"><text>¥</text>{{couponName}}</view>
+    <view class="type">{{type}}</view>
+    <text>有效期：{{time}}</text>
+    <view class="shop">{{merchantId}}</view>
+    <text class="range">{{rang}}</text>
+    <view wx:if="{{status}}" class="stat">已领取</view>
+    <view wx:else class="stat" bindtap="obtainCoupon">领取</view>
+  </view>
+</template>

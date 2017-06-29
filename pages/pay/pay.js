@@ -2,48 +2,75 @@ var app = getApp();
 Page({
  data: {
     payAmount:"0",//支付的价格
-    focus:false,
-    keyborderStat:true,
+    focus:true,
  },
  priceInner:function(e){
-   this.data.payAmount += e.currentTarget.dataset.num;
+   console.log(wx)
+   var newVal = this.data.payAmount;
+   
+    if (newVal.indexOf(".") > 0 && e.currentTarget.dataset.num=='.') {
+        newVal = this.data.payAmount
+     }else{
+      newVal = this.data.payAmount += e.currentTarget.dataset.num;
+     }
      this.setData({
-        payAmount:this.data.payAmount,
+       payAmount: newVal,
     });
-    console.log(this.data.payAmount);
-    this.priceVal();
+     console.log(this.data.payAmount);
+ },
+ valTap:function(e){
+   wx.hideKeyboard();
+   this.setData({
+     focus:true
+   });
+ },
+ valFocus:function(){
+   wx.hideKeyboard();
  },
  priceVal:function(e){
-   if (this.focus){
-     wx.hideKeyboard();//隐藏键盘
-   }
     this.setData({
-      payAmount:e.detail.value
+      payAmount: this.data.payAmount
     });
  },
  setValue:function(e){
-
+    console.log('12');
+ },
+ viewCard:function(){
+   wx.openCard({
+     cardList: [
+       {
+         cardId: '',
+         code: ''
+       }, {
+         cardId: '',
+         code: ''
+       }
+     ],
+     success: function (res) {
+     }
+   });
  },
  //隐藏键盘
  hideKeyborad:function(){
-   var stat = this.data.keyborderStat?false:true;
-   
    this.setData({
-     keyborderStat:stat
+     focus:false
    });
-   console.log(this.data.keyborderStat);
  },
-onLoad: function () {
+ delVal:function(){
+   var payval = this.data.payAmount;
+   var newVal = payval.substring(0, payval.length - 1);
+   this.setData({
+     payAmount: newVal
+   });
+   console.log(payval);
+ },
+onLoad: function (e) {
    var that = this;
-  //  console.log(that.focus);
-  //  if (that.focus) {
-  //    wx.hideKeyboard();//隐藏键盘
-  //  }
+    wx.hideKeyboard();
     app.getUserInfo(function(userInfo){
-      //更新数据
       that.setData({
         userInfo:userInfo,
       });
     });
   }
-})
+});

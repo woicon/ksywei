@@ -1,8 +1,0 @@
-.couponsCard{
-  
-}
- .couponsCard :after,.couponsCard :before{
-   
- }
- .couponsCard :after{}
- .couponsCard :before{}

@@ -1,50 +1,78 @@
-<!--wxpay.wxml-->
+<!--index.wxml-->
 <view class="container">
   <view class="payHead">
     <view class="mallInfo">
-    <image class="mallImg" src="{{userInfo.avatarUrl}}"></image>
+      <image class="mallImg" src="{{userInfo.avatarUrl}}"></image>
       <view class="mallInfos">
-      <text class="mallName"> {{userInfo.nickName}}</text>
-      <text class="mallField">{{userInfo.province}}{{userInfo.city}}</text>
+        <text class="mallName"> {{userInfo.nickName}}</text>
+        <text class="mallField">{{userInfo.province}}{{userInfo.city}}</text>
       </view>
     </view>
-    <view class="numInput">
-      <input type="digit" class="payNum" bindinput="priceVal" placeholder="输入付款金额" focus/>
+    <view class="numInput" catchtap="valTap">
+      <view class="cursor {{focus?'blink':''}}">
+        <text class="payval">{{payAmount||'请输入支付金额'}}</text>
+      </view>
+      <!--<input type="digit" class="payNum" catchtap="valTap" bindfocus="valFocus" value="{{payAmount}}" bindinput="priceVal" placeholder="输入付款金额" focus="{{focus}}"/>-->
     </view>
     <view class="payToggle">
       <checkbox-group class="vipPay" bindchange="checkboxChange">
-      <label>
-        <checkbox value="会员支付" checked="false"/>会员支付
-      </label>
+        <label>
+          <checkbox value="会员支付" checked="false" />会员支付
+        </label>
       </checkbox-group>
       <view catchtap="topUp" class="topBtn">立即充值</view>
+      <view class="classname" bindtap="viewCard">查看卡券</view>
     </view>
   </view>
-  <view class="numKeybord {{!keyborderStat?'hidekey':''}}" >
-      <view class="numKey">
-        <view class="num" data-num="1" hover="true" hover-class="numhover" bindtap="priceInner"><text>1</text></view>
-        <view class="num" data-num="2" hover="true" hover-class="numhover" bindtap="priceInner"><text>2</text></view>
-        <view class="num" data-num="3" hover="true" hover-class="numhover" bindtap="priceInner"><text>3</text></view>
-      
-        <view class="num" data-num="4" hover="true" hover-class="numhover" bindtap="priceInner"><text>4</text></view>
-        <view class="num" data-num="5" hover="true" hover-class="numhover" bindtap="priceInner"><text>5</text></view>
-        <view class="num" data-num="6" hover="true" hover-class="numhover" bindtap="priceInner"><text>6</text></view>
-      
-        <view class="num" data-num="7" hover="true" hover-class="numhover" bindtap="priceInner"><text>7</text></view>
-        <view class="num" data-num="8" hover="true" hover-class="numhover" bindtap="priceInner"><text>8</text></view>
-        <view class="num" data-num="9" hover="true" hover-class="numhover" bindtap="priceInner"><text>9</text></view>
-        <view class="num" data-open="true" hover="true" hover-class="numhover" bindtap="hideKeyborad">
-          <text class="ico-keyBorder"></text>
-        </view>
-        <view class="num" data-num="." hover="true" hover-class="numhover" bindtap="priceInner"><text>.</text></view>
-        <view class="num" data-num="0" hover="true" hover-class="numhover" bindtap="priceInner"><text>0</text></view>
+  <view class="numKeybord {{focus?'':'hidekey'}}">
+    <view class="numKey">
+      <view class="num" data-num="1" hover="true" hover-class="numhover" bindtap="priceInner">
+        <text>1</text>
       </view>
-      <view class="keyTool">
-        <view class="num delBtn" data-num="delbtn" ><text class="ico-delBtn"></text></view>
-        <view class="num payBtn" data-num="topay" hover="true" hover-class="payBtnHover"><text>支付</text></view>
+      <view class="num" data-num="2" hover="true" hover-class="numhover" bindtap="priceInner">
+        <text>2</text>
       </view>
+      <view class="num" data-num="3" hover="true" hover-class="numhover" bindtap="priceInner">
+        <text>3</text>
+      </view>
+      <view class="num" data-num="4" hover="true" hover-class="numhover" bindtap="priceInner">
+        <text>4</text>
+      </view>
+      <view class="num" data-num="5" hover="true" hover-class="numhover" bindtap="priceInner">
+        <text>5</text>
+      </view>
+      <view class="num" data-num="6" hover="true" hover-class="numhover" bindtap="priceInner">
+        <text>6</text>
+      </view>
+      <view class="num" data-num="7" hover="true" hover-class="numhover" bindtap="priceInner">
+        <text>7</text>
+      </view>
+      <view class="num" data-num="8" hover="true" hover-class="numhover" bindtap="priceInner">
+        <text>8</text>
+      </view>
+      <view class="num" data-num="9" hover="true" hover-class="numhover" bindtap="priceInner">
+        <text>9</text>
+      </view>
+      <view class="num" data-open="true" hover="true" hover-class="numhover" bindtap="hideKeyborad">
+        <text class="ico-keyBorder"></text>
+      </view>
+      <view class="num" data-num="." hover="true" hover-class="numhover" bindtap="priceInner">
+        <text>.</text>
+      </view>
+      <view class="num" data-num="0" hover="true" hover-class="numhover" bindtap="priceInner">
+        <text>0</text>
+      </view>
+    </view>
+    <view class="keyTool">
+      <view class="num delBtn" data-num="delbtn" bindtap="delVal" hover-class="numhover">
+        <text class="ico-delBtn"></text>
+      </view>
+      <view class="num payBtn" data-num="topay" hover="true" hover-class="payBtnHover">
+        <text>支付</text>
+      </view>
+    </view>
   </view>
 </view>
 <view class="singpage toppage {{showtop?'show':''}}">
-<input placeholder="输入充值金额" />
+  <input placeholder="输入充值金额" />
 </view>

@@ -326,7 +326,9 @@ src:url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8
 }
 
 
-
+.pagescroll{
+  margin-bottom:120rpx;
+}
 /*footbar.wxss*/
 .footbar{
 position:fixed;display:inline-block;text-align:center;bottom:0;left:0;right:0;background:#fafafa;padding:12rpx 0;
@@ -342,3 +344,99 @@ position:fixed;display:inline-block;text-align:center;bottom:0;left:0;right:0;ba
   color:#44C2B6;
 }
 .blockbtn{border-radius:6rpx;background:dodgerblue;color:#fff;padding:28rpx 0;text-align:center;margin-top:20rpx;font-size:36rpx;}
+
+
+.couponsCard{margin:20px;border-radius:10rpx;min-height:160rpx;display:flex;align-items: center;justify-content:space-around;position:relative;}
+.couponsCard:after,.couponsCard:before{content:'';width:20rpx;height:20rpx;background:#fff;position:absolute;left:100rpx;display:block;border-radius:90rpx;}
+.couponsCard:after{top:-10rpx;}
+.couponsCard:before{bottom:-10rpx;}
+
+.couponsCard text{color:#fff;}
+.couponsCard .value{font-size:40rpx;color:#fff;}
+.couponsCard .value text{font-size:20rpx;}
+.cards1 {
+  background: #63b359;
+}
+.cards1 .card:after, .cards1 .card:before {
+  background: #63b359;
+}
+.cards2 {
+  background: #2c9f67;
+}
+
+.cards2 .card:after, .cards2 .card:before {
+  background: #2c9f67;
+}
+
+.cards3 {
+  background: #509fc9;
+}
+
+.cards3 .card:after, .cards3 .card:before {
+  background: #509fc9;
+}
+
+.cards4 {
+  background: #5885cf;
+}
+
+.cards4 .card:after, .cards4 .card:before {
+  background: #5885cf;
+}
+
+.cards5 {
+  background: #9062c0;
+}
+
+.cards5 .card:after, .cards5 .card:before {
+  background: #9062c0;
+}
+
+.cards6 {
+  background: #d09a45;
+}
+
+.cards6 .card:after, .cards6 .card:before {
+  background: #d09a45;
+}
+
+.cards7 {
+  background: #e4b138;
+}
+
+.cards7 .card:after, .cards7 .card:before {
+  background: #e4b138;
+}
+
+.cards8 {
+  background: #ee903c;
+}
+
+.cards8 .card:after, .cards8 .card:before {
+  background: #ee903c;
+}
+
+.cards9 {
+  background: #a9d92d;
+}
+
+.cards9 .card:after, .cards9 .card:before {
+  background: #a9d92d;
+}
+
+.cards10 {
+  background: #dd6549;
+}
+
+.cards10 .card:after, .cards10 .card:before {
+  background: #dd6549;
+}
+
+.cards11 {
+  background: #cc463d;
+}
+
+.cards11 .card:after, .cards11 .card:before {
+  background: #cc463d;
+}
+
