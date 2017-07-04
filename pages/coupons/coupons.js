@@ -76,11 +76,13 @@ Page({
       var stats = true;//this.data.coupstat[e.currentTarget.id];
       var elmstat = this.data.coupstat;
       var stat = elmstat[e.currentTarget.id]?false:true;
+
+      e.detail.id == e.currentTarget.id
       elmstat[e.currentTarget.id]= stat;
         this.setData({
             coupstat: elmstat
         });
-    
+       console.log(e);
   },
   onLoad: function (options) {
     var that = this;

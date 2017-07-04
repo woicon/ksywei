@@ -5,7 +5,6 @@ Page({
     focus:true,
  },
  priceInner:function(e){
-   console.log(wx)
    var newVal = this.data.payAmount;
    
     if (newVal.indexOf(".") > 0 && e.currentTarget.dataset.num=='.') {
@@ -18,23 +17,28 @@ Page({
     });
      console.log(this.data.payAmount);
  },
+
  valTap:function(e){
    wx.hideKeyboard();
    this.setData({
      focus:true
    });
  },
+
  valFocus:function(){
    wx.hideKeyboard();
  },
+
  priceVal:function(e){
     this.setData({
       payAmount: this.data.payAmount
     });
  },
+
  setValue:function(e){
     console.log('12');
  },
+
  viewCard:function(){
    wx.openCard({
      cardList: [
@@ -51,7 +55,7 @@ Page({
    });
  },
  //隐藏键盘
- hideKeyborad:function(){
+ hideKeyborad: function() {
    this.setData({
      focus:false
    });
@@ -64,6 +68,7 @@ Page({
    });
    console.log(payval);
  },
+
 onLoad: function (e) {
    var that = this;
     wx.hideKeyboard();
@@ -73,4 +78,6 @@ onLoad: function (e) {
       });
     });
   }
+
+
 });

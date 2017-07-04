@@ -34,11 +34,12 @@ Page({
       })
   },
   onLoad: function (options) {
+    app.footBar();
     var that =this;
-    console.log(this.data.shopinfo);
     wx.setNavigationBarTitle({
       title: '西少爷'
-    })
+    });
+    console.log(this.data.tabBar)
   },
   onReady: function () {
 

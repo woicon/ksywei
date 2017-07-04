@@ -9,33 +9,33 @@
   color:string     卡片颜色
 -->
 <template name="couponscard">
-  <view class="couponsCard {{coupstat?'oepn':'close'}}" data-open="false" id="{{couponNo}}" style="background:{{color}}" bindtap="couponDescription">
+<view class="couponsCard {{coupstat[event.currentTarget.dataset.open]?'oepn':'close'}}" data-open="{{event.currentTarget.id}}" id="{{couponNo}}" style="background:{{color}}" bindtap="couponDescription">
     <view class="value"><text>¥</text>{{reduceCost}}</view>
     <view class="couponsinfo">
-    <view class="coupontype" wx:if="{{couponType==0}}">代金券</view>
-    <view class="coupontype" wx:elif="{{couponType==1}}">折扣券</view>
-    <view class="coupontype" wx:elif="{{couponType==2}}">兑换券</view>
-    <view class="coupontype" wx:elif="{{couponType==3}}">优惠券</view>
-    <view class="coupontype" wx:elif="{{couponType==4}}">团购券</view>
-    <view class="coupontype" wx:elif="{{couponType==5}}">单品代金券</view>
-    <view class="coupontype" wx:elif="{{couponType==6}}">会员卡</view>
-    <view class="coupontype" wx:elif="{{couponType==7}}">单品折扣</view>
-    <view class="time">有效期：{{beginTime}}-{{endTime}}</view>
-    <!--<view class="range">{{merchantId}}</view>-->
-     <view class="descriptionbox" data-open="false">
-        <view class="no">{{couponNo}}</view>
-        <view class="notice">{{notice}}</view>
-        <view class="description">{{description}}</view>
-         <view class="servicePhone" wx:if="{{servicePhone}}">客服电话：{{servicePhone}}</view>
-     </view>
-    <!--<view class="status" wx:if="{{status}}" class="stat">已领取</view>
-    <view class="status" wx:else class="stat" bindtap="obtainCoupon">领取</view>-->
-    <view class="status" wx:if="{{couponStatus == 0}}">未生效</view>
-    <view class="status" wx:elif="{{couponStatus == 1}}">待使用</view>
-    <view class="status" wx:elif="{{couponStatus == 2}}">已使用</view>
-    <view class="status" wx:elif="{{couponStatus == 3}}">已失效</view>
-    <view class="status" wx:elif="{{couponStatus == 4}}">已过期</view>
-    <view class="status" wx:elif="{{couponStatus == 5}}">已删除</view>
+        <view class="coupontype" wx:if="{{couponType==0}}">代金券</view>
+        <view class="coupontype" wx:elif="{{couponType==1}}">折扣券</view>
+        <view class="coupontype" wx:elif="{{couponType==2}}">兑换券</view>
+        <view class="coupontype" wx:elif="{{couponType==3}}">优惠券</view>
+        <view class="coupontype" wx:elif="{{couponType==4}}">团购券</view>
+        <view class="coupontype" wx:elif="{{couponType==5}}">单品代金券</view>
+        <view class="coupontype" wx:elif="{{couponType==6}}">会员卡</view>
+        <view class="coupontype" wx:elif="{{couponType==7}}">单品折扣</view>
+        <view class="time">有效期：{{beginTime}}-{{endTime}}</view>
+        <!--<view class="range">{{merchantId}}</view>-->
+        <view class="descriptionbox" data-open="false">
+            <view class="no">{{couponNo}}</view>
+            <view class="notice">{{notice}}</view>
+            <view class="description">{{description}}</view>
+            <view class="servicePhone" wx:if="{{servicePhone}}">客服电话：{{servicePhone}}</view>
+        </view>
+        <!--<view class="status" wx:if="{{status}}" class="stat">已领取</view>
+        <view class="status" wx:else class="stat" bindtap="obtainCoupon">领取</view>-->
+        <view class="status" wx:if="{{couponStatus == 0}}">未生效</view>
+        <view class="status" wx:elif="{{couponStatus == 1}}">待使用</view>
+        <view class="status" wx:elif="{{couponStatus == 2}}">已使用</view>
+        <view class="status" wx:elif="{{couponStatus == 3}}">已失效</view>
+        <view class="status" wx:elif="{{couponStatus == 4}}">已过期</view>
+        <view class="status" wx:elif="{{couponStatus == 5}}">已删除</view>
     </view>
   </view>
 </template>

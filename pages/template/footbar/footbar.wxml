@@ -1,4 +1,5 @@
 <!-- footbar.wxml -->
+
 <template name="footbar">
   <view class="footbar">
     <navigator url="/pages/index/index" class="{{(page=='index')?'active':''}}" opopen-type="switchTab" hover-class="footer-hover">
@@ -14,4 +15,11 @@
     <view class="icon ico-user"></view>
     我的</navigator>
   </view> 
+</template>
+
+<template name="tabbar">
+  <view class="footbar">
+    <navigator url="{{pagePath}}" class="{{active?'active':''}}" opopen-type="switchTab" hover-class="footer-hover">
+    <view class="icon ico-{{active?selectedIconPath:iconPath}}}"></view>{{text}}</navigator>
+  </view>
 </template>
