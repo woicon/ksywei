@@ -1,6 +1,10 @@
 // pages/coupons/coupons.js
+var app = getApp();
 Page({
   data: {
+      winWidth: 0,
+      winHeight: 0,
+      currentTab: 0,// tab切换
       couponlist:{
           "coupons": [
               {
@@ -72,24 +76,70 @@ Page({
       },
       coupstat:{},
   },
+  viewRules: function () {
+      wx.navigateTo({
+          url: '/pages/coupons/couponsRules',
+      });
+  },
   couponDescription:function(e){
-      var stats = true;//this.data.coupstat[e.currentTarget.id];
-      var elmstat = this.data.coupstat;
-      var stat = elmstat[e.currentTarget.id]?false:true;
+      var _couponStat = this.data.couponStat;
 
-      e.detail.id == e.currentTarget.id
-      elmstat[e.currentTarget.id]= stat;
-        this.setData({
-            coupstat: elmstat
-        });
-       console.log(e);
+      for (var i in _couponStat) {
+          _couponStat[i] = false;
+      }
+
+      
+      _couponStat[e.currentTarget.id] = true;
+      console.log(_couponStat);
+      this.setData({
+          couponStat: _couponStat
+      });
+  },
+  //滑动切换tab
+  bindChange: function (e) {
+      var that = this;
+      that.setData({ currentTab: e.detail.current });
+
+  },
+  //点击tab切换 
+  swichNav: function (e) {
+      var that = this;
+      if (this.data.currentTab === e.target.dataset.current) {
+          return false;
+      } else {
+          that.setData({
+              currentTab: e.target.dataset.current
+          })
+      }
   },
   onLoad: function (options) {
     var that = this;
     var elmStat = {};
+    app.setTab();
     wx.setNavigationBarTitle({
       title: '我的卡券'
-    })
+    });
+
+    //设置优惠券显示隐藏状态
+    var _couponStat = {};
+    var couponsitm = this.data.couponlist.coupons;
+    for (var i in couponsitm){
+        var _no = couponsitm[i].couponNo;
+        _couponStat[_no] = false;
+    }
+    this.setData({
+        couponStat: _couponStat
+    });
+
+    //获取系统信息 
+    wx.getSystemInfo({
+        success: function (res) {
+            that.setData({
+                winWidth: res.windowWidth,
+                winHeight: res.windowHeight
+            });
+        }
+    });
   },
   onReady: function () {
 

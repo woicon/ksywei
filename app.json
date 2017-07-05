@@ -3,11 +3,16 @@
     "pages/index/index",
     "pages/order/order",
     "pages/coupons/coupons",
+    "pages/coupons/couponsRules",
     "pages/member/member",
+    "pages/ewmpay/ewmpay",
+    "pages/card/card",
+    "pages/topup/topup",
     "pages/pay/pay",
     "pages/registercard/registercard",
     "pages/orders/orders",
     "pages/order/orderIng",
+    
     "pages/logs/logs"
   ],
   "window":{

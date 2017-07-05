@@ -24,7 +24,11 @@ App({
       })
     }
   },
-  footBar: function () {
+  pageloading: function () {
+      var _curpage = getCurrentPages();
+      console.log('appp pageloading' + _curpage)
+  },
+  setTab: function () {
       var _curPageArr = getCurrentPages();
       var _curPage = _curPageArr[_curPageArr.length - 1];
       var _pagePath = _curPage.__route__;
@@ -35,7 +39,7 @@ App({
       for (var i = 0; i < tabBar.list.length; i++) {
           tabBar.list[i].active = false;
           if (tabBar.list[i].pagePath == _pagePath) {
-              tabBar.list[i].active = true;//根据页面地址设置当前页面状态  
+              tabBar.list[i].active = true;
           }
       }
       _curPage.setData({
@@ -45,37 +49,36 @@ App({
   globalData:{
     userInfo:null,
     tabBar: {
-        "list": [
+        list: [
             {
-                "pagePath": "/pages/index/index",
-                "text": "主页",
-                "iconPath": "home",
-                "selectedIconPath": "home-s",
+                pagePath: "/pages/index/index",
+                text: "主页",
+                iconPath: "home",
+                selectedIconPath: "home-s",
                 active: true
             },
             {
-                "pagePath": "/pages/order/order",
-                "text": "订单",
-                "iconPath": "order",
-                "selectedIconPath": "order-s",
+                pagePath: "/pages/order/order",
+                text: "订单",
+                iconPath: "order",
+                selectedIconPath: "order-s",
                 active: false
             },
             {
-                "pagePath": "/pages/coupons/coupons",
-                "text": "优惠券",
-                "iconPath": "coup",
-                "selectedIconPath": "coup-s",
+                pagePath: "/pages/coupons/coupons",
+                text: "优惠券",
+                iconPath: "coup",
+                selectedIconPath: "coup-s",
                 active: false
             },
             {
-                "pagePath": "/pages/member/member",
-                "text": "我的",
-                "iconPath": "user",
-                "selectedIconPath": "user-s",
+                pagePath: "/pages/member/member",
+                text: "我的",
+                iconPath: "user",
+                selectedIconPath: "user-s",
                 active: false
             }
-        ],
-        "position": "bottom"
+        ]
     }
   }
 });

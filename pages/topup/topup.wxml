@@ -1,0 +1,37 @@
+<view class="topupage">
+    <view class="tophead">
+        <input class="topvalue" type="digit" bindinput="keyInput" placeholder="输入充值金额" value="{{topValue}}" />
+        <view class="topbtn btn {{topValue==0&&topValue==''?'disable':''}}" bindtap="sendTop">充值</view>
+    </view>
+    <view class="topuplist">
+        <block wx:for="{{valueList}}" wx:key="vaulelist">
+            <view class="topitem {{valueToggle[index]?'active':''}}" bindtap="setValue" data-value = "{{item.value}}" id="{{index}}">
+            <view class="value">{{item.value}}</view>
+                <view class="info">{{item.text}}</view>
+            </view>
+        </block>
+        <!--<view class="topitem {{select?'active':''}}" bindtap="setValue"  data-value = "500">
+            <view class="value">500</view>
+            <view class="info">充500送50</view>
+        </view>-->
+       
+    </view>
+
+    <view class="rules">
+        <view class="rulestitle">充值说明</view>
+        <view class="rulescont">
+            <view class="title">1.如何进行充值？</view>
+            <view>登录格瓦拉生活网->点击“进入“账户管理”->填写充值金额，选择充值方式->填写用户信息和支付密码支付->充值成功。</view>
+            <view class="title">2.有几种充值方式？</view>
+            <view>格瓦拉生活网支持以下充值方式：</view>
+            <view>1、网银充值</view>
+            <view>2、支付宝充值</view>
+            <view>3、拉卡拉充值</view>
+            <view>4、贵宾卡充值</view>
+            <view class="title">3.充值有什么好处？</view>
+            <view>1、先为您的账户充值，可以便于通过手机购票时使用。目前手机购票仅限使用余额支付；</view>
+            <view>2、通过账户余额支付，可以获得比其他支付方式双倍的积分。</view>
+        </view>    
+    </view>
+
+</view>

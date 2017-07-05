@@ -1,1 +1,19 @@
 /* pages/member/member.wxss */
+
+.memberhead{display: flex;background:#1CC16F;padding:40rpx;position:relative;}
+.memberhead .name{color:#fff;margin-bottom:16rpx;}
+.memberhead .level{color:#fff;}
+.memberhead .img{width:100rpx;height:100rpx;border-radius:290rpx;margin-right:20rpx;}
+.list-item{position:relative;display:flex;padding:30rpx 40rpx;align-items:center;}
+.list-item view{color:#444;font-size:32rpx;}
+.list-item .icon{
+    font-size:44rpx;margin-right:20rpx;
+}
+.list-item:before{
+    content:'';display:block;position:absolute;border-bottom:1px solid #eee;right:0;bottom:0;left:0;transform:scale(.5);transform-origin:0 100%;
+    width:200%;
+}
+.list-item:after{
+    content:'';position:absolute;right:30rpx;top:50%;display:block;width:14rpx;height:14rpx;border:5rpx solid #eee;border-left:none;border-bottom:none;transform:rotate(45deg);
+}
+.ewmpay{position:absolute;right:30rpx;top:50%;color:#fff;font-size:38rpx;margin-top:-19rpx;}

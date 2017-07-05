@@ -1,0 +1,4 @@
+/* pages/coupons/couponsRules.wxss */
+.rules{margin:20px;line-height:2;}
+.rules view{color:#555;}
+.title{font-size:34rpx;text-align:center;margin:20rpx;color:#333;}

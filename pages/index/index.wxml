@@ -1,4 +1,9 @@
 <!--index.wxml-->
+<view>
+    <loading hidden="{{pageloading}}">
+        加载中...
+    </loading>
+</view>
 <view class="container">
   <scroll-view class="pagescroll">
     <view class="indexad">
@@ -10,7 +15,7 @@
           <view class="location">
             {{shopinfo.shoplocaltion}}
           </view>
-          <view class="ico-phone" bindtap="callShop">{{shopinfo.shoptel}}</view>
+          <view class="ico-phone" bindtap="callShop"><view class="ico-phone"></view>{{shopinfo.shoptel}}</view>
         </view>
       </view>
       <view class="indexlist">
@@ -45,12 +50,12 @@
         </view>
       </view>
       <view class="couplist">
-        <!--<block wx:for="{{coupons}}" wx:for-item="item">
           <import src="../../pages/template/couponscard.wxml" />
-          <template is="couponsCard" data="{{color:item.color,range:item.range,stat:item.stat,index:item.index,value:item.value,time:item.time}}" />
-        </block>-->
+          <template is="couponscard" data="{{couponlist:couponlist,status:2}}" />
+      </view>
+      <view class="brand">
+         <view class="ico-logo"></view>
       </view>
   </scroll-view>
 </view>
-<import src="../../pages/template/footbar/footbar.wxml" />
-<!--<template is="tabbar" data="{{}}" />-->
+<include src="../../pages/common/tabbar.wxml"/>

@@ -1,0 +1,18 @@
+.tophead{margin:30rpx;}
+.topvalue{border:1px solid #eee;padding:20rpx 8rpx;font-size:32rpx;color:#333;}
+.topbtn{background:#1CC16F;margin:20rpx 0;text-align:center;color:#fff;padding:30rpx 0;font-size:36rpx;}
+.topuplist{
+    display:flex;justify-content:space-between;margin:30rpx;  flex-direction: row;flex-wrap: wrap;
+}
+.topitem{ width:48%;padding:20rpx;background:#f5f5f5;margin-bottom:20rpx;box-sizing:border-box;}
+.topitem .value{font-size:48rpx;margin-bottom:10rpx;color:#555;display:block;}
+.topitem.active{background:#1CC16F;}
+.topitem .info{color:#777;}
+.rulescont view{line-height:2;font-size:26rpx;color:#999;}
+
+.topitem.active view{color:#fff !important;}
+.rulestitle{text-align:center;font-size:40rpx;color:#666;margin:0 30rpx;position:relative;}
+.rulestitle:after,.rulestitle:before{content:'';position:absolute;display:block;width:30%;top:50%;border-bottom:1px solid #eee;height:1px;}
+.rulestitle:after{left:0;}
+.rulestitle:before{right:0;}
+.rulescont{margin:40rpx;}

@@ -1,0 +1,8 @@
+<!--pages/card/card.wxml-->
+<view class="vipcard">
+     <view class="cardinfo">
+      <view class="icon ico-crown"></view>
+      <text>西少爷肉夹馍</text>
+     </view>
+     <view class="cardid">NO:28329392932</view>
+  </view>

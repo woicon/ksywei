@@ -1,25 +1,26 @@
 <!-- footbar.wxml -->
-
 <template name="footbar">
   <view class="footbar">
-    <navigator url="/pages/index/index" class="{{(page=='index')?'active':''}}" opopen-type="switchTab" hover-class="footer-hover">
-    <view class="icon ico-home"></view>
+    <navigator url="/pages/index/index" class="{{(page=='index')?'active':''}}" opopen-type="switchTab" hover-class="footer-hover" redirect>
+    <view class="icon ico-home{{(page=='index')?'-s':''}}"></view>
     首页</navigator>
-    <navigator url="/pages/order/order" class="{{(page=='order')?'active':''}}" opopen-type="switchTab"  hover-class="footer-hover">
-    <view class="icon ico-order"></view>
+    <navigator url="/pages/order/order" class="{{(page=='order')?'active':''}}" opopen-type="switchTab"  hover-class="footer-hover" redirect>
+    <view class="icon ico-order{{(page=='order')?'-s':''}}"></view>
     订单</navigator>
-    <navigator url="/pages/coupons/coupons" class="{{(page=='coupons')?'active':''}}" opopen-type="switchTab" hover-class="footer-hover">
-    <view class="icon ico-coup"></view>
+    <navigator url="/pages/coupons/coupons" class="{{(page=='coupons')?'active':''}}" opopen-type="switchTab" hover-class="footer-hover" redirect>
+    <view class="icon ico-coup{{(page=='coupons')?'-s':''}}"></view>
     卡劵</navigator>
-    <navigator url="/pages/member/member" class="{{(page=='member')?'active':''}}" opopen-type="switchTab" hover-class="footer-hover">
-    <view class="icon ico-user"></view>
+    <navigator url="/pages/member/member" class="{{(page=='member')?'active':''}}" opopen-type="switchTab" hover-class="footer-hover" redirect>
+    <view class="icon ico-user{{(page=='member')?'-s':''}}"></view>
     我的</navigator>
   </view> 
 </template>
 
 <template name="tabbar">
   <view class="footbar">
-    <navigator url="{{pagePath}}" class="{{active?'active':''}}" opopen-type="switchTab" hover-class="footer-hover">
-    <view class="icon ico-{{active?selectedIconPath:iconPath}}}"></view>{{text}}</navigator>
+    <block wx:for="{{tabBar.list}}" wx:key="pagetab">
+        <navigator url="{{item.pagePath}}" class="{{item.active?'active':''}}" open-type="redirect" hover-class="footer-hover">
+        <view class="icon ico-{{item.active?item.selectedIconPath:item.iconPath}}"></view>{{item.text}}</navigator>
+    </block>
   </view>
 </template>

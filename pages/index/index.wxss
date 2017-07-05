@@ -6,7 +6,11 @@
   position:relative;
 }
 .list_item{
-  display: flex;align-items:center;padding:20rpx 40rpx;justify-content:space-between;
+  display:flex;align-items:center;justify-content:space-between;padding:30rpx 40rpx;position:relative;
+}
+.list_item:before{
+    content:'';display:block;position:absolute;border-bottom:1px solid #eee;right:0;bottom:0;left:0;transform:scale(.5);transform-origin:0 100%;
+    width:200%;
 }
 .location{
   color:#999;margin-top:10rpx;
@@ -22,8 +26,8 @@
   display:flex;align-items: center;
 }
 .list_item .icon{font-size:40rpx;margin-right:8rpx;}
-.list_btn{border-radius:200rpx;backround-color:#EA5E00;padding:12rpx 20rpx;font-size:24rpx;
-  background:#EA5E00;color:#fff;
+.list_btn{border-radius:200rpx;background-color:#EA5E00;padding:12rpx 20rpx;font-size:24rpx;color:#fff;
 }
+.head_name_title{font-size:30rpx;}
 .head_name{padding:30rpx;}
 .head_name text{line-height:38rpx;display:block;}

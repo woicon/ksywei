@@ -1,4 +1,5 @@
 // pages/order/order.js
+var app = getApp();
 Page({
   data: {
   
@@ -6,7 +7,8 @@ Page({
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '我的订单'
-    })
+    });
+    app.setTab();
   },
   onReady: function () {
   

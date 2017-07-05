@@ -1,0 +1,7 @@
+<!-- empty.wxml -->
+<template name="empty">
+ <view class="empty">
+    <view class="icon {{icon}}"></view>
+    <text class="text">{{text}}</text>
+</view>
+</template>

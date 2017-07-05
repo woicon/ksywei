@@ -1,12 +1,30 @@
 <!--pages/member/member.wxml-->
 <view class="container">
-    <view class="memberinfo">
-        <image class="mallImg" src="{{userInfo.avatarUrl}}"></image>
-        <view class="mallInfos">
-        <text class="mallName"> {{userInfo.nickName}}</text>
-        <text class="mallField">{{userInfo.province}}{{userInfo.city}}</text>
+    <!--<view class="vipcard">
+        <view class="cardinfo">
+        <view class="icon ico-vippay"></view>
+        <text>西少爷肉夹馍</text>
         </view>
+        <view class="cardid">NO:{{cardid}}</view>
+    </view>-->
+    <view class="memberhead">
+        <image class="img" src="{{userInfo.avatarUrl}}"></image>
+        <view class="info">
+            <view class="name"> {{userInfo.nickName}}</view>
+            <view class="level">白金会员 8.8折</view>
+        <!--<text class="city">{{userInfo.province}}{{userInfo.city}}</text>-->
+            <view class="ewmpay ico-ewm"></view>
+        </view>
+       
     </view>
+    <view class="memberlist">
+        <view class="list-item" bindtap="viewIntegral"><view class="icon ico-order"></view> 积分</view>
+        <view class="list-item" bindtap="viewCard"><view class="icon ico-card"></view> 会员卡</view>
+        <view class="list-item" bindtap="topupMoney"><view class="icon ico-mymoney"></view> 会员充值</view>
+        <view class="list-item" bindtap="viewCard"><view class="icon ico-pig"></view> 消费有礼</view>
+    </view>
+
+    
 </view>
-<import src="../../pages/template/footbar/footbar.wxml"/>
-<template is="footbar" data="{{page:'member'}}"/>
+<include src="../../pages/common/tabbar.wxml"/>
+

@@ -1,16 +1,6 @@
 
 /**couponsCard.wxss**/
-.couponsCard {
-}
 
-.couponsCard :after, .couponsCard :before {
-}
-
-.couponsCard :after {
-}
-
-.couponsCard :before {
-}
 
 .cards1 {
   background: #63b359;
