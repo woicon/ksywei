@@ -28,7 +28,7 @@
 <block wx:elif="{{couponlist.returnCode=='S'}}">
 <view class="couponslist">
     <import src="../../pages/template/couponscard.wxml"/>
-    <template is="couponscard" data="{{couponlist:couponlist,status:1}}"></template>
+    <template is="couponscard" data="{{couponlist:couponlist,status:1,couponStat:couponStat}}"></template>
 
     
     <view class="coupinfo"> <view class="viewrules" bindtap="viewRules"> 

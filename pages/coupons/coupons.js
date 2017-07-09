@@ -74,25 +74,24 @@ Page({
           "returnCode": "S",
           "returnMessage": "操作成功"
       },
-      coupstat:{},
+      couponStat:{}
   },
   viewRules: function () {
       wx.navigateTo({
           url: '/pages/coupons/couponsRules',
       });
   },
+  //查看优惠券详情
   couponDescription:function(e){
-      var _couponStat = this.data.couponStat;
-
-      for (var i in _couponStat) {
-          _couponStat[i] = false;
+      var __couponStat = this.data.couponStat;
+      for (var i in __couponStat) {
+        __couponStat[i] = false;
       }
-
-      
-      _couponStat[e.currentTarget.id] = true;
-      console.log(_couponStat);
+      var cstat = __couponStat[e.currentTarget.id];
+      cstat = !cstat?true:false;
+      __couponStat[e.currentTarget.id] = cstat;
       this.setData({
-          couponStat: _couponStat
+        couponStat: __couponStat
       });
   },
   //滑动切换tab
@@ -124,13 +123,11 @@ Page({
     var _couponStat = {};
     var couponsitm = this.data.couponlist.coupons;
     for (var i in couponsitm){
-        var _no = couponsitm[i].couponNo;
-        _couponStat[_no] = false;
+      _couponStat[e.currentTarget.id] = false;
     }
     this.setData({
         couponStat: _couponStat
     });
-
     //获取系统信息 
     wx.getSystemInfo({
         success: function (res) {
