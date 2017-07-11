@@ -1,4 +1,25 @@
 <!--pages/ewmpay/ewmpay.wxml-->
-<text>pages/ewmpay/ewmpay.wxml</text>
+<page style="background:{{color}}">
+    <view class="ewmpay">
+        <view class="ewmcard">
+            <view class="barcode"> 
+            <!--style="background-image:url(../../pages/images/rcCode.png)"-->
+                <image mode="aspectFit" src="../../pages/images/rcCode.png"></image>
+            </view>
+            <view class="qrcode">
+                <image mode="aspectFit" src="../../pages/images/rcCode2.png"></image>
+            </view>
 
-
+            <view class="ewmbar">
+                <view class="money">
+                    <view class="icon ico-pig"></view>
+                    <view class="ewmmoney">余额 
+                        <view class="balance">800.00
+                        </view>
+                    </view>
+                </view>
+            <navigator url="pages/topup/topup" open-type="redirect" class="gotop">充值</navigator>
+            </view>
+        </view>
+    </view>
+</page>

@@ -428,7 +428,7 @@ position:fixed;display:inline-block;text-align:center;bottom:0;left:0;right:0;ba
 
 /*template couponscard*/
 .couponsCard{margin:30rpx;border-radius:20rpx;min-height:160rpx;display:flex;align-items: center;position:relative;
-transition:all .5s;padding:32rpx;}
+transition:all .5s;padding:32rpx;padding-left:0;}
 .couponsCard:after,.couponsCard:before{content:'';width:20rpx;height:20rpx;background:#fff;position:absolute;left:120rpx;display:block;border-radius:90rpx;}
 .couponsCard:after{top:-10rpx;}
 .couponsCard:before{bottom:-10rpx;}
@@ -436,12 +436,14 @@ transition:all .5s;padding:32rpx;}
 .coupons-value{font-size:56rpx;color:#fff;width:130rpx;border-right:1px dashed #fff;text-align:center;}
 .coupons-value text{font-size:30rpx;}
 .couponsinfo{padding-left:30rpx;}
-.couponsinfo .time{color:#fff;font-size:22rpx;}
-.couponname{font-size:28rpx;color:#fff;margin-bottom:20rpx;border-top:1rpx dashed rgba(255,255,255,.4);padding-top:15rpx;}
+.couponsinfo .time{color:#fff;font-size:22rpx;margin-bottom:20rpx;}
+.couponname{font-size:28rpx;color:#fff;}
 .coupontype{font-size:32rpx;color:#fff;margin-bottom:20rpx;}
-.coupondescription{visibility:hidden;transform:scaleY(0);transition:all .4s;transform-origin:100% 0;transition-timing-function:ease-in;height:0;}
+.coupondescription{visibility:hidden;height:0;border-top:1rpx dashed rgba(255,255,255,.4);display:none}
+
+/*transform:scaleY(0);transition:all .4s;transform-origin:100% 0;transition-timing-function:ease-in;*/
 .coupondescription view{color:#fff;line-height:1.6;}
-.couponsCard.open .coupondescription{visibility:inherit;transform: scaleY(1);height:inherit;padding-top:20rpx;}
+.couponsCard.open .coupondescription{visibility:inherit;transform: scaleY(1);height:inherit;padding-top:20rpx;display:block;}
 .couponfav{position:absolute;right:20px;top:50%;border-radius:90px;padding:12rpx 22rpx;border:1px solid #fff;color:#fff;margin-top:-28rpx; }
 
 /*template empty*/
@@ -455,17 +457,26 @@ animation:easyin .5s ease-in both;}
 
 
 /*vipcard*/
-.vipcard{
-  margin:40rpx;background:#1CC16F;padding:30rpx;border-radius:20rpx;
-  height:300rpx;position:relative;
-  animation:sliderInUp .5s ease-in;
-}
-.cardinfo{
-  display:flex;color:#fff;align-items:center;
-}
+.vipcard{margin:40rpx;background:#1CC16F;padding:30rpx;border-radius:20rpx;height:300rpx;position:relative;animation:sliderInUp .5s ease-in;}
+.cardinfo{display:flex;color:#fff;align-items:center;}
 .cardinfo text{font-size:32rpx;}
 .cardinfo .icon{width:60rpx;height:60rpx;background:yellow;color:#333;border-radius:400rpx;text-align:center;line-height:60rpx;font-size:44rpx;margin-right:12rpx;}
 .cardid{align-self:flex-end;color:#fff;position:absolute;left:30rpx;bottom:32rpx;}
+
+/*comment*/
+.comment{margin:0 40rpx;}
+
+.comment-item{display:flex;align-items:flex-start;justify-content:flex-start;margin:30rpx 0;position:relative;padding-bottom:30rpx;}
+.comment-item:after{content:'';display:block;position:absolute;border-bottom:1px solid #eee;right:0;bottom:0;left:0;transform:scale(.5);transform-origin:0 100%;width:200%;}
+.comment-item:last-child:after{
+    border:none;
+}
+.comment-name{color:#444;margin-bottom:10rpx;}
+.comment-img{width:40px;height:40px;margin-right:20rpx;border-radius:150rpx;}
+.comment-img image{width:40px;height:40px;border-radius:40px;}
+.comment-text{line-height:1.8;color:#999;margin-top:14rpx;}
+.comment-item .star view{display:inline-block;color:#999;}
+.comment-item .star .active{color:#EA5E00;}
 
 /*animation*/
 @keyframes easyin{
@@ -482,4 +493,8 @@ animation:easyin .5s ease-in both;}
 }
 .btn.disable{
     background:#eee;color:#ccc;
+}
+
+.pagetitle{
+    margin:40rpx 30rpx;color:#1CC16F;font-size:38rpx;
 }

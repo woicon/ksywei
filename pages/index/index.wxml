@@ -5,57 +5,98 @@
     </loading>
 </view>
 <view class="container">
-  <scroll-view class="pagescroll">
-    <view class="indexad">
-        <view class="head_img">
-          <image src="{{shopinfo.shopimg}}" mode="aspectFill"></image>
-        </view>
-        <view class="head_name">
-          <text class="head_name_title">{{shopinfo.shopname}}</text>
-          <view class="location">
-            {{shopinfo.shoplocaltion}}
-          </view>
-          <view class="ico-phone" bindtap="callShop"><view class="ico-phone"></view>{{shopinfo.shoptel}}</view>
-        </view>
-      </view>
-      <view class="indexlist">
-        <navigator class="list_item" url="/pages/orders/orders">
-          <view class="list_first">
+<scroll-view class="pagescroll">
+<view class="indexad">
+    <view class="head-img">
+        <image src="{{shopinfo.shopimg}}" mode="aspectFill"></image>
+    </view>
+    <view class="head-name">
+        <text class="head-name-title">{{shopinfo.shopname}}</text>
+        <view class="location">{{shopinfo.shoplocaltion}}</view>
+        <view class="ico-phone" bindtap="callShop"><view class="ico-phone"></view>{{shopinfo.shoptel}}</view>
+    </view>
+</view>
+
+
+      <view class="indexlist index-grid">
+        <navigator class="list-item" url="/pages/orders/orders">
+          <view class="list-first">
             <view class="icon ico-order"></view>
-            <text class="list_text">自助点餐</text>
+            <text class="list-text">自助点餐</text>
           </view>
-          <view class="list_btn">点餐</view>
+          <view class="list-btn">点餐</view>
         </navigator>
-        <navigator class="list_item" url="/pages/registercard/registercard">
-          <view class="list_first">
+        <navigator class="list-item" url="/pages/registercard/registercard">
+          <view class="list-first">
             <view class="icon ico-card"></view>
-            <text class="list_text">领取会员卡</text>
+            <text class="list-text">领取会员卡</text>
           </view>
-          <view class="list_btn">领取</view>
+          <view class="list-btn">领取</view>
         </navigator>
-        <navigator class="list_item" url="/pages/pay/pay">
-          <view class="list_first">
+        <navigator class="list-item" url="/pages/pay/pay">
+          <view class="list-first">
             <view class="icon ico-mymoney"></view>
-            <text class="list_text">消费买单</text>
+            <text class="list-text">消费买单</text>
           </view>
-          <view class="list_btn">买单</view>
+          <view class="list-btn">买单</view>
         </navigator>
 
-        <view class="list_item" url="/pages/pay/pay">
-          <view class="list_first">
-            <view class="icon ico-mymoney"></view>
-            <text class="list_text">消费买单</text>
+        <navigator class="list-item" url="/pages/pay/pay">
+          <view class="list-first">
+            <view class="icon ico-sbag"></view>
+            <text class="list-text">礼品卡</text>
           </view>
-          <view class="list_btn">扫码</view>
-        </view>
+          <view class="list-btn">礼品卡</view>
+        </navigator>
       </view>
+
+
+      <view class="pagetitle">推荐单品</view>
+
+      <view class="recommended">
+
+      </view>
+
+      <view class="pagetitle">优惠券</view>
+
       <view class="couplist">
           <import src="../../pages/template/couponscard.wxml" />
           <template is="couponscard" data="{{couponlist:couponlist,status:2}}" />
       </view>
+
+     <view class="pagetitle">热门评价</view>
+
+     <view class="comment">
+        <import src="../../pages/template/comment.wxml" />
+        <template is="comments" data="{{comment:comment,status:2}}" />
+     </view>
+     <navigator class="morebtn" bindtap="commentPage"  url="/pages/comment/comment">查看更多评价</navigator>
+
+      <!--<view class="comment">
+         <view class="comment-item">
+            <view class="comment-img">
+                <image class="comment-img" mode="scaleToFill" src="../../pages/images/usimg.jpg"></image>
+            </view>
+            <view class="comment-info">
+                <view class="comment-name">Json Brose</view>
+                <view class="star">
+                    <view class="ico-star-s active"></view>
+                    <view class="ico-star-s active"></view>
+                    <view class="ico-star-s active"></view>
+                    <view class="ico-star-s active"></view>
+                    <view class="ico-star-s"></view>
+                </view>
+                <view class="comment-text">
+                    <text>重点羊腿很嫩，来对地方啦！偶尔搜到的，看到评价不错，决定来试试，服务态度很好！多次提醒小心火别烫到，啤酒可以换成饮料，不错！</text>
+                </view>
+            </view>
+        </view>
+      </view>-->
+
+
       <view class="brand">
          <view class="ico-logo"></view>
       </view>
-  </scroll-view>
+</scroll-view>
 </view>
 <include src="../../pages/common/tabbar.wxml"/>

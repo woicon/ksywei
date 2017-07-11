@@ -14,9 +14,7 @@
             <view class="value">500</view>
             <view class="info">充500送50</view>
         </view>-->
-       
     </view>
-
     <view class="rules">
         <view class="rulestitle">充值说明</view>
         <view class="rulescont">
@@ -33,5 +31,4 @@
             <view>2、通过账户余额支付，可以获得比其他支付方式双倍的积分。</view>
         </view>    
     </view>
-
 </view>

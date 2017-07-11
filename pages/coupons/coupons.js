@@ -76,17 +76,18 @@ Page({
       },
       couponStat:{}
   },
+
   viewRules: function () {
       wx.navigateTo({
           url: '/pages/coupons/couponsRules',
       });
   },
+
   //查看优惠券详情
   couponDescription:function(e){
       var __couponStat = this.data.couponStat;
-      for (var i in __couponStat) {
-        __couponStat[i] = false;
-      }
+      console.log(e);
+   
       var cstat = __couponStat[e.currentTarget.id];
       cstat = !cstat?true:false;
       __couponStat[e.currentTarget.id] = cstat;
@@ -94,12 +95,13 @@ Page({
         couponStat: __couponStat
       });
   },
+
   //滑动切换tab
   bindChange: function (e) {
       var that = this;
       that.setData({ currentTab: e.detail.current });
-
   },
+
   //点击tab切换 
   swichNav: function (e) {
       var that = this;
@@ -111,6 +113,7 @@ Page({
           })
       }
   },
+
   onLoad: function (options) {
     var that = this;
     var elmStat = {};
@@ -119,15 +122,16 @@ Page({
       title: '我的卡券'
     });
 
-    //设置优惠券显示隐藏状态
-    var _couponStat = {};
-    var couponsitm = this.data.couponlist.coupons;
-    for (var i in couponsitm){
-      _couponStat[e.currentTarget.id] = false;
-    }
-    this.setData({
-        couponStat: _couponStat
-    });
+    // //设置优惠券显示隐藏状态
+    // var _couponStat = {};
+    // var couponsitm = this.data.couponlist.coupons;
+    // for (var i in couponsitm){
+    //  // _couponStat[e.currentTarget.id] = false;
+    // }
+    // this.setData({
+    //     couponStat: _couponStat
+    // });
+
     //获取系统信息 
     wx.getSystemInfo({
         success: function (res) {
@@ -138,6 +142,7 @@ Page({
         }
     });
   },
+
   onReady: function () {
 
   },

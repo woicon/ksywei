@@ -1,8 +1,14 @@
 <!--pages/card/card.wxml-->
 <view class="vipcard">
-     <view class="cardinfo">
-      <view class="icon ico-crown"></view>
-      <text>西少爷肉夹馍</text>
-     </view>
-     <view class="cardid">NO:28329392932</view>
-  </view>
+    <view class="cardinfo">
+    <view class="icon ico-crown"></view>
+    <text>西少爷肉夹馍</text>
+    </view>
+    <view class="cardid">NO:28329392932</view>
+</view>
+
+<view class="member-col">
+    <view class="col-item">积分 <view class="value">2</view> </view>
+    <view class="col-item">余额 <view class="value">2</view> </view>
+    <view class="col-item">优惠券 <view class="value">4</view> </view>
+</view>

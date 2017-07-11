@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/order/order",
     "pages/coupons/coupons",
+    "pages/couponsdetail/couponsdetail",
     "pages/coupons/couponsRules",
     "pages/member/member",
     "pages/ewmpay/ewmpay",
@@ -12,9 +13,12 @@
     "pages/registercard/registercard",
     "pages/orders/orders",
     "pages/order/orderIng",
-    
-    "pages/logs/logs"
+    "pages/integral/integral",
+    "pages/logs/logs",
+    "pages/interests/interests",
+    "pages/comment/comment"
   ],
+  
   "window":{
     "backgroundTextStyle":"#444",
     "navigationBarBackgroundColor": "#fff",

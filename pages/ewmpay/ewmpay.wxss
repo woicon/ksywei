@@ -1,1 +1,42 @@
 /* pages/ewmpay/ewmpay.wxss */
+page{
+    background:#1CC16F;
+}
+.ewmcard{
+    overflow:hidden;
+}
+.ewmpay{
+    background:#fff;width:82%;margin:20% auto 0;border-radius:10rpx;box-shadow:0 1px 22px rgba(0,0,0,.3);position:relative;
+}
+.ewmpay:after,.ewmpay:before{
+    content:'';display:block;border-radius:0 0 8rpx 8rpx;position:absolute;height:8px;background:rgba(255,255,255,.4);box-shadow:0 1px 18px rgba(0,0,0,.1); z-index:-1;
+}
+.ewmpay:before{left:8rpx;right:8rpx;bottom:-8rpx;}
+.ewmpay:after{right:16rpx;left:16rpx;bottom:-16rpx;}
+.qrcode{
+ width:100%;margin:40rpx auto;text-align:center;height:200px;background-size:cover;background-repeat:no-repeat;
+ background-position:center center;
+}
+.qrcode image{
+  height:100%;width:100%;
+}
+.barcode{
+   margin:40rpx 0;height:120rpx;background-size:cover;background-repeat:no-repeat;
+ background-position:center center;
+}
+.barcode image{
+   height:100%;width:100%;
+}
+
+
+.money{
+    display:flex;align-items:center;
+}
+.money .icon{font-size:44rpx;margin-right:20rpx; color:#1CC16F;}
+.balance{
+    color:#1CC16F;font-size:38rpx;margin-top:10rpx;
+}
+.ewmbar{
+    border-top:1px dashed #eee;display:flex;align-items:center;justify-content:space-between;padding:30rpx 20rpx;
+}
+.gotop{display:inline-block;padding:12rpx 24rpx;background:#1CC16F;color:#fff;border-radius:4rpx;}

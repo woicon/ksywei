@@ -1,0 +1,23 @@
+<template name="comments">
+    <block wx:for="{{comment}}" wx:key="comments">
+        <view class="comment-item">
+        <view class="comment-img">
+            <image mode="scaleToFill" src="{{item.userImage}}"></image>
+        </view>
+        <view class="comment-info">
+            <view class="comment-name">{{item.userName}}</view>
+            <view class="star">
+               
+                <view class="ico-star-s active"></view>
+                <view class="ico-star-s active"></view>
+                <view class="ico-star-s active"></view>
+                <view class="ico-star-s active"></view>
+                <view class="ico-star-s"></view>
+            </view>
+            <view class="comment-text">
+                <text>{{item.content}}</text>
+            </view>
+        </view>
+    </view>
+    </block>
+</template>

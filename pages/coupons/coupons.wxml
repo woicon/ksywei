@@ -18,8 +18,8 @@
     <swiper-item>  
       <view class="empty">
       没有可使用红包
-      </view>  
-    </swiper-item>  
+      </view>
+    </swiper-item>
 </swiper>-->
 <block wx:if="{{couponlist.returnCode=='F'}}">
     <import src="../../pages/template/empty.wxml"/>
@@ -29,13 +29,10 @@
 <view class="couponslist">
     <import src="../../pages/template/couponscard.wxml"/>
     <template is="couponscard" data="{{couponlist:couponlist,status:1,couponStat:couponStat}}"></template>
-
-    
     <view class="coupinfo"> <view class="viewrules" bindtap="viewRules"> 
     <view class="ico-info-s"></view> 使用规则</view> 
     <view>没有更多可用券 <view class="viewcoupons" bindtap="failureCoupons">查看失效优惠</view></view>
     </view>
 </view>
 </block>
-
 <include src="../../pages/common/tabbar.wxml"/>

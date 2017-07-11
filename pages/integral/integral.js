@@ -1,23 +1,18 @@
-// pages/ewmpay/ewmpay.js
-var app = getApp();
+// pages/integral/integral.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      color:'#1CC16F',
+    integral:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-        title: '会员支付',
-    });
     
-    console.log(window);
   },
 
   /**

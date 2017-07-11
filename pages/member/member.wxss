@@ -1,9 +1,16 @@
 /* pages/member/member.wxss */
 
-.memberhead{display: flex;background:#1CC16F;padding:40rpx;position:relative;}
+.memberhead{display: flex;background:#1CC16F;padding:40rpx;position:relative;padding-bottom:50rpx;}
 .memberhead .name{color:#fff;margin-bottom:16rpx;}
 .memberhead .level{color:#fff;}
 .memberhead .img{width:100rpx;height:100rpx;border-radius:290rpx;margin-right:20rpx;}
+.member-col{align-self:flex-end;position:absolute;left:0;right:0;bottom:0;display:flex;}
+.col-item{
+    font-size:28rpx;width:33.333333%;text-align:center;color:#fff;
+}
+.col-item .value{font-size:30rpx;}
+
+
 .list-item{position:relative;display:flex;padding:30rpx 40rpx;align-items:center;}
 .list-item view{color:#444;font-size:32rpx;}
 .list-item .icon{

@@ -1,0 +1,5 @@
+<!--pages/comment.wxml-->
+<view class="comment">
+    <import src="../../pages/template/comment.wxml" />
+    <template is="comments" data="{{comment:comment}}" />
+</view>

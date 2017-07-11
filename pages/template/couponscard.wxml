@@ -2,7 +2,7 @@
 <template name="couponscard">
 <block wx:for="{{couponlist.coupons}}"  wx:key="couponslist">
         <block wx:if="{{status==1}}">
-            <view class="couponsCard {{couponStat[item.couponNo]?'open':''}}" data-id="{{index}}" id="{{item.couponNo}}" style="background:{{item.color}}" bindtap="couponDescription">
+            <view toggle="false" class="couponsCard {{couponStat[item.couponNo]?'open':''}}" data-id="{{index}}" id="{{item.couponNo}}" style="background:{{item.color}}" bindtap="couponDescription">
                 <view class="coupons-value"><text>¥</text>{{item.reduceCost}}</view>
                 <view class="couponsinfo">
                     <view class="coupontype" wx:if="{{item.couponType==0}}">代金券</view>
@@ -17,7 +17,7 @@
                     <!--<view class="range">{{merchantId}}</view>-->
                     <view class="coupondescription" data-open="false">
                         <view class="couponname">{{item.couponName}}</view>
-                        <view class="no">{{item.couponNo}}</view>
+                        <!--<view class="no">{{item.couponNo}}</view>-->
                         <view class="notice">{{item.notice}}</view>
                         <view class="description">{{item.description}}</view>
                         <view class="servicePhone" wx:if="{{item.servicePhone}}">客服电话：{{item.servicePhone}}</view>
@@ -37,24 +37,22 @@
                 </view>
             </view>
         </block>
-
-        <block wx:elif="{{status==2}}">
-                <view class="couponsCard {{coupstat[event.currentTarget.dataset.open]?'oepn':'close'}}" data-open="{{event.currentTarget.id}}" id="{{item.couponNo}}" style="background:{{item.color}}" bindtap="couponDescription">
+<block wx:elif="{{status==2}}">
+<view class="couponsCard {{coupstat[event.currentTarget.dataset.open]?'oepn':'close'}}" data-open="{{event.currentTarget.id}}" id="{{item.couponNo}}" style="background:{{item.color}}" bindtap="couponDescription">
                 <view class="coupons-value"><text>¥</text>{{item.reduceCost}}</view>
                 <view class="couponsinfo">
-                   
-                    <view class="couponname">{{item.couponName}}</view>
-                     <!--<view class="" wx:if="{{item.couponType==0}}">代金券</view>
-                    <view class="" wx:elif="{{item.couponType==1}}">折扣券</view>
-                    <view class="" wx:elif="{{item.couponType==2}}">兑换券</view>
-                    <view class="" wx:elif="{{item.couponType==3}}">优惠券</view>
-                    <view class="" wx:elif="{{item.couponType==4}}">团购券</view>
-                    <view class="" wx:elif="{{item.couponType==5}}">单品代金券</view>
-                    <view class="" wx:elif="{{item.couponType==6}}">会员卡</view>
-                    <view class="" wx:elif="{{item.couponType==7}}">单品折扣</view>-->
-                    <view class="time">有效期至：{{item.endTime}}</view>
+                    <!--<view class="couponname">{{item.couponName}}</view>-->
+                     <view class="coupontype" wx:if="{{item.couponType==0}}">代金券</view>
+                    <view class="coupontype" wx:elif="{{item.couponType==1}}">折扣券</view>
+                    <view class="coupontype" wx:elif="{{item.couponType==2}}">兑换券</view>
+                    <view class="coupontype" wx:elif="{{item.couponType==3}}">优惠券</view>
+                    <view class="coupontype" wx:elif="{{item.couponType==4}}">团购券</view>
+                    <view class="coupontype" wx:elif="{{item.couponType==5}}">单品代金券</view>
+                    <view class="coupontype" wx:elif="{{item.couponType==6}}">会员卡</view>
+                    <view class="coupontype" wx:elif="{{item.couponType==7}}">单品折扣</view>
+                    <view class="time">{{item.endTime}}</view>
                     <!--<view class="range">{{merchantId}}</view>-->
-                    <view class="descriptionbox" data-open="false">
+                    <view class="coupondescription">
                         <!--<view class="no">{{item.couponNo}}</view>-->
                         <view class="couponname">{{item.couponName}}</view>
                         <view class="notice">{{item.notice}}</view>
@@ -78,7 +76,6 @@
         </block>
 </block>
 </template>
-
 <template name="coupon">
   <view class="couponsCard {{color}}" id="card{{color}}">
     <view class="value"><text>¥</text>{{couponName}}</view>
