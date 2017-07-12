@@ -15,12 +15,12 @@
         <!--<text class="city">{{userInfo.province}}{{userInfo.city}}</text>-->
             <view class="ewmpay ico-ewm" bindtap="vipPay"></view>
         </view>
-        
-        <view class="member-col">
-            <view class="col-item">积分 <view class="value">2</view> </view>
-            <view class="col-item">余额 <view class="value">2</view> </view>
-            <view class="col-item">优惠券 <view class="value">4</view> </view>
-        </view>
+    </view>
+    
+    <view class="member-col">
+        <view class="col-item">积分 <view class="value">2</view> </view>
+        <view class="col-item">余额 <view class="value">2</view> </view>
+        <view class="col-item">优惠券 <view class="value">4</view> </view>
     </view>
 
     <view class="memberlist">
@@ -30,6 +30,4 @@
         <view class="list-item" bindtap="viewCard"><view class="icon ico-pig"></view> 消费有礼</view>
     </view>
 </view>
-
 <include src="../../pages/common/tabbar.wxml"/>
-

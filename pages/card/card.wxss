@@ -1,1 +1,44 @@
 /* pages/card/card.wxss */
+.vipcard{margin:40rpx;background:#1CC16F;padding:30rpx;border-radius:16rpx;height:360rpx;position:relative;animation:easyin .5s ease-in;
+    box-shadow:0 1px 12px rgba(0,0,0,.2);
+}
+
+.vipcard:before{
+    content:'';position:absolute;left:0;right:0;top:0;bottom:0;
+    /* background:linear-gradient(rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);border-radius:16rpx; */
+}
+.cardinfo{display:flex;color:#fff;align-items:center;}
+.cardinfo text{font-size:32rpx;}
+.cardinfo .icon{width:60rpx;height:60rpx;background:yellow;color:#333;border-radius:400rpx;text-align:center;line-height:60rpx;font-size:44rpx;margin-right:12rpx;}
+.cardid{align-self:flex-end;color:#fff;position:absolute;left:30rpx;bottom:32rpx;}
+.member-col{
+    align-self:flex-end;display:flex;margin:40rpx 0;
+}
+.col-item{
+    font-size:28rpx;width:33.333333%;text-align:center;color:#888;position:relative;
+    animation:easyin .5s ease-in forwards;
+    animation-delay:.3s;
+}
+.col-item:after{
+    content:'';display:block;border-right:1px solid #eee;transform:scaleY(.5);position:absolute;right:0;top:0;height:200%;transform-origin:0 0;
+}
+.col-item .value{
+    font-size:36rpx;color:#444;margin-top:10rpx;
+}
+
+.card-list{
+
+}
+.card-list navigator{
+    padding:0 40rpx;position:relative;
+
+}
+.card-list navigator text{
+    margin:0 0;display:block;position:relative;padding:40rpx 0;font-size:32rpx;
+}
+.card-list navigator text:after{
+    content:'';position:absolute;left:0;bottom:0;transform:scaleX(.5);border-bottom:1px solid #eee;display:block;transform-origin: 0 100%;height:1px;width:200%;
+}
+.card-list navigator:before{
+    content:'';position:absolute;right:40rpx;width:6px;height:6px;border:2px solid #eee;border-left:none;border-bottom:none;transform:rotate(45deg);top:50%;
+}

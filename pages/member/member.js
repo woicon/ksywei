@@ -2,7 +2,7 @@ var app = getApp();
 Page({
     data: {
         payAmount: "0",//支付的价格
-        focus: true,
+        focus: true
     },
     viewCard: function () {
         wx.navigateTo({
@@ -32,6 +32,10 @@ Page({
         });
         //加载tabBar菜单
         app.setTab();
+        wx.setNavigationBarColor({
+            frontColor: '#ffffff',
+            backgroundColor: app.globalData.color,
+        })
         app.getUserInfo(function (userInfo) {
             that.setData({
                 userInfo: userInfo,

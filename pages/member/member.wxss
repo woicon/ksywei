@@ -4,11 +4,19 @@
 .memberhead .name{color:#fff;margin-bottom:16rpx;}
 .memberhead .level{color:#fff;}
 .memberhead .img{width:100rpx;height:100rpx;border-radius:290rpx;margin-right:20rpx;}
-.member-col{align-self:flex-end;position:absolute;left:0;right:0;bottom:0;display:flex;}
-.col-item{
-    font-size:28rpx;width:33.333333%;text-align:center;color:#fff;
+
+.member-col{
+    align-self:flex-end;display:flex;margin:40rpx 0;
 }
-.col-item .value{font-size:30rpx;}
+.col-item{
+    font-size:28rpx;width:33.333333%;text-align:center;color:#888;position:relative;
+}
+.col-item:after{
+    content:'';display:block;border-right:1px solid #eee;transform:scaleY(.5);position:absolute;right:0;top:0;display:block;height:200%;transform-origin:0 0;
+}
+.col-item .value{
+    font-size:36rpx;color:#333;margin-top:10rpx;
+}
 
 
 .list-item{position:relative;display:flex;padding:30rpx 40rpx;align-items:center;}

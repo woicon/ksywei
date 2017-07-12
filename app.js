@@ -46,8 +46,10 @@ App({
           tabBar: tabBar
       });
   },
+ 
   globalData:{
     userInfo:null,
+    color:'#1CC16F',
     tabBar: {
         list: [
             {

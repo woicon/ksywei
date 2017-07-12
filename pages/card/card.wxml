@@ -9,6 +9,12 @@
 
 <view class="member-col">
     <view class="col-item">积分 <view class="value">2</view> </view>
-    <view class="col-item">余额 <view class="value">2</view> </view>
+    <view class="col-item">等级 <view class="value">2</view> </view>
     <view class="col-item">优惠券 <view class="value">4</view> </view>
+</view>
+
+<view class="card-list">
+    <navigator url="url"> <text>个人信息</text></navigator>
+    <navigator url="pages/carddetail/carddetail"> <text>会员权益</text></navigator>
+    <navigator url="url"> <text>适用门店</text></navigator>
 </view>

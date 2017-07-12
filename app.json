@@ -8,6 +8,7 @@
     "pages/member/member",
     "pages/ewmpay/ewmpay",
     "pages/card/card",
+    "pages/carddetail/carddetail",
     "pages/topup/topup",
     "pages/pay/pay",
     "pages/registercard/registercard",
@@ -18,7 +19,6 @@
     "pages/interests/interests",
     "pages/comment/comment"
   ],
-  
   "window":{
     "backgroundTextStyle":"#444",
     "navigationBarBackgroundColor": "#fff",

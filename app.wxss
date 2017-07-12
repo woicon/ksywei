@@ -455,13 +455,7 @@ animation:easyin .5s ease-in both;}
 .brand{color:#ccc;text-align:center;}
 .brand view{display:inline-block;color:#eee;font-size:60px;}
 
-
 /*vipcard*/
-.vipcard{margin:40rpx;background:#1CC16F;padding:30rpx;border-radius:20rpx;height:300rpx;position:relative;animation:sliderInUp .5s ease-in;}
-.cardinfo{display:flex;color:#fff;align-items:center;}
-.cardinfo text{font-size:32rpx;}
-.cardinfo .icon{width:60rpx;height:60rpx;background:yellow;color:#333;border-radius:400rpx;text-align:center;line-height:60rpx;font-size:44rpx;margin-right:12rpx;}
-.cardid{align-self:flex-end;color:#fff;position:absolute;left:30rpx;bottom:32rpx;}
 
 /*comment*/
 .comment{margin:0 40rpx;}

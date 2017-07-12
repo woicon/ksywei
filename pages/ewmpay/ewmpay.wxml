@@ -1,5 +1,6 @@
 <!--pages/ewmpay/ewmpay.wxml-->
 <page style="background:{{color}}">
+    
     <view class="ewmpay">
         <view class="ewmcard">
             <view class="barcode"> 
@@ -18,7 +19,7 @@
                         </view>
                     </view>
                 </view>
-            <navigator url="pages/topup/topup" open-type="redirect" class="gotop">充值</navigator>
+            <navigator url="/pages/topup/topup" open-type="redirect" class="gotop">充值</navigator>
             </view>
         </view>
     </view>
