@@ -1,1 +1,10 @@
 /* pages/carddetail/carddetail.wxss */
+.item{
+    margin:40rpx;position:relative;padding-bottom: 40rpx;
+}
+.item:after{
+    content:'';width:200%;position:absolute;left:0;bottom:0;height:1px;border-bottom:1px solid #eee;transform: scale(.5);transform-origin: 0 0;
+}
+.item p{line-height:2;}
+.item-content{margin-left:140rpx;}
+.title{width:140rpx;display:inline-block;float:left;}

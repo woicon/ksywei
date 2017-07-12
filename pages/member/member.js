@@ -11,7 +11,9 @@ Page({
     },
     //积分
     viewIntegral: function () {
-        
+        wx.navigateTo({
+            url: '/pages/integral/integral',
+        })
     },
     //充值
     topupMoney: function () {

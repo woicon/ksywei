@@ -1,2 +1,23 @@
 <!--pages/carddetail/carddetail.wxml-->
-<text>pages/carddetail/carddetail.wxml</text>
+
+
+<view class="item">
+    <view class="title">特权说明</view>
+    <view class="item-content">
+        <rich-text nodes="{{nodes.instructions}}"></rich-text >
+    </view>
+</view>
+
+<view class="item">
+    <view class="title">有效期</view>
+    <view class="item-content">
+    2017-12-12 永久有效
+    </view>
+</view>
+
+<view class="item">
+    <view class="title">适用须知</view>
+    <view class="item-content">
+        <rich-text nodes="{{nodes.information}}"></rich-text >
+    </view>
+</view>

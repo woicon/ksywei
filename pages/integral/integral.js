@@ -1,18 +1,49 @@
 // pages/integral/integral.js
+var app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    integral:null
+    integral:[{
+        type:'消费',
+        time:'2017-06-12',
+        number:'+4',
+    }, {
+        type: '消费',
+        time: '2017-06-12',
+        number: '+4',
+        }, {
+            type: '会员充值',
+            time: '2017-06-12',
+            number: '+4',
+    }, {
+        type: '邀请好友完成任务',
+        time: '2017-06-12',
+        number: '+5',
+        }, {
+            type: '在线支付',
+            time: '2017-06-12',
+            number: '+5',
+    }, {
+        type: '在线支付',
+        time: '2017-06-12',
+        number: '+5',
+    }],
+    color: app.globalData.color,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    wx.setNavigationBarTitle({
+        title: '我的积分',
+    });
+    wx.setNavigationBarColor({
+        frontColor: '#ffffff',
+        backgroundColor: app.globalData.color,
+    })
   },
 
   /**

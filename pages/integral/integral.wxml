@@ -1,4 +1,33 @@
-<!--pages/integral/integral.wxml-->
-<view class="integral">
-    
-</view>
+<!--pages/integral/integral.wxml 积分-->
+<scroll-view scroll-y>
+    <view class="integral">
+
+        <view class="integral-head" style="background:{{color}}">
+             <view class="points">92012</view>
+
+             <view class="icon">?</view>
+             <view class="lsimg">
+                <image src="../../pages/images/imgs.svg" mode="aspectFit"></image>
+             </view>
+             <view class="lsimg lsimg2">
+                <image src="../../pages/images/imgs.svg" mode="aspectFit"></image>
+             </view>
+        </view>
+
+        <view class="integral-list">
+
+
+        <view class="integral-item" wx:for="{{integral}}" wx:key="inegral">
+
+            <view class="">
+                <view class="type"> {{item.type}}</view>
+                <view class="time">{{item.time}}</view>  
+            </view>
+
+            <text class="number">{{item.number}}</text>
+        </view>
+
+       
+        </view>
+    </view>
+</scroll-view>

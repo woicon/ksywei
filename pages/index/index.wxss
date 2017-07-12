@@ -14,10 +14,12 @@
 .location{color:#999;margin-top:10rpx;}
 .list-text{font-size:28rpx;}
 
-.index-grid{display:flex;text-align:center;padding:36rpx 0;align-items: center;justify-content:space-between;}
+.index-grid{display:flex;text-align:center;padding:36rpx 0;align-items: center;
+flex-wrap:wrap;
+}
 .index-grid .list-btn{display:none;}
 .index-grid navigator{display:block;padding:0;}
-.index-grid .list-item{padding:0;width:25%;display:block;}
+.index-grid .list-item{padding:0;width:25%;display:block;margin-bottom:30rpx;}
 .index-grid .list-first{display:block;text-align:center;}
 .index-grid .list-text{font-size:24rpx;margin-top:18rpx;}
 .index-grid .list-item .icon{width:44px;height:44px;border-radius:44px;text-align:center;line-height:44px;background:#EA5E00;color:#fff;margin:0 auto 20rpx;font-size:52rpx;}

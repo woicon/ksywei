@@ -22,10 +22,25 @@
         <navigator class="list-item" url="/pages/orders/orders">
           <view class="list-first">
             <view class="icon ico-order"></view>
-            <text class="list-text">自助点餐</text>
+            <text class="list-text">堂食</text>
           </view>
-          <view class="list-btn">点餐</view>
         </navigator>
+
+        <navigator class="list-item" url="/pages/pay/pay">
+          <view class="list-first">
+            <view class="icon ico-sbag"></view>
+            <text class="list-text">自提</text>
+          </view>
+        </navigator>
+
+        <navigator class="list-item" url="/pages/pay/pay">
+          <view class="list-first">
+            <view class="icon ico-sbag"></view>
+            <text class="list-text">外卖</text>
+          </view>
+        </navigator>
+
+
         <navigator class="list-item" url="/pages/registercard/registercard">
           <view class="list-first">
             <view class="icon ico-card"></view>
@@ -48,6 +63,18 @@
           </view>
           <view class="list-btn">礼品卡</view>
         </navigator>
+
+         <navigator class="list-item" url="/pages/pay/pay">
+          <view class="list-first">
+            <view class="icon ico-sbag"></view>
+            <text class="list-text">礼品卡</text>
+          </view>
+          <view class="list-btn">礼品卡</view>
+        </navigator>
+
+         
+
+        
       </view>
 
 
