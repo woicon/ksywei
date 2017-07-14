@@ -1,13 +1,15 @@
 /* pages/integral/integral.wxss */
 .integral-head{
     height:220rpx;display:flex;align-items: center;justify-content: center;position:relative;
+     background:linear-gradient(#1CC16F 0%, #13af61 100%);
 }
 .integral-head .icon{
     position:absolute;right:25rpx;top:15rpx;color:#fff;width:36rpx;height:36rpx;border:1px solid #fff;border-radius:90px;
     text-align:center;line-height:34rpx;
+   
 }
 .lsimg{
-    position:absolute;bottom:-2px;left:0;width:1326px;height:50px;opacity:.5;
+    position:absolute;bottom:-2px;left:-30px;width:1326px;height:50px;opacity:.5;
     animation:trx 5s linear infinite;
 }
 .lsimg2{

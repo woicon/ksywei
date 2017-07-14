@@ -2,7 +2,7 @@
 <scroll-view scroll-y>
     <view class="integral">
 
-        <view class="integral-head" style="background:{{color}}">
+        <view class="integral-head" style="background:{{}}">
              <view class="points">92012</view>
 
              <view class="icon">?</view>
@@ -13,10 +13,7 @@
                 <image src="../../pages/images/imgs.svg" mode="aspectFit"></image>
              </view>
         </view>
-
         <view class="integral-list">
-
-
         <view class="integral-item" wx:for="{{integral}}" wx:key="inegral">
 
             <view class="">
@@ -26,8 +23,6 @@
 
             <text class="number">{{item.number}}</text>
         </view>
-
-       
         </view>
     </view>
 </scroll-view>

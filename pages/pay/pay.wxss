@@ -1,78 +1,88 @@
 /**wxpay.wxss**/
-.container{background:#f4f4f4;position:absolute;left:0;right:0;top:0;bottom:0;}
-.numKeybord{width:100%;position:absolute;top:50%;bottom:0;right:0;left:0;transition:all .5s;visibility:inherit;}
-.num{position:relative;background:#fafafa;color:#444;}
-.numKeybord .num:before{
-  content:'';display:block;transform:scaleY(0.5);border-top:1px solid #ccc;transform-origin:bottom;
+
+.numkeyborder{width:100%;position:absolute;top:55%;bottom:0;right:0;left:0;transition:all .5s;visibility:inherit;}
+.numinput{background:#fff;height:140rpx;position:relative;display:flex;align-items: center;padding:18rpx 20rpx;justify-content:flex-end;}
+.numinput:after{
+    content:'';position:absolute;left:-50%;right:-50%;bottom:-50%;top:-50%;transform: scale(.5);border:1px solid #eee;
+}
+.cursor.blink{position:relative;display:flex;align-items: center;}
+.cursor{line-height:normal;height:auto;position:relative;}
+.cursor.blink:after{
+    position:absolute;right:-4px;top:6px;width:2px;bottom:6px;animation: blink 1s infinite steps(1, start);content: '';
+}
+.payval{font-size:90rpx;line-height:90rpx;color:#444;}
+.payval:before{
+    content:'¥';position:absolute;left:-36rpx;top:0;bottom:0;font-size:60rpx;display:flex;align-items: center;
+}
+.payval.placeholder:before{
+    content:'';
+}
+.placeholder{color:#ddd;}
+
+.num:after{
+  content:'';display:block;transform:scaleX(0.5);border-left:1px solid #eee;transform-origin:0 100%;width:0;position:absolute;top:0;bottom:0;left:0;
+}
+.num:before{
+  content:'';display:block;transform:scaleY(0.5);border-top:1px solid #eee;transform-origin:bottom;
   position:absolute;top:-1px;left:0;right:0;
 }
-.cursor{height:36px;}
-.cursor.blink {
-    position:relative;display:inline-block;
-}
-.cursor.blink:after{ position:absolute;right:-4px;top:50%;width:2px;bottom:0;animation: blink 1s infinite steps(1, start);content: '';
-height:36px;margin-top:-18px;
-}
-.payval{line-height:normal;font-size:36px;}
-.numInput{background:#fff;padding:20px 4px;overflow:hidden;}
-@keyframes blink {
-    0%, 100% {
-        background-color: #000;
-        color: #aaa;
-        opacity:1;
-    }
-    50% {
-        background-color: #fff; /* not #aaa because it's seem there is Google Chrome bug */
-        opacity:0;
-        color: #000;
-    }
-}
-@keyframes sliderOutDown{
-  from{transform: translateY(0);}
-  to{transform:translateY(100%); visibility:hidden;}
-  
-}
-
-.names{cursor:text}
-.numKeybord .num:after{
-  content:'';display:block;transform:scaleX(0.5);border-left:1px solid #ccc;transform-origin:0 100%;width:0;position:absolute;top:0;bottom:0;left:0;}
-.num text{position:absolute;left:0;top:50%;right:0;margin-top:-26rpx;font-size:50rpx;}
 .hidekey{transform: translateY(100%);transition-timing-function:ease-out; visibility:hidden;}
-.numKey{position:absolute;left:0;bottom:0;top:0;right:25%;z-index:99;}
-.num{width:33.333333333%;float:left;height:25%;text-align:center;transition:.3s;}
+.numkey{position:absolute;left:0;bottom:0;top:0;right:25%;z-index:99;display: flex;flex-wrap: wrap;}
+.numkey .num{width:33.333333333%;height:25%;text-align:center;}
+.num{display: flex;align-items: center;justify-content: center;position:relative;background:#fff;color:#444;font-size:48rpx;transition:.3s;}
+.num text{font-size:50rpx;}
 .numhover{background:#333;color:#fff;}
-.keyTool .payBtn{height:75%;background:#1aad19;color:#fff;}
-.keyTool .delBtn{height:25%;}
-.keyTool .payBtn:after{border:none;}
-.keyTool{position:absolute;right:0;bottom:0;left:75%;top:0;}
-.keyTool .num{width:100%;text-align:center;}
-
-.mallInfo{display:flex;flex-wrap:wrap;margin-bottom:40rpx;}
-.mallImg{width:80rpx;height:80rpx;margin-right:20rpx;border-radius:700rpx;}
-.mallField{font-size:24rpx;color:#666;}
-.mallInfos text{display:block;}
-.payHead{padding:0 40rpx;}
-.payNum{border:1px solid #ccc;padding:40rpx 20rpx;border-radius:2rpx;background:#fff;font-size:50rpx;}
-.delico{font-size:0;display:block;width:60rpx;height:14rpx;background:#666;}
-.payToggle{
-    display:flex;justify-content:space-between;align-items:center;margin:20rpx 0;
+.keyborder text{position:relative;display:flex;flex-direction:column;align-items:center;justify-content: center;}
+.keyborder text:after{
+    content:'';border:4px solid transparent;border-top-color:#333;
 }
-.mallInfo{margin-top:20rpx;}
-.topBtn{font-size:30rpx;}
-.vipPay{font-size:30rpx;}
+.keytool{position:absolute;right:0;bottom:0;left:75%;top:0;}
+.keytool .paybtn{height:75%;background:#1CC16F;color:#fff;position:relative;z-index:10;font-size:34rpx;}
+.keytool .delbtn{height:25%;}
+.keytool .vippay{background:#FF5C3B;}
+.keytool .paybtnhover{background:#00a553;}
+.keytool .disable{background:#fff;color:#ddd;}
+.keytool .paybtn.active:after,
+.keytool .paybtn.active:before{border:none;}
 
-.payBtnHover{background:#14A313;}
+.mall-info{display:flex;flex-wrap:wrap;margin-bottom:40rpx;margin-top:20rpx;}
+.mall-img{width:80rpx;height:80rpx;margin-right:20rpx;border-radius:700rpx;}
+.mall-field{font-size:24rpx;color:#666;}
+.mall-infos text{display:block;}
+.pay-head{padding:0 40rpx;}
+.paynum{border:1px solid #ccc;padding:40rpx 20rpx;border-radius:2rpx;background:#fff;font-size:50rpx;}
+
+.numbar{display:flex;justify-content:space-between;align-items:center;margin:20rpx 0;}
+
+
+.topbtn{font-size:26rpx;display:block;background: #1CC16F;color:#fff;padding:12rpx 20rpx;border-radius:4rpx;}
+.vipPay{font-size:30rpx;}
 .toppage{display:none;}
+
+.checkbox{position:relative;padding-left:44rpx;font-size:30rpx;}
+.checkbox:after,
+.checkbox:before{
+    content:'';position:absolute;left:0;top:50%;
+}
+.checkbox:after{
+    width:20rpx;height:8rpx;border:4rpx solid #fff;border-top:none;border-right:none;transform:rotate(-45deg);
+    margin-top:-10rpx;left:6rpx;
+}
+.checkbox:before{
+    width:38rpx;height:38rpx;border-radius:90rpx;background:#eee;margin-top:-19rpx;
+}
+.checkbox.checked:before{
+    background:#1CC16F;
+}
+
 @font-face {
   font-family: 'payico';
-  src:
-    url(data:application/x-font-ttf;base64,AAEAAAALAIAAAwAwT1MvMg8SBYAAAAC8AAAAYGNtYXAXVtKIAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZlVWwcIAAAF4AAABRGhlYWQMXXHPAAACvAAAADZoaGVhB8IDxwAAAvQAAAAkaG10eA4AACIAAAMYAAAAGGxvY2EAygBiAAADMAAAAA5tYXhwABEAPAAAA0AAAAAgbmFtZa79B1YAAANgAAABenBvc3QAAwAAAAAE3AAAACAAAwNVAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpAQPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6QH//f//AAAAAAAg6QD//f//AAH/4xcEAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACACIAngQAAuIADAAYAAABBxc3FzcnNycHJwcXASEyFhURFAYjIQkBAlxzJHNyJXNzJXJzJHP+yAK6DhQUDv1G/v4BAgHRciVzcyVycyRyciRzAREUDv4ADhQBIgEiAAAKAAAASQQAAyYAEAAVABoAHwAkACkALQAxADUAOQAAExEUFjMhMjY1ETQmIyEiBhUTIRUhNSczFSM1OwEVIzU7ARUjNTsBFSM1JTMVIzczFSM3MxUjNzMVIwAUDgO8DhQUDvxEDhS8Aoj9eDNmZthmZthmZthmZv14ZmbYZmbYZmbYZmYDBP1nDhQUDgKZDhQUDv4iZmbNZmZmZmZmZmarZ2dnZ2dnZwABAAAAAQAAosHqMV8PPPUACwQAAAAAANSfltYAAAAA1J+W1gAAAAAEAAMmAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAQAAAEAAAAAAAAAAAAAAAAAAAAGBAAAAAAAAAAAAAAAAgAAAAQAACIEAAAAAAAAAAAKABQAHgBOAKIAAAABAAAABgA6AAoAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEABgAAAAEAAAAAAAIABwBXAAEAAAAAAAMABgAzAAEAAAAAAAQABgBsAAEAAAAAAAUACwASAAEAAAAAAAYABgBFAAEAAAAAAAoAGgB+AAMAAQQJAAEADAAGAAMAAQQJAAIADgBeAAMAAQQJAAMADAA5AAMAAQQJAAQADAByAAMAAQQJAAUAFgAdAAMAAQQJAAYADABLAAMAAQQJAAoANACYcGF5aWNvAHAAYQB5AGkAYwBvVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwcGF5aWNvAHAAYQB5AGkAYwBvcGF5aWNvAHAAYQB5AGkAYwBvUmVndWxhcgBSAGUAZwB1AGwAYQBycGF5aWNvAHAAYQB5AGkAYwBvRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format('truetype');
+  src:url(data:application/x-font-ttf;base64,AAEAAAALAIAAAwAwT1MvMg8SBYAAAAC8AAAAYGNtYXAXVtKIAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZlVWwcIAAAF4AAABRGhlYWQMXXHPAAACvAAAADZoaGVhB8IDxwAAAvQAAAAkaG10eA4AACIAAAMYAAAAGGxvY2EAygBiAAADMAAAAA5tYXhwABEAPAAAA0AAAAAgbmFtZa79B1YAAANgAAABenBvc3QAAwAAAAAE3AAAACAAAwNVAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpAQPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6QH//f//AAAAAAAg6QD//f//AAH/4xcEAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACACIAngQAAuIADAAYAAABBxc3FzcnNycHJwcXASEyFhURFAYjIQkBAlxzJHNyJXNzJXJzJHP+yAK6DhQUDv1G/v4BAgHRciVzcyVycyRyciRzAREUDv4ADhQBIgEiAAAKAAAASQQAAyYAEAAVABoAHwAkACkALQAxADUAOQAAExEUFjMhMjY1ETQmIyEiBhUTIRUhNSczFSM1OwEVIzU7ARUjNTsBFSM1JTMVIzczFSM3MxUjNzMVIwAUDgO8DhQUDvxEDhS8Aoj9eDNmZthmZthmZthmZv14ZmbYZmbYZmbYZmYDBP1nDhQUDgKZDhQUDv4iZmbNZmZmZmZmZmarZ2dnZ2dnZwABAAAAAQAAosHqMV8PPPUACwQAAAAAANSfltYAAAAA1J+W1gAAAAAEAAMmAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAQAAAEAAAAAAAAAAAAAAAAAAAAGBAAAAAAAAAAAAAAAAgAAAAQAACIEAAAAAAAAAAAKABQAHgBOAKIAAAABAAAABgA6AAoAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEABgAAAAEAAAAAAAIABwBXAAEAAAAAAAMABgAzAAEAAAAAAAQABgBsAAEAAAAAAAUACwASAAEAAAAAAAYABgBFAAEAAAAAAAoAGgB+AAMAAQQJAAEADAAGAAMAAQQJAAIADgBeAAMAAQQJAAMADAA5AAMAAQQJAAQADAByAAMAAQQJAAUAFgAdAAMAAQQJAAYADABLAAMAAQQJAAoANACYcGF5aWNvAHAAYQB5AGkAYwBvVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwcGF5aWNvAHAAYQB5AGkAYwBvcGF5aWNvAHAAYQB5AGkAYwBvUmVndWxhcgBSAGUAZwB1AGwAYQBycGF5aWNvAHAAYQB5AGkAYwBvRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="ico-"], [class*=" ico-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'payico' !important;
   speak: none;
   font-style: normal;
@@ -80,17 +90,31 @@ height:36px;margin-top:-18px;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ico-delBtn:before {
+.ico-delbtn:before {
   content: "\e900";
 }
-.ico-keyBorder:before {
+.ico-keyborder:before {
   content: "\e901";
+}
+
+@keyframes blink {
+    0%, 100% {
+        background-color: #000;
+        color: rgba(0,0,0,.3);
+    }
+    50% {
+        background-color: #fff; 
+        color: #000;
+    }
+}
+@keyframes sliderOutDown{
+  from{transform: translateY(0);}
+  to{transform:translateY(100%); visibility:hidden;}
+  
 }
 
 
