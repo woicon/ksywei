@@ -1,0 +1,35 @@
+<!--pages/pay/paycomplete/paycomplete.wxml-->
+<view class="complete">
+    <view class="complete-head">
+        <view class="icon ico-ok"></view>
+
+        <view class="paystat">
+        <view class="paytitle">支付成功</view>
+         <view class="payinfo">
+            <view>支付金额</view>
+            <view class="moneys">¥ <text>90.00</text></view>
+        </view> 
+        </view>
+    </view>
+
+
+
+
+    <view class="comment-box">
+        <view class="title">评价一下我们</view>
+        <view class="stars">
+            <view class="icon ico-star-s"></view>
+            <view class="icon ico-star-s"></view>
+            <view class="icon ico-star-s"></view>
+            <view class="icon ico-star-s"></view>
+            <view class="icon ico-star-s"></view>
+        </view>
+        <view class="comment-txt">
+            <textarea placeholder="评价一下我们把" />
+        </view>
+        <view class="btn">提交评论</view>
+    </view>
+
+</view>
+
+

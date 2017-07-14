@@ -1,0 +1,22 @@
+/* pages/pay/paycomplete/paycomplete.wxss */
+
+.complete{
+
+}
+.payinfo view{display:inline-block;}
+.complete-head{display:flex;align-items:flex-start;flex-wrap:wrap;}
+.complete-head .icon{color:#1CC16F;margin:30rpx 0;font-size:90rpx;width:30%;text-align:center;}
+.moneys{color:#FF5C3B;}
+.moneys text{}
+.stars{text-align:center;padding:30rpx 0;}
+.stars .icon{display:inline-block;padding:0 20rpx;font-size:38rpx;color:#ccc;}
+.comment-box{margin:0 40rpx;}
+.comment-box .title{text-align:center;color:#999;padding:20rpx 0;}
+.comment-box .btn{text-align:center;display:block;background:#1CC16F;color:#fff;padding:30rpx 0;}
+.comment-txt{padding:16rpx;position:relative;margin-bottom:18rpx;}
+.comment-txt:after{
+    content:'';position:absolute;left:0;right:0;top:0;bottom:0;border:1px solid #eee;
+}
+.comment-txt textarea{
+    font-size:30rpx;
+}

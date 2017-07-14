@@ -11,6 +11,7 @@
     "pages/carddetail/carddetail",
     "pages/topup/topup",
     "pages/pay/pay",
+    "pages/pay/paycomplete/paycomplete",
     "pages/registercard/registercard",
     "pages/orders/orders",
     "pages/order/orderIng",
