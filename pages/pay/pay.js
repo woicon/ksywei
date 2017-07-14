@@ -10,7 +10,20 @@ Page({
     //输入金额
     priceInner:function(e){
         var newVal = this.data.payAmount;
-        newVal = (newVal.indexOf(".") > 0 && e.currentTarget.dataset.num === '.' || newVal.substr(-3, 1) === '.' || newVal.length > 8) ? newVal : newVal += e.currentTarget.dataset.num;
+        console.log(newVal.substr(-3, 1));
+        newVal = (newVal.indexOf(".") > 0 && e.currentTarget.dataset.num === '.' 
+        || newVal.substr(-3, 1) === '.'
+        || newVal.length > 8) ? newVal : newVal += e.currentTarget.dataset.num;
+        
+        
+        if (newVal ==='.'){
+            newVal='0.'
+        }
+
+        if (newVal === '00') {
+            newVal = '0'
+        }
+        
         this.setData({
             payAmount: newVal,
             placeholder:false,
