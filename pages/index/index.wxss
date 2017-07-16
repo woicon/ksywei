@@ -30,8 +30,11 @@ flex-wrap:wrap;
 .index-grid .list-item:nth-child(4) .icon{background:#7EB6F3;}
 
 
-.head-name{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);}
+.head-name{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);
+    display:flex;align-items: center;justify-content:space-between;
+}
 .head-name view,.head-name text{color:#fff;}
+.head-name .phone{}
 .list-first{display:flex;align-items: center;}
 .list-item .icon{font-size:40rpx;margin-right:8rpx;}
 .list-btn{border-radius:200rpx;background-color:#EA5E00;padding:12rpx 20rpx;font-size:24rpx;color:#fff;}

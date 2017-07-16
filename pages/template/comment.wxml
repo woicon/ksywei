@@ -14,6 +14,8 @@
                 <view class="ico-star-s active"></view>
                 <view class="ico-star-s"></view>
             </view>
+
+            <view class="time">{{item.time}}</view>
             <view class="comment-text">
                 <text>{{item.content}}</text>
             </view>

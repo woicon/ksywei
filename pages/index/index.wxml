@@ -6,82 +6,81 @@
 </view>
 <view class="container">
 <scroll-view class="pagescroll">
-<view class="indexad">
-    <view class="head-img">
-        <image src="{{shopinfo.shopimg}}" mode="aspectFill"></image>
+    <view class="indexad">
+        <view class="head-img">
+            <image src="{{shopinfo.shopimg}}" mode="aspectFill"></image>
+        </view>
+        <view class="head-name">
+            <view class="head-info">
+                <text class="head-name-title">{{shopinfo.shopname}}</text>
+                <view class="location"><text class="ico-local"></text>{{shopinfo.shoplocation}}</view>
+            </view>
+            <view class="phone" bindtap="callShop" data-phone="{{shopinfo.shoptel}}"><view class="ico-phone"></view></view>
+        </view>
     </view>
-    <view class="head-name">
-        <text class="head-name-title">{{shopinfo.shopname}}</text>
-        <view class="location">{{shopinfo.shoplocaltion}}</view>
-        <view class="ico-phone" bindtap="callShop"><view class="ico-phone"></view>{{shopinfo.shoptel}}</view>
-    </view>
-</view>
-
-
-      <view class="indexlist index-grid">
+    <view class="indexlist index-grid">
         <navigator class="list-item" url="/pages/orders/orders">
-          <view class="list-first">
-            <view class="icon ico-order"></view>
-            <text class="list-text">堂食</text>
-          </view>
+            <view class="list-first">
+                <view class="icon ico-order"></view>
+                <text class="list-text">堂食</text>
+            </view>
         </navigator>
 
         <navigator class="list-item" url="/pages/pay/pay">
-          <view class="list-first">
-            <view class="icon ico-sbag"></view>
-            <text class="list-text">自提</text>
-          </view>
+            <view class="list-first">
+                <view class="icon ico-sbag"></view>
+                <text class="list-text">自提</text>
+            </view>
         </navigator>
 
         <navigator class="list-item" url="/pages/pay/pay">
-          <view class="list-first">
-            <view class="icon ico-sbag"></view>
-            <text class="list-text">外卖</text>
-          </view>
+            <view class="list-first">
+                <view class="icon ico-sbag"></view>
+                <text class="list-text">外卖</text>
+            </view>
         </navigator>
 
 
         <navigator class="list-item" url="/pages/registercard/registercard">
-          <view class="list-first">
-            <view class="icon ico-card"></view>
-            <text class="list-text">领取会员卡</text>
-          </view>
-          <view class="list-btn">领取</view>
+            <view class="list-first">
+                <view class="icon ico-card"></view>
+                <text class="list-text">领取会员卡</text>
+            </view>
+            <view class="list-btn">领取</view>
         </navigator>
         <navigator class="list-item" url="/pages/pay/pay">
-          <view class="list-first">
+            <view class="list-first">
             <view class="icon ico-mymoney"></view>
             <text class="list-text">消费买单</text>
-          </view>
-          <view class="list-btn">买单</view>
+            </view>
+            <view class="list-btn">买单</view>
+        </navigator>
+        <navigator class="list-item" url="/pages/pay/pay">
+            <view class="list-first">
+                <view class="icon ico-sbag"></view>
+                <text class="list-text">礼品卡</text>
+            </view>
+            <view class="list-btn">礼品卡</view>
         </navigator>
 
         <navigator class="list-item" url="/pages/pay/pay">
-          <view class="list-first">
-            <view class="icon ico-sbag"></view>
-            <text class="list-text">礼品卡</text>
-          </view>
-          <view class="list-btn">礼品卡</view>
+            <view class="list-first">
+                <view class="icon ico-sbag"></view>
+                <text class="list-text">礼品卡</text>
+            </view>
+            <view class="list-btn">礼品卡</view>
         </navigator>
-
-         <navigator class="list-item" url="/pages/pay/pay">
-          <view class="list-first">
-            <view class="icon ico-sbag"></view>
-            <text class="list-text">礼品卡</text>
-          </view>
-          <view class="list-btn">礼品卡</view>
-        </navigator>
-
-         
-
-        
-      </view>
+    </view>
 
 
       <view class="pagetitle">推荐单品</view>
 
       <view class="recommended">
-
+        <view class="item" wx:for="{{recommend}}">
+           <image src="{{item.skuImg}}"></image>
+           <view class="name">{{item.skuName}}</view>
+           <view class="slae">{{item.saleNum}}</view>
+        </view>
       </view>
 
       <view class="pagetitle">优惠券</view>

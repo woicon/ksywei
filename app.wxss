@@ -346,7 +346,9 @@ view, text, navigator {
     display: inline-block;
     color: #999;
 }
-
+.comment-item .time{
+    position:absolute;right:20rpx;top:16rpx;font-size:22rpx;color:#ccc;
+}
 .comment-item .star .active {
     color: #ea5e00;
 }
