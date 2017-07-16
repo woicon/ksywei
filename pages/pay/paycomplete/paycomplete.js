@@ -11,6 +11,7 @@ Page({
         commentStar:null,
         'commentContent':''
     },
+    selectTags:[],
     starItem:[
         {star:1,txt:'很差'},
         {star:2,txt: '一般'},
@@ -80,15 +81,22 @@ Page({
   selectTag:function(e){
     var _submitComment = this.data.submitComment;
     var _commentContent = _submitComment['commentContent'];
-    this.data.submitComment['commentContent'] = _commentContent += e.target.dataset.tag+=',';
-    
+    var _commentTag = e.target.dataset.tag;
+
+    _submitComment['commentContent'] = _commentContent += e.target.dataset.tag += ',';
+
     var __tagStat= this.data.tagStat;
-    var __index = e.target.dataset.index;
-    __tagStat[__index] = __tagStat[__index]?false:true;
+    var _index = e.target.dataset.index;
+    __tagStat[_index] = __tagStat[_index]?false:true;
+
+    //var _selectTag = this.data.selectTag;
+    // stat ? selectTag.push(_commentTag):'';
+    console.log(__tagStat);
     this.setData({
         submitComment: _submitComment,
         tagStat: __tagStat
     });
+
   },
   //评分 选择评分
     setStars:function(e){
@@ -120,7 +128,6 @@ Page({
     var _commentTag = that.data.commentTag;
 
     for (var i= 0;i<= _commentTag.length;i++){
-        console.log(i);
         _tagStat[i] = false;
     }
     that.setData({
