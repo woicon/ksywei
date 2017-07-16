@@ -27,7 +27,7 @@ Page({
             saleNum: '3',
             skuName: '精品肉夹馍'
         }
-    ]
+    ],
     coupons:[{
       type:1,
       value:20,

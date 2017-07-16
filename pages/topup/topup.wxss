@@ -1,6 +1,6 @@
 .tophead{margin:30rpx;}
 .topvalue{border:1px solid #eee;padding:20rpx 8rpx;font-size:32rpx;color:#333;}
-.topbtn{background:#1CC16F;margin:20rpx 0;text-align:center;color:#fff;padding:30rpx 0;font-size:36rpx;}
+
 .topuplist{
     display:flex;justify-content:space-between;margin:30rpx;  flex-direction: row;flex-wrap: wrap;
 }

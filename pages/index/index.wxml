@@ -12,8 +12,8 @@
         </view>
         <view class="head-name">
             <view class="head-info">
-                <text class="head-name-title">{{shopinfo.shopname}}</text>
-                <view class="location"><text class="ico-local"></text>{{shopinfo.shoplocation}}</view>
+                <view class="head-name-title">{{shopinfo.shopname}}</view>
+                <view class="head-location"><text class="ico-local"></text>{{shopinfo.shoplocation}}</view>
             </view>
             <view class="phone" bindtap="callShop" data-phone="{{shopinfo.shoptel}}"><view class="ico-phone"></view></view>
         </view>
@@ -39,8 +39,6 @@
                 <text class="list-text">外卖</text>
             </view>
         </navigator>
-
-
         <navigator class="list-item" url="/pages/registercard/registercard">
             <view class="list-first">
                 <view class="icon ico-card"></view>
@@ -66,20 +64,21 @@
         <navigator class="list-item" url="/pages/pay/pay">
             <view class="list-first">
                 <view class="icon ico-sbag"></view>
-                <text class="list-text">礼品卡</text>
+                <text class="list-text">红包</text>
             </view>
-            <view class="list-btn">礼品卡</view>
+            <view class="list-btn">红包</view>
         </navigator>
     </view>
 
 
-      <view class="pagetitle">推荐单品</view>
-
+    <view class="pagetitle">推荐单品</view>
       <view class="recommended">
-        <view class="item" wx:for="{{recommend}}">
-           <image src="{{item.skuImg}}"></image>
+        <view class="item" wx:for="{{recommend}}" wx:key="recommend">
+            <view class="skuimg">
+                <image src="{{item.skuImg}}" mode="widthFix"></image>
+           </view>
            <view class="name">{{item.skuName}}</view>
-           <view class="slae">{{item.saleNum}}</view>
+           <!-- <view class="slae">{{item.saleNum}}</view> -->
         </view>
       </view>
 
@@ -119,10 +118,6 @@
         </view>
       </view>-->
 
-
-      <view class="brand">
-         <view class="ico-logo"></view>
-      </view>
 </scroll-view>
 </view>
 <include src="../../pages/common/tabbar.wxml"/>

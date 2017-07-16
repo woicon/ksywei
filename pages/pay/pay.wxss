@@ -2,8 +2,13 @@
 
 .numkeyborder{width:100%;position:absolute;top:55%;bottom:0;right:0;left:0;transition:all .5s;visibility:inherit;}
 .numinput{background:#fff;height:140rpx;position:relative;display:flex;align-items: center;padding:18rpx 20rpx;justify-content:flex-end;}
+
 .numinput:after{
     content:'';position:absolute;left:-50%;right:-50%;bottom:-50%;top:-50%;transform: scale(.5);border:1px solid #eee;
+    border-radius:12rpx;
+}
+.numinput.focus:after{
+    border:1px solid #1CC16F;
 }
 .cursor.blink{position:relative;display:flex;align-items: center;}
 .cursor{line-height:normal;height:auto;position:relative;}
@@ -41,6 +46,7 @@
 .keytool .delbtn{height:25%;}
 .keytool .vippay{background:#FF5C3B;}
 .keytool .paybtnhover{background:#00a553;}
+.keytool .vipbtnhover{background:#ef2b03;}
 .keytool .disable{background:#fff;color:#ddd;}
 .keytool .paybtn.active:after,
 .keytool .paybtn.active:before{border:none;}

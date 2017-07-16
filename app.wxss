@@ -14,7 +14,7 @@ view, text, navigator {
 }
 
 .pagescroll {
-    margin-bottom: 120rpx;
+    margin-bottom: 150rpx;
 }
 
 .cards1 {
@@ -134,21 +134,13 @@ view, text, navigator {
     color: #1cc16f;
 }
 
-.blockbtn {
-    border-radius: 6rpx;
-    background: dodgerblue;
-    color: #fff;
-    padding: 28rpx 0;
-    text-align: center;
-    margin-top: 20rpx;
-    font-size: 36rpx;
-}
+
 
 /*template couponscard*/
 
 .couponsCard {
     margin: 30rpx;
-    border-radius: 20rpx;
+    border-radius:14rpx;
     min-height: 160rpx;
     display: flex;
     align-items: center;
@@ -385,16 +377,48 @@ view, text, navigator {
     }
 }
 
-.btn.disable {
-    background: #eee;
-    color: #ccc;
-}
-
 .pagetitle {
     margin: 40rpx 30rpx;
     color: #1cc16f;
     font-size: 38rpx;
 }
+
+
+/*common style*/
+
+.flex-center-between{
+    display:flex;justify-content:space-between;align-items:center;
+}
+
+.block-btn{
+    text-align:center;display:block;background:#1CC16F;color:#fff;padding:30rpx 0;border-radius:6rpx;
+}
+
+.block-btn.disable {
+    background: #eee;
+    color: #ccc;
+}
+
+.block-btn-b {
+    background: dodgerblue;
+}
+.price{
+    color:#FF5C3B;
+}
+
+.vipcard{margin:40rpx;background:#1CC16F;padding:30rpx;border-radius:16rpx;height:360rpx;position:relative;animation:easyin .5s ease-in;
+    box-shadow:0 1px 12px rgba(0,0,0,.2);
+}
+
+.vipcard:before{
+    content:'';position:absolute;left:0;right:0;top:0;bottom:0;
+    /* background:linear-gradient(rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);border-radius:16rpx; */
+}
+.cardinfo{display:flex;color:#fff;align-items:center;}
+.cardinfo text{font-size:32rpx;}
+.cardinfo .icon{width:60rpx;height:60rpx;background:yellow;color:#333;border-radius:400rpx;text-align:center;line-height:60rpx;font-size:44rpx;margin-right:12rpx;}
+.cardid{align-self:flex-end;color:#fff;position:absolute;left:30rpx;bottom:32rpx;}
+
 
 @font-face {
     font-family: 'kico';

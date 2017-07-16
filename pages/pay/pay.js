@@ -9,25 +9,29 @@ Page({
 
     //输入金额
     priceInner:function(e){
-        var newVal = this.data.payAmount;
-        console.log(newVal.substr(-3, 1));
-        newVal = (newVal.indexOf(".") > 0 && e.currentTarget.dataset.num === '.' 
-        || newVal.substr(-3, 1) === '.'
-        || newVal.length > 8) ? newVal : newVal += e.currentTarget.dataset.num;
-        
-        
-        if (newVal ==='.'){
-            newVal='0.'
+        if (e.target.dataset.num){
+            var newVal = this.data.payAmount;
+            console.log(e);
+            newVal = (newVal.indexOf(".") > 0 && e.target.dataset.num === '.' 
+            || newVal.substr(-3, 1) === '.'
+            || newVal.length > 8) ? newVal : newVal += e.target.dataset.num;
+            if (newVal ==='.'){
+                newVal='0.'
+            }
+            if (newVal === '00') {
+                newVal = '0'
+            }
+            
+            this.setData({
+                payAmount: newVal,
+                placeholder:false,
+            });
+        }else{
+            this.setData({
+                focus: false
+            });
         }
-
-        if (newVal === '00') {
-            newVal = '0'
-        }
         
-        this.setData({
-            payAmount: newVal,
-            placeholder:false,
-        });
     },
 
     //键盘显示
@@ -39,9 +43,7 @@ Page({
 
     //隐藏键盘
     hideKeyborad: function () {
-        this.setData({
-            focus: false
-        });
+        
     },
 
     //跳转到充值
@@ -82,13 +84,21 @@ Page({
             'success': function (res) {
             },
             'fail': function (res) {
+                
+            },
+            complete:function(){
+                wx.navigateTo({
+                    url: '/pages/pay/paycomplete/paycomplete',
+                })
             }
         })
     },
 
     //会员支付
     vipPayment:function () {
-
+        wx.navigateTo({
+            url: '/pages/pay/paycomplete/paycomplete',
+        });
     },
 
     onLoad: function (e) {

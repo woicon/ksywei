@@ -1,2 +1,13 @@
 <!--pages/couponsdetail/couponsdetail.wxml-->
+<view class="coupons-detail">
+   <image src="{{coupon.logo}}"></image>
+    <view class="classname">¥<text>{{coupon.reduceCost}}</text></view>
+    <view class="coupon-name">{{coupon.couponName}}</view>
+    <image mode="aspectFit" src="../../pages/images/rcCode.png"></image>
+
+    <view class="pay-list">
+        有效期
+        客服电话
+    </view>
+</view>
 

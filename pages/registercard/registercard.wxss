@@ -3,9 +3,45 @@
 
 
 .registerform{margin:40rpx;}
-.line{position:relative;}
-.line input{border-bottom:1px solid #eee;padding:30rpx 0;font-size:32rpx;}
-.phonecode{position:absolute;right:0;top:50%;display:inline-block;padding:0 16rpx;
-background:#eee;border-radius:4rpx;line-height:60rpx;margin-top:-30rpx;z-index:100;}
+.line{display:flex;justify-content:space-between;width:100%;position:relative;align-items:center;}
+.line .picker,.line input{font-size:28rpx;height:1.4;display:block;line-height:1.4;padding:24rpx 0;
+color:#333;}
+.line-title{font-size:28rpx;color:#666;}
+.line:after{
+     content:'';display:block;position:absolute;border-bottom:1px solid #eee;right:0;bottom:0;left:0;transform:scale(.5);transform-origin:0 100%;
+    width:200%;
+}
+.line-title+input{text-align:right;}
+
+.phonecode{display:inline-block;padding:0 16rpx;color:#555;
+background:#eee;border-radius:4rpx;line-height:60rpx;z-index:100;}
 .phonecode.disable{color:#999;}
+
+.line-col{
+    text-align:left;color:#666;line-height:2;margin-top:30rpx;border-bottom:1px dashed #eee;
+}
+.blockline{
+    display:block;
+}
+.line picker{
+    display:flex;justify-content: flex-end;align-items:center;
+}
+.line picker:after{
+    content:'';width:5px;height:5px;border:2px solid #eee;border-left:none;border-bottom:none;transform:rotate(45deg);
+    display:block;margin-left:10rpx;
+}
+.blockline textarea{width:100%;font-size:28rpx;line-height:1.6;}
+.blockline .textarea-wrap{
+    position:relative;padding:10rpx;
+}
+.blockline .textarea-wrap:before{
+    content:'';position:absolute;left:-50%;right:-50%;top:-50%;bottom:-50%;border:1px solid #eee;transform:scale(.5);
+    border-radius:6rpx;
+}
+.blockline .textarea-number{
+    color:#999;font-size:24rpx;
+}
+.blockline .line-title{
+    padding:26rpx 0;
+}
 

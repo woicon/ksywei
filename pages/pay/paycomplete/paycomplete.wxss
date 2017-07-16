@@ -1,22 +1,66 @@
 /* pages/pay/paycomplete/paycomplete.wxss */
+page{
+    background:#1CC16F;
+}
 
 .complete{
-
+    margin:150rpx 30rpx;background:#fff;box-shadow:0 3px 20px rgba(0,0,0,.1);padding:30rpx;
+    animation:easyin .5s ease-in both;border-radius:12rpx;
 }
-.payinfo view{display:inline-block;}
-.complete-head{display:flex;align-items:flex-start;flex-wrap:wrap;}
-.complete-head .icon{color:#1CC16F;margin:30rpx 0;font-size:90rpx;width:30%;text-align:center;}
+.paytitle{
+    font-size:32rpx;color:#1CC16F;line-height:2;
+}
+.payinfo view{display:inline-block;color:#999;line-height:2;}
+.complete-head{text-align:center;}
+.complete-head .icon{color:#fff;font-size:120rpx;text-align:center;border:8rpx solid #fff;
+display:flex;justify-content:center;align-items:center;
+overflow:hidden;
+width:120rpx;height:120rpx;border-radius:200rpx;
+background-color:#1CC16F;
+margin:-90rpx auto 0 auto;}
+.pay-list{
+    margin-bottom:40rpx;
+}
+.pay-list .item{display: flex;justify-content:space-between;align-items:center;width:100%;position:relative;
+    padding:20rpx 0;color:#666;}
+.pay-list .item .value{font-size:24rpx;color:#999;text-align:right;line-height:1.5;}
+.pay-list .item .value view{display:inline-block;}
+.pay-list .item .price{margin-left:10rpx;}
+.pay-list .item:after{
+    content:'';display:block;position:absolute;border-bottom:1px solid #eee;right:0;bottom:0;left:0;transform:scale(.5);transform-origin:0 100%;
+    width:200%;
+}
+.pay-list .item:last-child:after{border:none;}
 .moneys{color:#FF5C3B;}
-.moneys text{}
+
 .stars{text-align:center;padding:30rpx 0;}
-.stars .icon{display:inline-block;padding:0 20rpx;font-size:38rpx;color:#ccc;}
-.comment-box{margin:0 40rpx;}
+.stars .icon{display:inline-block;padding:0 20rpx;font-size:42rpx;color:#ccc;transition-duration:.5s;}
+.stars .icon.active{color:#1CC16F;}
+.comment-box{border-top:1px dashed #eee;padding-top:20rpx;position:relative;}
+.comment-box:after,
+.comment-box:before{
+    content:'';width:36rpx;height:36rpx;border-radius:90px;position:absolute;top:-18rpx;
+    background-color:#1CC16F;
+    
+}
+.comment-box:after{
+    left:-48rpx;
+    transform: rotate(-180deg);
+    
+}
+.comment-box:before{
+    right:-48rpx;
+}
 .comment-box .title{text-align:center;color:#999;padding:20rpx 0;}
-.comment-box .btn{text-align:center;display:block;background:#1CC16F;color:#fff;padding:30rpx 0;}
 .comment-txt{padding:16rpx;position:relative;margin-bottom:18rpx;}
 .comment-txt:after{
-    content:'';position:absolute;left:0;right:0;top:0;bottom:0;border:1px solid #eee;
+    content:'';position:absolute;left:-50%;right:-50%;top:-50%;bottom:-50%;border:1px solid #eee;transform:scale(.5);
+    border-radius:6rpx;
 }
 .comment-txt textarea{
-    font-size:30rpx;
+   height:140rpx;font-size:26rpx;
+}
+
+.coupons{
+    margin:0 -30rpx;
 }

@@ -28,6 +28,12 @@ App({
       var _curpage = getCurrentPages();
       console.log('appp pageloading' + _curpage)
   },
+  setBarColr:function(){
+     wx.setNavigationBarColor({
+         frontColor: '#ffffff',
+         backgroundColor: this.globalData.color
+     })
+  },
   setTab: function () {
       var _curPageArr = getCurrentPages();
       var _curPage = _curPageArr[_curPageArr.length - 1];

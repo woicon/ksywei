@@ -7,7 +7,7 @@
             <text class="mall-field">{{userInfo.province}}{{userInfo.city}}</text>
         </view>
     </view>
-        <view class="numinput" catchtap="valTap">
+        <view class="numinput {{focus?'focus':''}}" catchtap="valTap">
             <view class="cursor {{focus?'blink':''}}">
             <text class="payval {{placeholder?'placeholder':''}}">{{payAmount||'输入支付金额'}}</text>
         </view>
@@ -20,21 +20,21 @@
 </view>
 
 <view class="numkeyborder {{focus?'':'hidekey'}}">
-    <view class="numkey">
-        <view class="num" data-num="1" hover="true" hover-class="numhover" bindtap="priceInner">1</view>
-        <view class="num" data-num="2" hover="true" hover-class="numhover" bindtap="priceInner">2</view>
-        <view class="num" data-num="3" hover="true" hover-class="numhover" bindtap="priceInner">3</view>
-        <view class="num" data-num="4" hover="true" hover-class="numhover" bindtap="priceInner">4</view>
-        <view class="num" data-num="5" hover="true" hover-class="numhover" bindtap="priceInner">5</view>
-        <view class="num" data-num="6" hover="true" hover-class="numhover" bindtap="priceInner">6</view>
-        <view class="num" data-num="7" hover="true" hover-class="numhover" bindtap="priceInner">7</view>
-        <view class="num" data-num="8" hover="true" hover-class="numhover" bindtap="priceInner">8</view>
-        <view class="num" data-num="9" hover="true" hover-class="numhover" bindtap="priceInner">9</view>
-        <view class="num keyborder" data-open="true" hover="true" hover-class="numhover" bindtap="hideKeyborad">
+    <view class="numkey" bindtap="priceInner">
+        <view class="num" data-num="1" hover="true" hover-class="numhover">1</view>
+        <view class="num" data-num="2" hover="true" hover-class="numhover">2</view>
+        <view class="num" data-num="3" hover="true" hover-class="numhover">3</view>
+        <view class="num" data-num="4" hover="true" hover-class="numhover">4</view>
+        <view class="num" data-num="5" hover="true" hover-class="numhover">5</view>
+        <view class="num" data-num="6" hover="true" hover-class="numhover">6</view>
+        <view class="num" data-num="7" hover="true" hover-class="numhover">7</view>
+        <view class="num" data-num="8" hover="true" hover-class="numhover">8</view>
+        <view class="num" data-num="9" hover="true" hover-class="numhover">9</view>
+        <view class="num keyborder" data-open="true" hover="true" hover-class="numhover">
             <text class="ico-keyborder"></text>
         </view>
-        <view class="num" data-num="." hover="true" hover-class="numhover" bindtap="priceInner">.</view>
-        <view class="num" data-num="0" hover="true" hover-class="numhover" bindtap="priceInner">0</view>
+        <view class="num" data-num="." hover="true" hover-class="numhover">.</view>
+        <view class="num" data-num="0" hover="true" hover-class="numhover">0</view>
     </view>
 
 
@@ -45,7 +45,7 @@
         <view class="num paybtn vippay {{payAmount===''?'disable':'active'}}"
             wx:if="{{vipcheck}}"
             data-num="topay" bindtap="{{payAmount!=''?'vipPayment':''}}"  
-            hover="true" hover-class="{{payAmount!=''?'paybtnhover':''}}" >会员支付</view>
+            hover="true" hover-class="{{payAmount!=''?'vipbtnhover':''}}" >会员支付</view>
 
         <view class="num paybtn {{payAmount===''?'disable':'active'}}"
             wx:else

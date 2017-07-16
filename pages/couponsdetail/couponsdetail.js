@@ -5,8 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-        couponsDetail: {
-            "coupon": {
+        coupon:{
                 "couponNo": "901054075904214473",
                 "couponName": "核销1元代金券",
                 "couponStatus": 1,
@@ -34,9 +33,6 @@ Page({
                 "itemText": "苏打饼干",
                 "status": 0
             }
-        },
-            "returnCode": "S",
-            "returnMessage": "操作成功"
         }
   },
 

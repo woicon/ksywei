@@ -1,7 +1,7 @@
 <view class="topupage">
     <view class="tophead">
         <input class="topvalue" type="digit" bindinput="keyInput" placeholder="输入充值金额" value="{{topValue}}" />
-        <view class="topbtn btn {{topValue==0&&topValue==''?'disable':''}}" bindtap="sendTop">充值</view>
+        <view class="block-btn {{topValue==0&&topValue==''?'disable':''}}" bindtap="sendTop">充值</view>
     </view>
     <view class="topuplist">
         <block wx:for="{{valueList}}" wx:key="vaulelist">

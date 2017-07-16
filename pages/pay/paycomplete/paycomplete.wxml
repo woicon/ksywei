@@ -1,35 +1,46 @@
 <!--pages/pay/paycomplete/paycomplete.wxml-->
+<scroll-view scroll-y="true">
 <view class="complete">
+
     <view class="complete-head">
-        <view class="icon ico-ok"></view>
+        <view class="icon ico-checkok"></view>
+            <view class="paytitle">支付成功</view>
+            <view class="payinfo">
+                <view>支付金额</view>
+                <view class="moneys">¥ <text>90.00</text></view>
+            </view> 
 
-        <view class="paystat">
-        <view class="paytitle">支付成功</view>
-         <view class="payinfo">
-            <view>支付金额</view>
-            <view class="moneys">¥ <text>90.00</text></view>
-        </view> 
-        </view>
+            <view class="pay-list">
+                <view class="item">
+                    <view class="label">优惠信息</view>
+                    <view class="value">会员优惠<view class="price">-3.00</view></view>
+                </view>
+                <view class="item">
+                    <view class="label">付款信息</view><view class="value">支付宝余额<view class="price">80.00</view></view>
+                </view>
+            </view>
     </view>
-
-
-
 
     <view class="comment-box">
         <view class="title">评价一下我们</view>
-        <view class="stars">
-            <view class="icon ico-star-s"></view>
-            <view class="icon ico-star-s"></view>
-            <view class="icon ico-star-s"></view>
-            <view class="icon ico-star-s"></view>
-            <view class="icon ico-star-s"></view>
+        <view class="stars" bindtap="setStars" data-allstar ="{{starNumber}}">
+            <block wx:for="{{starItem}}"  wx:key="starItem">
+                <view class="icon ico-star{{starStat[index]?'-s active':''}}" data-star='{{index}}' data-txt="{{item.txt}}"></view>
+            </block>
         </view>
         <view class="comment-txt">
             <textarea placeholder="评价一下我们把" />
         </view>
-        <view class="btn">提交评论</view>
+        <view class="block-btn">提交评论</view>
     </view>
 
+    <view class="coupons">
+        <import src="../../../pages/template/couponscard.wxml" />
+        <template is="couponscard" data="{{couponlist:couponlist,status:2}}" />
+    </view>
+
+
 </view>
+</scroll-view>
 
 
