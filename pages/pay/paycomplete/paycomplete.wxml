@@ -3,7 +3,7 @@
 <view class="complete">
 
     <view class="complete-head">
-        <view class="icon ico-checkok"></view>
+        <view class="icon ok"></view>
             <view class="paytitle">支付成功</view>
             <view class="payinfo">
                 <view>支付金额</view>
@@ -25,11 +25,14 @@
         <view class="title">评价一下我们</view>
         <view class="stars" bindtap="setStars" data-allstar ="{{starNumber}}">
             <block wx:for="{{starItem}}"  wx:key="starItem">
-                <view class="icon ico-star{{starStat[index]?'-s active':''}}" data-star='{{index}}' data-txt="{{item.txt}}"></view>
+                <view class="icon ico-star-s {{starStat[index]?'active':''}}" data-star='{{index}}' data-txt="{{item.txt}}"></view>
             </block>
         </view>
         <view class="comment-txt">
-            <textarea placeholder="评价一下我们把" />
+            <textarea placeholder="评价一下我们把" cursor-spacing="100" value="{{submitComment.commentContent}}" />
+        </view>
+        <view class="taglist" bindtap="selectTag">
+            <view data-tag="{{item}}" class="tag {{tagStat[index]?'active':''}}" data-index="{{index}}" wx:for="{{commentTag}}" wx:key="tag">{{item}}</view>
         </view>
         <view class="block-btn">提交评论</view>
     </view>

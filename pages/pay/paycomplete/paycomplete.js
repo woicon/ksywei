@@ -1,19 +1,30 @@
 // pages/pay/paycomplete/paycomplete.js
 var app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     comment:{},
     starStat:{},
+    submitComment:{
+        commentStar:null,
+        'commentContent':''
+    },
     starItem:[
         {star:1,txt:'很差'},
         {star:2,txt: '一般'},
         {star:3,txt: '满意'},
         {star:4,txt: '非常满意'},
         {star:5,txt:'很完美，无可挑剔'}
+    ],
+    commentTag:[
+        '好吃',
+        '好吃又美味',
+        '根本停不下来',
+        '干净',
+        '环境很好',
+        '美中不足',
     ],
     couponlist: {
         "coupons": [
@@ -34,7 +45,7 @@ Page({
                 "merchantId": 10104677,
                 "merchantName": "收款小精灵",
                 "logo": "http://open.liantuobank.cn/assets/images/wechat.png",
-                "color": "#63b359",
+                "color": "#FF9374",
                 "syncWechat": 0,
                 "wechatCardId": "pdest9w8jlngxvDybO1qGaURiNY"
             },
@@ -55,7 +66,7 @@ Page({
                 "merchantId": 10104677,
                 "merchantName": "收款小精灵",
                 "logo": "http://open.liantuobank.cn/assets/images/wechat.png",
-                "color": "#63b359",
+                "color": "#FFC160",
                 "syncWechat": 0,
                 "wechatCardId": "pdest9w8jlngxvDybO1qGaURiNY"
             }
@@ -64,6 +75,20 @@ Page({
         "returnMessage": "操作成功"
     },
 
+  },
+  //tag 选择标签
+  selectTag:function(e){
+    var _submitComment = this.data.submitComment;
+    var _commentContent = _submitComment['commentContent'];
+    this.data.submitComment['commentContent'] = _commentContent += e.target.dataset.tag+=',';
+    
+    var __tagStat= this.data.tagStat;
+    var __index = e.target.dataset.index;
+    __tagStat[__index] = __tagStat[__index]?false:true;
+    this.setData({
+        submitComment: _submitComment,
+        tagStat: __tagStat
+    });
   },
   //评分 选择评分
     setStars:function(e){
@@ -90,7 +115,20 @@ Page({
     wx.setNavigationBarTitle({
         title: '支付成功',
     })
-    console.log(app);
+    //评价tag状态
+    var _tagStat = {};
+    var _commentTag = that.data.commentTag;
+
+    for (var i= 0;i<= _commentTag.length;i++){
+        console.log(i);
+        _tagStat[i] = false;
+    }
+    that.setData({
+        tagStat: _tagStat
+    });
+
+
+
     //设置评分星状态
     // var _starItem = [];
     // for(var i=1;i<=that.data.starNumber;i++){

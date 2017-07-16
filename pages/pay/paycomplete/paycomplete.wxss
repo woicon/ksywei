@@ -13,11 +13,22 @@ page{
 .payinfo view{display:inline-block;color:#999;line-height:2;}
 .complete-head{text-align:center;}
 .complete-head .icon{color:#fff;font-size:120rpx;text-align:center;border:8rpx solid #fff;
-display:flex;justify-content:center;align-items:center;
+    display:flex;justify-content:center;align-items:center;
 overflow:hidden;
 width:120rpx;height:120rpx;border-radius:200rpx;
 background-color:#1CC16F;
 margin:-90rpx auto 0 auto;}
+
+.ok:after{
+    content:'';
+    position:absolute;
+    width:50rpx;height:18rpx;
+    border:10rpx solid #fff;
+    border-top:none;
+    border-right:none;margin-top:-8rpx;
+    transform:rotate(-45deg);
+}
+
 .pay-list{
     margin-bottom:40rpx;
 }
@@ -30,11 +41,33 @@ margin:-90rpx auto 0 auto;}
     content:'';display:block;position:absolute;border-bottom:1px solid #eee;right:0;bottom:0;left:0;transform:scale(.5);transform-origin:0 100%;
     width:200%;
 }
+
+.taglist{}
+.taglist .tag{
+    padding:10rpx 16rpx;position:relative;display:inline-block;margin:12rpx 10rpx 12rpx 0;color:#666;
+    font-size:24rpx;
+}
+
+.taglist .tag:after{
+    content:'';display:block;
+    position:absolute;
+    border:1px solid #eee;right:-50%;
+    bottom:-50%;
+    left:-50%;
+    top:-50%;
+    transform:scale(.5);border-radius:90rpx;
+}
+.taglist .active{
+    background:#1CC16F;color:#fff;border-radius:90px;
+}
+.taglist .active:after{
+    border:none;
+}
 .pay-list .item:last-child:after{border:none;}
 .moneys{color:#FF5C3B;}
 
 .stars{text-align:center;padding:30rpx 0;}
-.stars .icon{display:inline-block;padding:0 20rpx;font-size:42rpx;color:#ccc;transition-duration:.5s;}
+.stars .icon{display:inline-block;padding:0 20rpx;font-size:48rpx;color:#ccc;transition-duration:.5s;}
 .stars .icon.active{color:#1CC16F;}
 .comment-box{border-top:1px dashed #eee;padding-top:20rpx;position:relative;}
 .comment-box:after,
@@ -58,7 +91,7 @@ margin:-90rpx auto 0 auto;}
     border-radius:6rpx;
 }
 .comment-txt textarea{
-   height:140rpx;font-size:26rpx;
+   height:140rpx;font-size:26rpx;line-height:1.5;color:#555;
 }
 
 .coupons{
