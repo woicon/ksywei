@@ -49,12 +49,12 @@ text-align:center;line-height:44px;background:#EA5E00;color:#fff;margin:0 auto 2
 .head-localtion{display:flex;align-items:center;margin-top:8rpx;font-size:22rpx;}
 .head-name text{line-height:38rpx;}
 
-.recommended{display:flex;justify-content:space-between;margin:0 30rpx;flex-wrap:wrap;}
-.recommended .item{position:relative;}
+.recommended{display:flex;justify-content:space-between;margin:0 30rpx;flex-wrap:wrap;align-items:flex-start;}
+.recommended .item{position:relative;width:22%;}
 .recommended .name{position:absolute;left:0;right:0;bottom:0;padding:8rpx;background:rgba(0,0,0,.5);
 color:#fff;overflow:hidden;text-overflow:ellipsis;font-size:24rpx;}
-.recommended .skuimg{width:80px;}
-.recommended .skuimg image{width:80px;height:80px;}
+.recommended .skuimg{width:100%;}
+.recommended .skuimg image{width:100%;height:76px;}
 .morebtn{text-align:center;width:60%;position:relative;margin:0 auto;padding:30rpx 0;font-size:24rpx;color:#888;}
 .morebtn:after{
     content:'';display:block;transform: scale(0.5);border:1px solid #eee;top: -50%;position:absolute;

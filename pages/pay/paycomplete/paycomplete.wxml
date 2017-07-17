@@ -1,9 +1,7 @@
 <!--pages/pay/paycomplete/paycomplete.wxml-->
-<scroll-view scroll-y="true">
 <view class="complete">
-
     <view class="complete-head">
-        <view class="icon ok"></view>
+        <view class="icon ico-oks"></view>
             <view class="paytitle">支付成功</view>
             <view class="payinfo">
                 <view>支付金额</view>
@@ -42,8 +40,6 @@
         <template is="couponscard" data="{{couponlist:couponlist,status:2}}" />
     </view>
 
-
 </view>
-</scroll-view>
 
 

@@ -18,7 +18,8 @@
     "pages/integral/integral",
     "pages/logs/logs",
     "pages/interests/interests",
-    "pages/comment/comment"
+    "pages/comment/comment",
+    "pages/scanorder/scanorder"
   ],
   "window":{
     "backgroundTextStyle":"#444",

@@ -3,6 +3,7 @@
 <block wx:for="{{couponlist.coupons}}"  wx:key="couponslist">
         <block wx:if="{{status==1}}">
             <view toggle="false" class="couponsCard {{couponStat[item.couponNo]?'open':''}}" data-id="{{index}}" id="{{item.couponNo}}" style="background:{{item.color}}" bindtap="couponDescription">
+                
                 <view class="coupons-value"><text>¥</text>{{item.reduceCost}}</view>
                 <view class="couponsinfo">
                     <view class="coupontype" wx:if="{{item.couponType==0}}">代金券</view>

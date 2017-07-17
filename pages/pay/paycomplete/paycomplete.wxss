@@ -12,13 +12,12 @@ page{
 }
 .payinfo view{display:inline-block;color:#999;line-height:2;}
 .complete-head{text-align:center;}
-.complete-head .icon{color:#fff;font-size:120rpx;text-align:center;border:8rpx solid #fff;
+.complete-head .icon{color:#fff;font-size:70rpx;text-align:center;border:8rpx solid #fff;
     display:flex;justify-content:center;align-items:center;
 overflow:hidden;
 width:120rpx;height:120rpx;border-radius:200rpx;
 background-color:#1CC16F;
 margin:-90rpx auto 0 auto;}
-
 .ok:after{
     content:'';
     position:absolute;
@@ -42,7 +41,6 @@ margin:-90rpx auto 0 auto;}
     width:200%;
 }
 
-.taglist{}
 .taglist .tag{
     padding:10rpx 16rpx;position:relative;display:inline-block;margin:12rpx 10rpx 12rpx 0;color:#666;
     font-size:24rpx;

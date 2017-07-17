@@ -1,4 +1,46 @@
 <!--pages/order/order.wxml-->
 <import src="../../pages/template/empty.wxml"/>
 <template is="empty" data="{{icon:'ico-orders',text:'没有任何订单'}}"></template>
+<view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">所有</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">未支付</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">已完成</view>  
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="2" bindtap="swichNav">已取消</view>  
+</view>
+  
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <swiper-item>  
+      <view class="couponslist">
+            <import src="../../pages/template/couponscard.wxml"/>
+            <template is="couponscard" wx:for="{{couponlist.coupons}}" data="{{...item}}" wx:key="list"></template>
+        </view>
+    </swiper-item>  
+    <swiper-item>  
+
+    </swiper-item>  
+    <swiper-item>  
+
+    </swiper-item>
+</swiper>
+
+<import src="../../pages/template/swipertab/swipertab.wxml"/>
+<view class="orderlist">
+    <view class="item" wx:for="{{orderList}}" wx:key="orderlist">
+        <view class="item-cont">
+            <view class="time">{{item.time}}</view>
+            <view class="total">
+                {{item.total}}  
+                <block wx:if="{{item.stat!=0}}">
+                    <view class="type">{{item.payType}}</view>
+                </block>
+            </view>
+        </view>
+        <view class="stat" wx:if="{{item.stat==0}}">未支付<view class="paybtn" bindtap="paymenut" data-total = "{{item.total}}">立即支付</view><view class="del">取消</view></view>
+        <view class="stat" wx:elif="{{item.stat==1}}">已完成</view>
+        <view class="stat" wx:elif="{{item.stat==2}}">已完成</view>
+        <view class="stat" wx:elif="{{item.stat==3}}">已完成</view>
+        <view class="stat" wx:elif="{{item.stat==4}}">已完成</view>
+    </view>
+</view>
+
 <include src="../../pages/common/tabbar.wxml"/>
