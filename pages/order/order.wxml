@@ -4,6 +4,7 @@
 <view class="swiper-tab">  
     <view class="swiper-tab-list {{currentTab==0 ? 'active' : ''}}" data-current="0" bindtap="swichNav">所有</view>
     <view class="swiper-tab-list {{currentTab==1 ? 'active' : ''}}" data-current="1" bindtap="swichNav">未支付</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'active' : ''}}" data-current="2" bindtap="swichNav">未完成</view>  
     <view class="swiper-tab-list {{currentTab==2 ? 'active' : ''}}" data-current="2" bindtap="swichNav">已完成</view>  
     <view class="swiper-tab-list {{currentTab==3 ? 'active' : ''}}" data-current="3" bindtap="swichNav">已取消</view>  
 </view>
@@ -36,31 +37,187 @@
                     <view class="stat" wx:elif="{{item.stat==2}}">已完成</view>
                     <view class="stat" wx:elif="{{item.stat==3}}">已完成</view>
                     <view class="stat" wx:elif="{{item.stat==4}}">已完成</view>
-
                 </view>
             </view>
         </scroll-view>
     </swiper-item>
+    <swiper-item>
+             <view class="orderlist">
+             <block wx:for="{{orderList}}" wx:key="stat">
+                <block wx:if="{{item.stat==0}}">
+                    <view class="item">
+                        
+                        <view class="item-cont">
+                            <view class="time">{{item.time}}</view>
+                            <view class="ordertype" wx:if="{{item.orderType==0}}">堂食点单</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==1}}">外卖点单</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==2}}">自提点单</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==3}}">扫码支付</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==4}}">直接买单</view>
+                            <!-- <view class="total">
+                                <view class="totlas">
+                                支付金额：
+                                <text>{{item.total}}</text>
+                            </view>
+                                <block wx:if="{{item.stat!=0}}">
+                                    支付方式：
+                                    <view class="type">{{item.payType}}</view>
+                                </block>
+                            </view> -->
+                        </view>
+
+                        <view class="stat" wx:if="{{item.stat==0}}">未支付<view class="paybtn" bindtap="paymenut" data-total = "{{item.total}}">立即支付</view><view class="del">取消</view></view>
+                        <view class="stat" wx:elif="{{item.stat==1}}">已完成</view>
+                        <view class="stat" wx:elif="{{item.stat==2}}">已完成</view>
+                        <view class="stat" wx:elif="{{item.stat==3}}">已完成</view>
+                        <view class="stat" wx:elif="{{item.stat==4}}">已完成</view>
+                        
+                    </view>
+                    </block>
+                </block>
+            </view>
+    </swiper-item>
+
+       <swiper-item>
+             <view class="orderlist">
+             <block wx:for="{{orderList}}" wx:key="stat">
+                <block wx:if="{{item.stat==1}}">
+                    <view class="item">
+                        
+                        <view class="item-cont">
+                            <view class="time">{{item.time}}</view>
+                            <view class="ordertype" wx:if="{{item.orderType==0}}">堂食点单</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==1}}">外卖点单</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==2}}">自提点单</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==3}}">扫码支付</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==4}}">直接买单</view>
+                            <!-- <view class="total">
+                                <view class="totlas">
+                                支付金额：
+                                <text>{{item.total}}</text>
+                            </view>
+                                <block wx:if="{{item.stat!=0}}">
+                                    支付方式：
+                                    <view class="type">{{item.payType}}</view>
+                                </block>
+                            </view> -->
+                        </view>
+
+                        <view class="stat" wx:if="{{item.stat==0}}">未支付<view class="paybtn" bindtap="paymenut" data-total = "{{item.total}}">立即支付</view><view class="del">取消</view></view>
+                        <view class="stat" wx:elif="{{item.stat==1}}">已完成</view>
+                        <view class="stat" wx:elif="{{item.stat==2}}">已完成</view>
+                        <view class="stat" wx:elif="{{item.stat==3}}">已完成</view>
+                        <view class="stat" wx:elif="{{item.stat==4}}">已完成</view>
+                        
+                    </view>
+                    </block>
+                </block>
+            </view>
+    </swiper-item>
+
+       <swiper-item>
+             <view class="orderlist">
+             <block wx:for="{{orderList}}" wx:key="stat">
+                <block wx:if="{{item.stat==3}}">
+                    <view class="item">
+                        
+                        <view class="item-cont">
+                            <view class="time">{{item.time}}</view>
+                            <view class="ordertype" wx:if="{{item.orderType==0}}">堂食点单</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==1}}">外卖点单</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==2}}">自提点单</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==3}}">扫码支付</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==4}}">直接买单</view>
+                            <!-- <view class="total">
+                                <view class="totlas">
+                                支付金额：
+                                <text>{{item.total}}</text>
+                            </view>
+                                <block wx:if="{{item.stat!=0}}">
+                                    支付方式：
+                                    <view class="type">{{item.payType}}</view>
+                                </block>
+                            </view> -->
+                        </view>
+
+                        <view class="stat" wx:if="{{item.stat==0}}">未支付<view class="paybtn" bindtap="paymenut" data-total = "{{item.total}}">立即支付</view><view class="del">取消</view></view>
+                        <view class="stat" wx:elif="{{item.stat==1}}">已完成</view>
+                        <view class="stat" wx:elif="{{item.stat==2}}">已完成</view>
+                        <view class="stat" wx:elif="{{item.stat==3}}">已完成</view>
+                        <view class="stat" wx:elif="{{item.stat==4}}">已完成</view>
+                        
+                    </view>
+                    </block>
+                </block>
+            </view>
+    </swiper-item>
+       <swiper-item>
+             <view class="orderlist">
+             <block wx:for="{{orderList}}" wx:key="stat">
+                <block wx:if="{{item.stat==4}}">
+                    <view class="item">
+                        
+                        <view class="item-cont">
+                            <view class="time">{{item.time}}</view>
+                            <view class="ordertype" wx:if="{{item.orderType==0}}">堂食点单</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==1}}">外卖点单</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==2}}">自提点单</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==3}}">扫码支付</view>
+                            <view class="ordertype" wx:elif="{{item.orderType==4}}">直接买单</view>
+                            <!-- <view class="total">
+                                <view class="totlas">
+                                支付金额：
+                                <text>{{item.total}}</text>
+                            </view>
+                                <block wx:if="{{item.stat!=0}}">
+                                    支付方式：
+                                    <view class="type">{{item.payType}}</view>
+                                </block>
+                            </view> -->
+                        </view>
+
+                        <view class="stat" wx:if="{{item.stat==0}}">未支付<view class="paybtn" bindtap="paymenut" data-total = "{{item.total}}">立即支付</view><view class="del">取消</view></view>
+                        <view class="stat" wx:elif="{{item.stat==1}}">已完成</view>
+                        <view class="stat" wx:elif="{{item.stat==2}}">已完成</view>
+                        <view class="stat" wx:elif="{{item.stat==3}}">已完成</view>
+                        <view class="stat" wx:elif="{{item.stat==4}}">已完成</view>
+                        
+                    </view>
+                    </block>
+                </block>
+            </view>
+    </swiper-item>
+
 </swiper>
 
 <!-- <view class="orderlist">
-    <view class="item" wx:for="{{orderList}}" wx:key="orderlist">
-        <view class="item-cont">
-            <view class="time">{{item.time}}</view>
-            <view class="total">
-                {{item.total}}  
-                <block wx:if="{{item.stat!=0}}">
-                    <view class="type">{{item.payType}}</view>
-                </block>
-            </view>
-        </view>
-        <view class="stat" wx:if="{{item.stat==0}}">未支付<view class="paybtn" bindtap="paymenut" data-total = "{{item.total}}">立即支付</view><view class="del">取消</view></view>
-        <view class="stat" wx:elif="{{item.stat==1}}">已完成</view>
-        <view class="stat" wx:elif="{{item.stat==2}}">已完成</view>
-        <view class="stat" wx:elif="{{item.stat==3}}">已完成</view>
-        <view class="stat" wx:elif="{{item.stat==4}}">已完成</view>
-    </view>
-</view> -->
+                <view class="item" wx:for="{{orderList}}" wx:key="orderlist">
+                    <view class="item-cont">
+                        <view class="time">{{item.time}}</view>
+                        <view class="ordertype" wx:if="{{item.orderType==0}}">堂食点单</view>
+                        <view class="ordertype" wx:elif="{{item.orderType==1}}">外卖点单</view>
+                        <view class="ordertype" wx:elif="{{item.orderType==2}}">自提点单</view>
+                        <view class="ordertype" wx:elif="{{item.orderType==3}}">扫码支付</view>
+                        <view class="ordertype" wx:elif="{{item.orderType==4}}">直接买单</view>
+                         <view class="total">
+                            <view class="totlas">
+                             支付金额：
+                            <text>{{item.total}}</text>
+                           </view>
+                            <block wx:if="{{item.stat!=0}}">
+                                支付方式：
+                                <view class="type">{{item.payType}}</view>
+                            </block>
+                        </view> 
+                    </view>
+
+                    <view class="stat" wx:if="{{item.stat==0}}">未支付<view class="paybtn" bindtap="paymenut" data-total = "{{item.total}}">立即支付</view><view class="del">取消</view></view>
+                    <view class="stat" wx:elif="{{item.stat==1}}">已完成</view>
+                    <view class="stat" wx:elif="{{item.stat==2}}">已完成</view>
+                    <view class="stat" wx:elif="{{item.stat==3}}">已完成</view>
+                    <view class="stat" wx:elif="{{item.stat==4}}">已完成</view>
+                </view>
+            </view> -->
 
 
 <include src="../../pages/common/tabbar.wxml"/>
