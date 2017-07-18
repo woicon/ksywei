@@ -1,0 +1,20 @@
+<template name="order">
+    <view class="orderlist">
+        <view class="item" wx:for="{{orderList}}" wx:key="orderlist">
+            <view class="item-cont">
+                <view class="time">{{item.time}}</view>
+                <view class="total">
+                    {{item.total}}  
+                    <block wx:if="{{item.stat!=0}}">
+                        <view class="type">{{item.payType}}</view>
+                    </block>
+                </view>
+            </view>
+            <view class="stat" wx:if="{{item.stat==0}}">未支付<view class="paybtn" bindtap="paymenut" data-total = "{{item.total}}">立即支付</view><view class="del">取消</view></view>
+            <view class="stat" wx:elif="{{item.stat==1}}">已完成</view>
+            <view class="stat" wx:elif="{{item.stat==2}}">已完成</view>
+            <view class="stat" wx:elif="{{item.stat==3}}">已完成</view>
+            <view class="stat" wx:elif="{{item.stat==4}}">已完成</view>
+        </view>
+    </view>
+</template>

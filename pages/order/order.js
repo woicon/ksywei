@@ -6,13 +6,14 @@ Page({
         winWidth: 0,
         winHeight: 0,
         currentTab: 0,
-    orderList:[  //stat 0 未支付  1 已完成 2 待收货 4 已取消
+        orderList: [  //stat 0 未支付  1 已完成 2 待收货 4 已取消   orderStat 0 堂食点单  1 自提订单  2 外卖订单  3 扫码支付  4 直接买单 
         {
             id: 912939123123,
             time: '2017-12-12 9:00',
             total: '80',
             payType: '微信支付',
             stat: 0,
+            orderType:0,
         },
         {
             id:912939123123,
@@ -20,6 +21,7 @@ Page({
             total:'80',
             payType:'微信支付',
             stat:1,
+            orderType: 0,
             sku:[
                 {skuimg:'',skuid:'2323123',skuPrice:'90',skuName:'辣子鸡',skuNumber:1},
                 {skuimg: '', skuid: '2323123', skuPrice: '90', skuName: '辣子鸡', skuNumber: 1 },
@@ -32,6 +34,7 @@ Page({
             payType:'微信支付',
             stat: '已完成',
             stat: 1,
+            orderType: 0,
         },
         {
             id: 912939123123,
@@ -39,6 +42,7 @@ Page({
             total: '80',
             payType: '微信支付',
             stat: 1,
+            orderType: 0,
         },
         {
             id: 912939123123,
@@ -46,6 +50,7 @@ Page({
             total: '80',
             payType: '微信支付',
             stat: 1,
+            orderType: 0,
         },
         {
             id: 912939123123,
@@ -53,6 +58,7 @@ Page({
             total: '80',
             payType: '微信支付',
             stat: 2,
+            orderType: 0,
         },
         {
             id: 912939123123,
@@ -60,6 +66,7 @@ Page({
             total: '80',
             payType: '微信支付',
             stat: 3,
+            orderType:1,
         },
         {
             id: 912939123123,
@@ -67,42 +74,49 @@ Page({
             total: '80',
             payType: '会员支付',
             stat: 4,
+            orderType: 0,
         },
         {
             id: 912939123123,
             time: '2017-12-12 9:00',
             total: '80',
-            payType: '微信支付'
+            payType: '微信支付',
+            orderType: 2,
         },
         {
             id: 912939123123,
             time: '2017-12-12 9:00',
             total: '80',
-            payType: '微信支付'
+            payType: '微信支付',
+            orderType: 3,
         },
         {
             id: 912939123123,
             time: '2017-12-12 9:00',
             total: '80',
-            payType: '微信支付'
+            payType: '微信支付',
+            orderType: 4,
         },
         {
             id: 912939123123,
             time: '2017-12-12 9:00',
             total: '80',
-            payType: '微信支付'
+            payType: '微信支付',
+            orderType: 1,
         },
         {
             id: 912939123123,
             time: '2017-12-12 9:00',
             total: '80',
-            payType: '微信支付'
+            payType: '微信支付',
+            orderType: 2,
         },
         {
             id: 912939123123,
             time: '2017-12-12 9:00',
             total: '80',
-            payType: '微信支付'
+            payType: '微信支付',
+            orderType: 3,
         },
     ]
   },

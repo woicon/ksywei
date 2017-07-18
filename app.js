@@ -38,6 +38,8 @@ App({
   },
   setTab: function () {
       var _curPageArr = getCurrentPages();
+
+      console.log(_curPageArr);
       var _curPage = _curPageArr[_curPageArr.length - 1];
       var _pagePath = _curPage.__route__;
       if (_pagePath.indexOf('/') != 0) {

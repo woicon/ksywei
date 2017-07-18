@@ -1,11 +1,12 @@
 <!--index.wxml-->
-<view>
+
+<view wx:if="{{!pageloading}}">
     <loading hidden="{{pageloading}}">
         加载中...
     </loading>
 </view>
-<view class="container">
-<scroll-view class="pagescroll">
+
+<view  wx:else class="container">
     <view class="indexad">
         <view class="head-img">
             <image src="{{shopinfo.shopimg}}" mode="aspectFill"></image>
@@ -55,7 +56,7 @@
         </navigator>
         <navigator class="list-item" url="/pages/pay/pay">
             <view class="list-first">
-                <view class="icon ico-jifen-s"></view>
+                <view class="icon ico-gift"></view>
                 <text class="list-text">礼品卡</text>
             </view>
             <view class="list-btn">礼品卡</view>
@@ -126,7 +127,5 @@
             </view>
         </view>
       </view>-->
-
-</scroll-view>
 </view>
 <include src="../../pages/common/tabbar.wxml"/>

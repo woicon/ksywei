@@ -1,1 +1,7 @@
-{}
+{
+    "window": {
+        "backgroundTextStyle": "#444",
+        "navigationBarBackgroundColor": "#ffcc00",
+        "navigationBarTextStyle": "black"
+    }
+}

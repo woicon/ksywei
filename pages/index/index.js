@@ -118,8 +118,7 @@ Page({
             ],
             "returnCode": "S",
             "returnMessage": "操作成功"
-        },
-        pageloading: true,
+        }
 
     },
     callShop: function () {
@@ -140,7 +139,6 @@ Page({
                 var longitude = res.longitude
                 var speed = res.speed
                 var accuracy = res.accuracy
-
                 console.log(accuracy)
             }
         });
@@ -151,7 +149,9 @@ Page({
         });
     },
     onShow: function () {
-
+        this.setData({
+            pageloading:false
+        });
     },
     onHide: function () {
 

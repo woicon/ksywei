@@ -1,4 +1,7 @@
 /**index.wxss**/
+.container{
+    padding-bottom:200rpx;
+}
 .indexlist{padding:0 0;}
 .head-img{height:200px;}
 .head-img image{width:100%;height:200px;}
