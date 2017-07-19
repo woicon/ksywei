@@ -71,7 +71,7 @@
             <view class="textarea-number"><text>200</text>字以内</view>
         </view>
         <view class="textarea-wrap">
-            <textarea placeholder="多行文本输入"  />
+            <textarea placeholder="多行文本输入" maxlength="200" cursor-spacing="200"  />
         </view>
     </view>
 

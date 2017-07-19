@@ -1,13 +1,54 @@
 <!--pages/couponsdetail/couponsdetail.wxml-->
 <view class="coupons-detail">
-   <image src="{{coupon.logo}}"></image>
-    <view class="classname">¥<text>{{coupon.reduceCost}}</text></view>
-    <view class="coupon-name">{{coupon.couponName}}</view>
-    <image mode="aspectFit" src="../../pages/images/rcCode.png"></image>
 
-    <view class="pay-list">
-        有效期
-        客服电话
+    <view class="coupons-logo">
+        <image mode="scaleToFill" src="{{coupon.logo}}"></image>
+    </view>
+
+    <view class="coupon-name">{{coupon.couponName}}</view>
+    <view wx:if="{{coupon.couponType == 1}}"  class="cost"><text class="price">{{discount}}</text>折</view>
+    <view wx:else class="cost">¥<text class="price">{{coupon.reduceCost}}</text></view>
+
+    <view class="coupon-infos">
+        <view class="classname"> <text class="icon ico-clock"></text> 有效期：{{coupon.beginTime}}至{{coupon.endTime}}</view>
+        <view class="classname"><text class="icon ico-moneyr"></text>满{{coupon.leastCost}}元可用</view>
+    </view>
+
+    <view class="coupon-info">
+        <view class="rqcode">
+            <view class="rqcode-img">
+                <image mode="aspectFit" mode="scaleToFill"  data-id="{{coupon.couponNo}}" src="../../pages/images/rcCode.png"></image>
+            </view>
+            <view class="couponno nos">{{coupon.couponNo}}</view>
+        </view>
+
+        <view class="ewm">
+            <view class="ewm-img">
+                <image mode="aspectFit" data-id="{{coupon.couponNo}}" src="../../pages/images/1499668706.png"></image>
+            </view>
+            <view class="couponno">{{coupon.notice}}</view>
+        </view>
+
+        <view class="title">适用商品</view>
+
+        <view class="sku">
+            <view class="classname">
+
+                <view class="sku-name">{{coupon.goodItem.itemName}}</view>
+                <view class="sku-text">{{coupon.goodItem.itemText}}</view>
+            </view>
+            <view class="sku-price price">¥{{coupon.goodItem.itemPrice}}</view>
+            <!-- {{coupon.goodItem.itemNo}} -->
+        </view>
+
+        <view class="title">优惠券详情</view>
+
+        <view class="description">
+            <view class="description-text">{{coupon.description}}</view>
+            
+        </view>
+
+        
+        <view wx:if="{{coupon.servicePhone}}" class="phone">客服电话：{{coupon.servicePhone}}</view>
     </view>
 </view>
-

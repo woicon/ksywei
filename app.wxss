@@ -388,7 +388,9 @@ view, text, navigator {
 .flex-center-between{
     display:flex;justify-content:space-between;align-items:center;
 }
-
+.btn-hover{
+    background:#11B162;
+}
 .block-btn{
     text-align:center;display:block;background:#1CC16F;color:#fff;padding:30rpx 0;border-radius:6rpx;
     font-size:32rpx;margin-top:20rpx;

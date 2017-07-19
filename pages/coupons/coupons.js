@@ -24,7 +24,7 @@ Page({
                   "merchantId": 10104677,
                   "merchantName": "收款小精灵",
                   "logo": "http://open.liantuobank.cn/assets/images/wechat.png",
-                  "color": "#63b359",
+                  "color": "#7DBBFF",
                   "syncWechat": 0,
                   "wechatCardId": "pdest9w8jlngxvDybO1qGaURiNY"
               },
@@ -45,7 +45,7 @@ Page({
                   "merchantId": 10104677,
                   "merchantName": "收款小精灵",
                   "logo": "http://open.liantuobank.cn/assets/images/wechat.png",
-                  "color": "#63b359",
+                  "color": "#FF7A6B",
                   "syncWechat": 0,
                   "wechatCardId": "pdest9w8jlngxvDybO1qGaURiNY"
               },
@@ -66,7 +66,29 @@ Page({
                   "merchantId": 10104677,
                   "merchantName": "收款小精灵",
                   "logo": "http://open.liantuobank.cn/assets/images/wechat.png",
-                  "color": "#63b359",
+                  "color": "#FFC491",
+                  "syncWechat": 0,
+                  "wechatCardId": "pdest9w8jlngxvDybO1qGaURiNY"
+              }
+              ,
+              {
+                  "couponNo": "aa9064402803578549421123123123",
+                  "couponName": "流程21元代金券",
+                  "couponStatus": 1,
+                  "couponType": 5,
+                  "getDate": "20170614 13:24:01",
+                  "reduceCost": 1,
+                  "leastCost": 1,
+                  "beginTime": "20170614 13:22:07",
+                  "endTime": "20170714 13:22:07",
+                  "giveFriend": 1,
+                  "notice": "请在结账时出示给服务员",
+                  "description": "本优惠券不可兑换现金，不可找零。",
+                  "servicePhone": "",
+                  "merchantId": 10104677,
+                  "merchantName": "收款小精灵",
+                  "logo": "http://open.liantuobank.cn/assets/images/wechat.png",
+                  "color": "#45E091",
                   "syncWechat": 0,
                   "wechatCardId": "pdest9w8jlngxvDybO1qGaURiNY"
               }
@@ -118,15 +140,19 @@ Page({
 
   //查看优惠券详情
   couponDescription:function(e){
-      var __couponStat = this.data.couponStat;
-      console.log(e);
+    //   var __couponStat = this.data.couponStat;
+    //   console.log(e);
    
-      var cstat = __couponStat[e.currentTarget.id];
-      cstat = !cstat?true:false;
-      __couponStat[e.currentTarget.id] = cstat;
-      this.setData({
-        couponStat: __couponStat
-      });
+    //   var cstat = __couponStat[e.currentTarget.id];
+    //   cstat = !cstat?true:false;
+    //   __couponStat[e.currentTarget.id] = cstat;
+    //   this.setData({
+    //     couponStat: __couponStat
+    //   });
+
+    wx.navigateTo({
+        url: '/pages/couponsdetail/couponsdetail',
+    })
   },
 
   //滑动切换tab

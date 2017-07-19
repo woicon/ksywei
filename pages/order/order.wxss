@@ -19,21 +19,41 @@
     transform-origin: 0 100%;
     width: 200%;
 }
-.time{
-    color:#666;
-    margin-bottom:10rpx;
+.item-cont{
+    display: flex;align-items: center;
 }
-
+.time{
+    color:#999;
+}
+.stat{
+    color:#666;display:inline-block;padding:4rpx 12rpx;
+}
 .type{
     display:inline-block;
 }
+.ordertype{
+    margin-bottom:16rpx;color:#444;font-size:32rpx;
+}
+.orderbtns view{
+    display:inline-block;padding:12rpx 18rpx;background:#eee;color:#444;margin-left:8rpx;border-radius:6rpx;
+    
+}
+
+.orderbtns .paybtn{
+    background:#1CC16F;color:#fff;
+}
+.total{
+    color:#FF5C3B;font-size:24rpx;padding-right:16rpx;margin-right:16rpx;border-right:1px solid #eee;
+}
+.total text{font-size:40rpx;}
+
 
 .swiper-tab{
   width: 100%; 
   border-bottom:2px solid #eee; 
   text-align: center; 
   display:flex;
-  justify-content:space-around;
+  justify-content:space-between;
   position:fixed;
   left:0;right:0;top:0;
 }
@@ -44,13 +64,13 @@
   margin-bottom:-2px;
   color: #777777; 
    padding:0 30rpx;
-   line-height:38px;
+   line-height:38px;height:38px;
    border-bottom:2px solid transparent;
 }
 
 .swiper-tab-list.active{
   color:#1CC16F; 
-  border-bottom:4rpx solid #1CC16F;
+  border-bottom:2px solid #1CC16F;
 }
 
 .swiper-box{ 
@@ -58,5 +78,29 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
-  position:absolute;left:0;right:0;top:80rpx;bottom:120rpx;
+  position:absolute;left:0;right:0;top:40px;bottom:120rpx;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

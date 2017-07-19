@@ -5,12 +5,13 @@
         <view class="ewmcard">
             <view class="barcode"> 
             <!--style="background-image:url(../../pages/images/rcCode.png)"-->
-                <image mode="aspectFit" src="../../pages/images/rcCode.png"></image>
+                <image mode="aspectFill" src="../../pages/images/rcCode.png"></image>
             </view>
             <view class="qrcode">
-                <image mode="aspectFit" src="../../pages/images/rcCode2.png"></image>
+                <image mode="aspectFit" src="../../pages/images/1499668706.png"></image>
+                
             </view>
-
+            <view class="restime">1后自动刷新</view>
             <view class="ewmbar">
                 <view class="money">
                     <view class="icon ico-pig"></view>

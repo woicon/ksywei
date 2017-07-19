@@ -4,7 +4,7 @@
 
 .registerform{margin:40rpx;}
 .line{display:flex;justify-content:space-between;width:100%;position:relative;align-items:center;}
-.line .picker,.line input{font-size:28rpx;height:1.4;display:block;line-height:1.4;padding:24rpx 0;
+.line .picker,.line input{font-size:28rpx;height:1.4;display:block;line-height:1.4;padding:30rpx 0;
 color:#333;}
 .line-title{font-size:28rpx;color:#666;}
 .line:after{
@@ -18,10 +18,20 @@ background:#eee;border-radius:4rpx;line-height:60rpx;z-index:100;}
 .phonecode.disable{color:#999;}
 
 .line-col{
-    text-align:left;color:#666;line-height:2;margin-top:30rpx;border-bottom:1px dashed #eee;
+    color:#666;line-height:4;margin-top:30rpx;text-align:center;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
+
+.line-col:after,
+.line-col:before{
+    content:'';height:1px;border-bottom:1px dashed #eee;display:line-block;width:90px;margin:0 20rpx;
+}
+
 .blockline{
-    display:block;
+    display:block;padding:20rpx 0;
 }
 .line picker{
     display:flex;justify-content: flex-end;align-items:center;
@@ -32,7 +42,7 @@ background:#eee;border-radius:4rpx;line-height:60rpx;z-index:100;}
 }
 .blockline textarea{width:100%;font-size:28rpx;line-height:1.6;}
 .blockline .textarea-wrap{
-    position:relative;padding:10rpx;
+    position:relative;padding:16rpx;
 }
 .blockline .textarea-wrap:before{
     content:'';position:absolute;left:-50%;right:-50%;top:-50%;bottom:-50%;border:1px solid #eee;transform:scale(.5);

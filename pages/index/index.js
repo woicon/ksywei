@@ -142,19 +142,26 @@ Page({
                 console.log(accuracy)
             }
         });
+
+        this.setData({
+            pageloading: true
+        });
+        
     },
+    
     onReady: function () {
         this.setData({
             pageloading: true
         });
     },
+
     onShow: function () {
         this.setData({
-            pageloading:false
+            pageloading:true
         });
     },
-    onHide: function () {
 
+    onHide: function () {
     },
     onUnload: function () {
 

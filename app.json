@@ -15,7 +15,6 @@
     "pages/pay/paycomplete/paycomplete",
     "pages/registercard/registercard",
     "pages/orders/orders",
-    "pages/order/orderIng",
     "pages/integral/integral",
     "pages/logs/logs",
     "pages/interests/interests",

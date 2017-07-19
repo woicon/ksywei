@@ -1,5 +1,4 @@
 <!--index.wxml-->
-
 <view wx:if="{{!pageloading}}">
     <loading hidden="{{pageloading}}">
         加载中...
@@ -26,14 +25,12 @@
                 <text class="list-text">堂食</text>
             </view>
         </navigator>
-
         <navigator class="list-item" url="/pages/pay/pay">
             <view class="list-first">
                 <view class="icon ico-sbag-s"></view>
                 <text class="list-text">自提</text>
             </view>
         </navigator>
-
         <navigator class="list-item" url="/pages/pay/pay">
             <view class="list-first">
                 <view class="icon ico-waimai-s"></view>
@@ -61,7 +58,6 @@
             </view>
             <view class="list-btn">礼品卡</view>
         </navigator>
-
         <navigator class="list-item" url="/pages/pay/pay">
             <view class="list-first">
                 <view class="icon ico-coup-s"></view>
@@ -69,7 +65,6 @@
             </view>
             <view class="list-btn">优惠券</view>
         </navigator>
-
         <navigator class="list-item" url="/pages/pay/pay">
             <view class="list-first">
                 <view class="icon ico-redbag-s"></view>
@@ -106,26 +101,5 @@
         <template is="comments" data="{{comment:comment,status:2}}" />
      </view>
      <navigator class="morebtn" bindtap="commentPage"  url="/pages/comment/comment">查看更多评价</navigator>
-
-      <!--<view class="comment">
-         <view class="comment-item">
-            <view class="comment-img">
-                <image class="comment-img" mode="scaleToFill" src="../../pages/images/usimg.jpg"></image>
-            </view>
-            <view class="comment-info">
-                <view class="comment-name">Json Brose</view>
-                <view class="star">
-                    <view class="ico-star-s active"></view>
-                    <view class="ico-star-s active"></view>
-                    <view class="ico-star-s active"></view>
-                    <view class="ico-star-s active"></view>
-                    <view class="ico-star-s"></view>
-                </view>
-                <view class="comment-text">
-                    <text>重点羊腿很嫩，来对地方啦！偶尔搜到的，看到评价不错，决定来试试，服务态度很好！多次提醒小心火别烫到，啤酒可以换成饮料，不错！</text>
-                </view>
-            </view>
-        </view>
-      </view>-->
 </view>
 <include src="../../pages/common/tabbar.wxml"/>

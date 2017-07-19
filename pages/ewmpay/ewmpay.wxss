@@ -11,17 +11,19 @@ page{
 .ewmcard:after,.ewmcard:before{
     content:'';display:block;border-radius:0 0 8rpx 8rpx;position:absolute;height:8px;background:rgba(255,255,255,.4); z-index:-1;
 }
-.ewmpay:before{left:8rpx;right:8rpx;bottom:-8rpx;}
-.ewmpay:after{right:16rpx;left:16rpx;bottom:-16rpx;}
+.ewmcard:before{left:8rpx;right:8rpx;bottom:-8rpx;}
+.ewmcard:after{right:16rpx;left:16rpx;bottom:-16rpx;}
 .qrcode{
  width:100%;margin:0 auto;text-align:center;height:200px;background-size:cover;background-repeat:no-repeat;clear:both;
  background-position:center center;
+
 }
+.restime{line-height:2;color:#999;text-align:center; padding-bottom:30rpx;}
 .qrcode image{
   height:100%;width:100%;
 }
 .barcode{
-   margin:40rpx 0;height:120rpx;background-size:cover;background-repeat:no-repeat;
+   margin:40rpx 20rpx;height:100rpx;background-size:cover;background-repeat:no-repeat;
  background-position:center center;
 }
 .barcode image{
@@ -39,7 +41,7 @@ page{
     color:#999;
 }
 .ewmbar{
-    border-top:1px dashed #eee;display:flex;align-items:center;justify-content:space-between;padding:30rpx 20rpx;
+    border-top:1px dashed #eee;display:flex;align-items:center;justify-content:space-between;padding:40rpx 20rpx;
     position:relative;
 }
 .ewmbar:after,.ewmbar:before{
