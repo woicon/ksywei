@@ -1,53 +1,31 @@
 <!--pages/coupons/coupons.wxml-->
-<!--<view class="swiper-tab">  
-    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">所有</view>  
-    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">未使用</view>  
-    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">已使用</view>  
-</view>  -->
-  
-<!--<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
-    <swiper-item>  
-      <view class="couponslist">
+<view class="container">
+    <block wx:if="{{!failure}}">
+        <block wx:if="{{couponlist.returnCode=='F'}}">
+            <import src="../../pages/template/empty.wxml"/>
+            <template is="empty" data="{{icon:'ico-coup',text:'还没有优惠券'}}"></template>
+        </block>
+
+        <block wx:elif="{{couponlist.returnCode=='S'}}">
+            <view class="couponslist">
+                <import src="../../pages/template/couponscard.wxml"/>
+                <template is="couponscard" data="{{couponlist:couponlist,status:1,couponStat:couponStat}}"></template>
+                <view class="coupinfo"> <view class="viewrules" bindtap="viewRules"> 
+                <view class="ico-help"></view> 使用规则</view> 
+                <view>没有更多可用券 <view class="viewcoupons" bindtap="failureCoupons">查看失效优惠</view></view>
+                </view>
+            </view>
+        </block>
+    </block>
+
+    <block wx:else>
+        <view class="couponslist">
             <import src="../../pages/template/couponscard.wxml"/>
-            <template is="couponscard" wx:for="{{couponlist.coupons}}" data="{{...item}}" wx:key="list"></template>
+            <template is="couponscard" data="{{couponlist:couponlist,status:3,couponStatus:couponStatus}}"></template>
+            <view class="coupinfo">
+            <view>没有更多可用券 <view class="viewcoupons" bindtap="effectiveCoupons">查看优惠券</view></view>
+            </view>
         </view>
-    </swiper-item>  
-    <swiper-item>  
-      <view>我是呵呵</view>  
-    </swiper-item>  
-    <swiper-item>  
-      <view class="empty">
-      没有可使用红包
-      </view>
-    </swiper-item>
-</swiper>-->
-<block wx:if="{{couponlist.returnCode=='F'}}">
-    <import src="../../pages/template/empty.wxml"/>
-    <template is="empty" data="{{icon:'ico-coup',text:'还没有优惠券'}}"></template>
-</block>
-<block wx:elif="{{couponlist.returnCode=='S'}}">
-<view class="couponslist">
-    <import src="../../pages/template/couponscard.wxml"/>
-    <template is="couponscard" data="{{couponlist:couponlist,status:1,couponStat:couponStat}}"></template>
-    <view class="coupinfo"> <view class="viewrules" bindtap="viewRules"> 
-    <view class="ico-info-s"></view> 使用规则</view> 
-    <view>没有更多可用券 <view class="viewcoupons" bindtap="failureCoupons">查看失效优惠</view></view>
-    </view>
+    </block>
 </view>
-</block>
-<!-- <view class="section">
-  <view class="section__title">movable-view区域小于movable-area</view>
-  <movable-area style="height: 200px;width: 200px;background: red;">
-    <movable-view style="height: 50px; width: 50px; background: blue;" x="{{x}}" y="{{y}}" inertia="true" direction="all">
-    </movable-view>
-  </movable-area>
-  <view class="btn-area">
-    <button size="mini" bindtap="tap">click me to move to (30px, 30px)</button>
-  </view>
-  <view class="section__title">movable-view区域大于movable-area</view>
-  <movable-area style="height: 100px;width: 100px;background: red;" direction="all">
-    <movable-view style="height: 200px; width: 200px; background: blue;">
-    </movable-view>
-  </movable-area>
-</view> -->
 <include src="../../pages/common/tabbar.wxml"/>

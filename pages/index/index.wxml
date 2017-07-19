@@ -1,11 +1,9 @@
 <!--index.wxml-->
 <view wx:if="{{!pageloading}}">
-    <loading hidden="{{pageloading}}">
-        加载中...
-    </loading>
+    <loading hidden="{{pageloading}}">加载中...</loading>
 </view>
-
-<view  wx:else class="container">
+<block wx:else>
+<view class="container">
     <view class="indexad">
         <view class="head-img">
             <image src="{{shopinfo.shopimg}}" mode="aspectFill"></image>
@@ -40,7 +38,7 @@
         <navigator class="list-item" url="/pages/registercard/registercard">
             <view class="list-first">
                 <view class="icon ico-card-s"></view>
-                <text class="list-text">领取会员卡</text>
+                <text class="list-text">会员卡</text>
             </view>
             <view class="list-btn">领取</view>
         </navigator>
@@ -75,6 +73,11 @@
         
     </view>
 
+    <view class="regvip" hover-class="regvip-hover" hover="true" bindtap="registerCard">
+        <text>您有一张会员卡可领取</text>
+        <view class="icon ico-diamond"></view>
+        <view class="btn">立即领取</view>
+    </view>
 
     <view class="pagetitle">推荐单品</view>
       <view class="recommended">
@@ -103,3 +106,4 @@
      <navigator class="morebtn" bindtap="commentPage"  url="/pages/comment/comment">查看更多评价</navigator>
 </view>
 <include src="../../pages/common/tabbar.wxml"/>
+</block>

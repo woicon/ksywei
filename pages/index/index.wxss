@@ -22,12 +22,12 @@ flex-wrap:wrap;
 }
 .index-grid .list-btn{display:none;}
 .index-grid navigator{display:block;padding:0;}
-.index-grid .list-item{width:25%;display:block;padding:30rpx 0 20rpx;}
+.index-grid .list-item{width:25%;display:block;padding:30rpx 0 8rpx;}
 .index-grid .list-first{display:block;text-align:center;}
 .index-grid .list-text{font-size:24rpx;margin-top:18rpx;color:#666;}
 .index-grid .list-item .icon{width:44px;height:44px;border-radius:44px;
 box-shadow:0 2px 4px rgba(0,0,0,.1);
-text-align:center;line-height:44px;background:#EA5E00;color:#fff;margin:0 auto 20rpx;font-size:52rpx;}
+text-align:center;line-height:44px;background:#EA5E00;color:#fff;margin:0 auto 12rpx;font-size:52rpx;}
 .index-grid .list-item:before{border:none;}
 .index-grid .list-item:nth-child(1) .icon{background:#FF7A6B;}
 .index-grid .list-item:nth-child(2) .icon{background:#FFC160;}
@@ -37,6 +37,48 @@ text-align:center;line-height:44px;background:#EA5E00;color:#fff;margin:0 auto 2
 .index-grid .list-item:nth-child(6) .icon{background:#FF90F2;}
 .index-grid .list-item:nth-child(7) .icon{background:#FFC491;}
 .index-grid .list-item:nth-child(8) .icon{background:#FF9374;}
+
+.regvip{
+    border-radius:10rpx;
+    background:#FF7A6B;
+    margin:50rpx 30rpx;
+    padding:30px 20px;
+    color:#fff;
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    overflow:hidden;
+} 
+.regvip .btn{
+    display:inline-block;
+    padding: 12rpx 22rpx;
+    position:relative;
+    font-size:28rpx;
+}
+
+.regvip text{
+    font-size:36rpx;
+}
+.regvip .icon{
+    position:absolute;left:-20px;top:0;transform:rotate(15deg);font-size:90px;opacity:.2;
+}
+.regvip .btn:after{
+    content:'';display:block;
+    transform: scale(0.5);
+    border:1px solid #eee;
+    border-radius:100px;
+    position:absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    z-index: 0;
+
+}
+.regvip-hover{
+    background:#f46354;
+}
 
 .head-name{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);
     display:flex;align-items: center;justify-content:space-between;

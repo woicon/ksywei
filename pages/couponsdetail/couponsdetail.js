@@ -10,7 +10,7 @@ Page({
                 "couponStatus": 1,
                 "couponType": 5,
                 "getDate": "2017-06-09 16:37:38",
-                "reduceCost": 1,
+                "reduceCost": 2,
                 "leastCost": 10,
                 "discount": 0,
                 "beginTime": "2017-06-20 00:00:00",

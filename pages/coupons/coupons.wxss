@@ -1,3 +1,6 @@
+.container{
+    padding-bottom:90px;
+}
 .swiper-tab{  
     width: 100%;  
     border-bottom: 2rpx solid #777777;  

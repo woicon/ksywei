@@ -66,7 +66,7 @@ page{
     height:100%;width:100%;
 }
 .nos{
-    letter-spacing:14rpx;font-size:20rpx;
+    letter-spacing:14rpx;font-size:26rpx;
 }
 .coupons-detail{
     background:#fff;

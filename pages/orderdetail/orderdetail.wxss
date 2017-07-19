@@ -48,8 +48,15 @@
     display:flex;
     align-items:center;
 }
+.sku-item .name{
+    line-height:1.8;
+}
+.sku-item .total{
+    color:#666;
+}
+
 .sku-item .info .num{
-    color:#999;margin-top:14rpx;
+    color:#999;
 }
 .sku-item .img{
     width:34px;
