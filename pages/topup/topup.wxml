@@ -1,11 +1,11 @@
 <view class="topupage">
     <view class="tophead">
         <input class="topvalue" type="digit" bindinput="keyInput" placeholder="输入充值金额" value="{{topValue}}" />
-        <view class="block-btn {{topValue==0&&topValue==''?'disable':''}}" bindtap="sendTop">充值</view>
+        <view class="block-btn {{topValue==0&&topValue==''?'disable':''}}" bindtap="{{topValue==0&&topValue==''?'':'sendTop'}}">充值</view>
     </view>
     <view class="topuplist">
         <block wx:for="{{valueList}}" wx:key="vaulelist">
-            <view class="topitem {{valueToggle[index]?'active':''}}" bindtap="setValue" data-value = "{{item.value}}" id="{{index}}">
+            <view class="topitem ico-gift {{valueToggle[index]?'active':''}}" bindtap="setValue" data-value = "{{item.value}}" id="{{index}}">
             <view class="value">{{item.value}}</view>
                 <view class="info">{{item.text}}</view>
             </view>

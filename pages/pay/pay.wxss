@@ -65,19 +65,45 @@
 .vipPay{font-size:30rpx;}
 .toppage{display:none;}
 
-.checkbox{position:relative;padding-left:44rpx;font-size:30rpx;}
-.checkbox:after,
-.checkbox:before{
-    content:'';position:absolute;left:0;top:50%;
+.checkbox{
+    position:relative;
+    font-size:30rpx;
+    display:flex;
+    align-items:center;
 }
-.checkbox:after{
-    width:20rpx;height:8rpx;border:4rpx solid #fff;border-top:none;border-right:none;transform:rotate(-45deg);
-    margin-top:-10rpx;left:6rpx;
+.checkbox .icon{
+    width:18px;
+    height:18px;
+    margin-right:2px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
-.checkbox:before{
-    width:38rpx;height:38rpx;border-radius:90rpx;background:#eee;margin-top:-19rpx;
+.checkbox .icon:after,
+.checkbox .icon:before{
+    content:'';
+    display:block;
 }
-.checkbox.checked:before{
+.checkbox .icon:after{
+    width:9px;
+    height:3px;
+    border:2px solid #fff;
+    border-top:none;
+    border-right:none;
+    transform:rotate(-45deg);
+}
+.checkbox .icon:before{
+    width:18px;
+    height:18px;
+    border-radius:90rpx;
+    background:#eee;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+}
+.checkbox.checked .icon:before{
     background:#1CC16F;
 }
 
@@ -90,7 +116,6 @@
 
 [class^="ico-"], [class*=" ico-"] {
   font-family: 'payico' !important;
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;

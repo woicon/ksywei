@@ -13,7 +13,7 @@
         </view>
     </view>
     <view class="numbar">
-        <view bindtap="checktap" class="checkbox {{vipcheck?'checked':''}}">会员支付</view>
+        <view bindtap="checktap" class="checkbox {{vipcheck?'checked':''}}"> <view class="icon"></view> 会员支付</view>
         <view catchtap="topUp" class="topbtn">充值</view>
     <!-- <view class="classname" bindtap="viewCard">查看卡券</view> -->
     </view>
