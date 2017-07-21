@@ -1,0 +1,122 @@
+/* pages/apply/apply.wxss */
+page{
+    padding-top:70px;
+    background:#fafafa;
+}
+.apply-form{
+    background:#fff;
+}
+.apply-step{
+    position:fixed;
+    left:0;
+    top:0;
+    right:0;
+    height:70px;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    z-index:20;
+}
+.step-item{
+    width:33.333333%;
+    text-align:center;
+    position:relative;
+    color:#ccc;
+    font-size:24rpx;
+}
+.step-item.active{
+    color:#27CFB1;
+}
+.step-item:before{
+    content:'';
+    display:block;
+    left:0;right:0;
+    height:2px;
+    background:#eee;
+    position:absolute;
+    top:14px;
+    z-index:0;
+    
+}
+.step-item .num{
+    display:block;
+    width:26px;
+    height:26px;
+    background:#eee;
+    line-height:26px;
+    text-align:center;
+    margin:0 auto;
+    border-radius:90px;
+    font-size:18px;
+    margin-bottom:12rpx;
+    position:relative;
+    z-index:9;
+    color:#ccc;
+}
+
+.step-item.active .num{
+    background:#27CFB1;
+    color:#fff;
+}
+.fgroup{
+    display:flex;
+    justify-content:space-between;
+    position:relative;
+    align-items:center;
+    padding:0 30rpx;
+}
+.fgroup:after{
+     content:'';
+     display:block;
+     position:absolute;
+     border-bottom:1px solid #eee;
+     right:0;
+     bottom:0;
+     left:0;
+     transform:scale(.5);
+     transform-origin:0 100%;
+     width:200%;
+}
+.fgroup label{
+    font-size:28rpx;
+    color:#666;
+}
+.fgroup input,
+.fgroup .picker{
+    padding:16px 6px;
+    text-align:right;
+    font-size:28rpx;
+    color:#444;
+    position:relative;
+}
+.fgroup .type{
+    width:60%;
+}
+.fgroup .picker:after{
+    content:'';
+    width:5px;
+    height:5px;
+    border:2px solid #eee;
+    border-left:none;
+    border-bottom:none;
+    transform:rotate(45deg);
+    display:block;
+    margin-left:10rpx;
+    position:absolute;
+    right:0;
+}
+.btnbar {
+    text-align:center;
+    padding:20px 0;
+}
+.btnbar .btn{
+    display:inline-block;
+    width:40%;
+    padding:10px;
+    font-size:36rpx;
+    background:#27CFB1;color:#fff;
+    margin:0 5px;
+}
+.btnbar .btn.prev{
+    background:#eee;color:#888;
+}

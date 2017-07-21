@@ -1,0 +1,69 @@
+<template name="formtemp">
+    <view wx:for="{{formlist}}" class="fgroup" wx:key="s">
+        <label class="label">{{item.label}}</label>
+
+        <!-- input 输入框 -->
+        <view class="type" wx:if="{{item.type == '0'}}">
+            <input placeholder="{{item.placeholder}}" 
+            type="{{item.data.type || 'type'}}" 
+            bindtap="{{item.bindtap}}"
+            maxlength="{{tiem.data.maxlength || '-1'}}"
+            disabled="{{item.data.disabled}}" />
+        </view>
+
+        <!-- picker 选择 -->
+        <view class="type" wx:elif="{{item.type == '1'}}">
+            <picker wx:if="{{item.data.mode == 'selector'}}" 
+            mode="{{item.data.mode}}"
+            value="{{item.data.selected}}"
+            disabled="{{item.data.disabled}}"
+            rang="{{item.data.rang}}">
+                <view class="picker">{{item.data.selected}} </view>
+            </picker>
+            <picker wx:elif="{{item.data.mode == 'multiSelector'}}" 
+            mode="{{item.data.mode}}" 
+            rang="{{item.data.range}}" 
+            value="{{item.data.selected}}" 
+            bindcolumnchange="item.data.bindcolumnchange"
+            bindchange="{{item.data.bindchange}}"  
+            disabled="{{item.data.disabled}}">
+                <view class="picker">{{item.data.selected}}</view>
+            </picker>
+
+            <picker wx:elif="{{item.data.mode == 'date'}}" 
+            mode="{{item.data.mode}}" 
+            value="{{item.data.selected}}"
+            files="{{item.data.files}}" 
+            start="{{item.data.start}}" 
+            end="{{item.data.end}}"  
+            disabled="{{item.data.disabled}}">
+                <view class="picker">{{item.data.selected}}</view>
+            </picker>
+
+            <picker wx:elif="{{item.data.mode == 'region'}}" 
+            mode="{{item.data.mode}}" 
+            value="{{item.data.selected}}"
+            files="{{item.data.files}}" 
+            start="{{item.data.start}}" 
+            end="{{item.data.end}}"  
+            disabled="{{item.data.disabled}}">
+                <view class="picker">{{item.data.selected}}</view>
+            </picker>
+        </view>
+
+        <!-- upfile 图片上传 -->
+        <view class="type" wx:elif="{{item.type == '2'}}">
+            <view class="upfile">
+            </view>
+            <view class="title">
+            {{item.label}}
+            </view>
+        </view>
+
+        <!-- textarea 多行文本 -->
+        <view class="type" wx:elif="{{item.type == '3'}}">
+            <textarea placeholder="{{item.placeholder}}"  />
+        </view>
+
+    </view>
+</template>

@@ -3,10 +3,12 @@ var app = getApp();
 Page({
     data: {
         shopinfo: {
-            shopname: '西少爷肉夹馍北苑路北店',
-            shopimg: '../../pages/images/usimg.jpg',
-            shoplocation: '北京市朝阳区北苑路北',
-            shoptel: "18912312312"
+            shopname: '哲哥小面',
+            shopimg: '../../pages/images/zg.jpg',
+            shoplocation: '北京市大兴区绿地缤纷城地下一层，味多美斜对面',
+            shoptel: "13699286528",
+            businessHours:'09:00-22:00',
+            shopType:'特色小吃'
         },
         recommend: [
             {

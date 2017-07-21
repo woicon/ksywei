@@ -19,7 +19,8 @@
     "pages/logs/logs",
     "pages/interests/interests",
     "pages/comment/comment",
-    "pages/scanorder/scanorder"
+    "pages/scanorder/scanorder",
+    "pages/apply/apply"
   ],
   "window":{
     "backgroundTextStyle":"#444",

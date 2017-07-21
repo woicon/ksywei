@@ -2,32 +2,201 @@
 .container{
     padding-bottom:200rpx;
 }
-.indexlist{padding:0 0;}
-.head-img{height:200px;}
-.head-img image{width:100%;height:200px;}
+
+.shop-head{
+    margin:0 40rpx;
+}
+
+.shop-info{
+    display:flex;
+    flex-wrap:wrap;
+    
+    padding:32rpx 0;
+}
+
+.shop-head .bar{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.shop-head .shop-title{
+    font-size:36rpx;line-height:1.5;
+
+}
+
+.shop-head .shop-type{
+    color:#999;
+    line-height:2;
+}
+
+.shop-head .shop-info{
+    display:flex;
+}
+
+.head-bar{
+    padding:20rpx 0;
+    margin-bottom:10rpx;
+    position:relative;
+}
+.head-bar:after{
+    content:'';
+    transform: scale(0.5);
+    border:1px solid #eee;
+    border-left:none;
+    border-right:none;
+    position:absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+}
+
+.head-bar .contact{
+    display:flex;
+    align-items: center;
+    color:#444;
+}
+.head-bar .contact .icon{
+    font-size:34rpx;
+    padding:14rpx 40rpx;
+}
+
+.head-bar .navigation{
+    border-right:1px solid #eee;
+}
+
+.head-bar-line view{
+    line-height:2.4;
+    color:#666;
+    display:flex;
+    align-items:center;
+    font-size:26rpx;
+}
+.head-bar-line .location{
+    width:220px;
+    line-height:1.6;
+    display:flex;
+    align-items:flex-start;
+}
+.head-bar-line .location .icon{
+    margin-top:6rpx;
+}
+.head-bar-line .time .icon{
+    font-size:22rpx;
+}
+.head-bar-line .icon{
+    margin-right:6rpx;
+}
+
+.shop-head .head-bar{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.shop-head .img{
+    margin-right:15px;
+    position:relative;
+}
+.shop-head .photo{
+    position:absolute;
+    right:0;
+    bottom:5rpx;
+    padding:3px 20px;
+    border-radius:50rpx 0 0 0;
+    background:rgba(0,0,0,.3);
+    color:#fff;
+}
+.shop-head .img image{
+     width:100px;
+     height:70px;
+}
+.shop-head .time{
+    color:#999;
+    line-height:2;
+}
+
+.indexlist{
+    padding:0 0;
+}
+.head-img{
+    height:200px;
+}
+.head-img image{
+    width:100%;
+    height:200px;
+}
+
 .indexad{
   position:relative;
 }
+
 .list-item{
-  display:flex;align-items:center;justify-content:space-between;padding:30rpx 40rpx;position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:30rpx 40rpx;
+  position:relative;
 }
 .list-item:before{
-    content:'';display:block;position:absolute;border-bottom:1px solid #eee;right:0;bottom:0;left:0;transform:scale(.5);transform-origin:0 100%;
-    width:200%;}
-.location{color:#999;margin-top:10rpx;}
+    content:'';
+    display:block;
+    position:absolute;
+    border-bottom:1px solid #eee;
+    right:0;
+    bottom:0;
+    left:0;
+    transform:scale(.5);
+    transform-origin:0 100%;
+    width:200%;
+}
 .list-text{font-size:28rpx;}
 
-.index-grid{display:flex;text-align:center;align-items: center;
-flex-wrap:wrap;
+.index-grid{
+    display:flex;
+    text-align:center;
+    align-items: center;
+    flex-wrap:wrap;
 }
-.index-grid .list-btn{display:none;}
-.index-grid navigator{display:block;padding:0;}
-.index-grid .list-item{width:25%;display:block;padding:30rpx 0 8rpx;}
-.index-grid .list-first{display:block;text-align:center;}
-.index-grid .list-text{font-size:24rpx;margin-top:18rpx;color:#666;}
-.index-grid .list-item .icon{width:44px;height:44px;border-radius:44px;
-box-shadow:0 2px 4px rgba(0,0,0,.1);
-text-align:center;line-height:44px;background:#EA5E00;color:#fff;margin:0 auto 12rpx;font-size:52rpx;}
+
+.index-grid .list-btn{
+    display:none;
+}
+
+.index-grid navigator{
+    display:block;
+    padding:0;
+}
+
+.index-grid .list-item{
+    width:25%;
+    display:block;
+    padding:30rpx 0 8rpx;
+}
+
+.index-grid .list-first{
+    display:block;
+    text-align:center;
+}
+
+.index-grid .list-text{
+    font-size:24rpx;
+    margin-top:18rpx;
+    color:#666;
+}
+
+.index-grid .list-item .icon{
+    width:44px;
+    height:44px;
+    border-radius:44px;
+    text-align:center;
+    line-height:44px;
+    background:#EA5E00;
+    color:#fff;
+    margin:0 auto 12rpx;
+    font-size:52rpx;
+}
+
 .index-grid .list-item:before{border:none;}
 .index-grid .list-item:nth-child(1) .icon{background:#FF7A6B;}
 .index-grid .list-item:nth-child(2) .icon{background:#FFC160;}

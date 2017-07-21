@@ -1,0 +1,23 @@
+<!--pages/apply/apply.wxml-->
+<view class="apply">
+    <view class="apply-step">
+        <view class="step-item {{index == currentStep?'active':''}}" wx:for="{{stepBar}}" wx:key="stepbar"><view class="num">{{index+1}}</view>{{item}}</view>
+    </view>
+    <view class="apply-form">
+        <import src="../../pages/apply/formTemplate.wxml" />
+        <template is="formtemp" data="{{formlist:formData[currentStep],key:'step'+currentStep}}" />
+    </view>
+    <view class="btnbar">
+        <block wx:if="{{currentStep == 0}}">
+            <view class="btn" bindtap="nextStep">下一步</view>
+        </block>
+        <block wx:elif="{{currentStep == 1}}">
+            <view class="btn prev" bindtap="backStep">上一步</view>
+            <view class="btn" bindtap="nextStep">下一步</view>
+        </block>
+        <block wx:elif="{{currentStep == 2}}">
+            <view class="btn prev" bindtap="backStep">上一步</view>
+            <view class="btn" bindtap="submintForm">提交</view>
+        </block>
+    </view>
+</view>

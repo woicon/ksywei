@@ -76,8 +76,15 @@
     display:flex;justify-content: flex-end;align-items:center;
 }
 .line picker:after{
-    content:'';width:5px;height:5px;border:2px solid #eee;border-left:none;border-bottom:none;transform:rotate(45deg);
-    display:block;margin-left:10rpx;
+    content:'';
+    width:5px;
+    height:5px;
+    border:2px solid #eee;
+    border-left:none;
+    border-bottom:none;
+    transform:rotate(45deg);
+    display:block;
+    margin-left:10rpx;
 }
 .blockline textarea{width:100%;font-size:28rpx;line-height:1.6;}
 .blockline .textarea-wrap{

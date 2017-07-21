@@ -4,7 +4,37 @@
 </view>
 <block wx:else>
 <view class="container">
-    <view class="indexad">
+    <view class="shop-head">
+
+        <view class="shop-info">
+            <view class="img">
+                <image src="{{shopinfo.shopimg}}" mode="aspectFill"></image>
+                <view class="photo">共10张</view>
+            </view>
+            <view class="shopname">
+                <view class="shop-title">{{shopinfo.shopname}}</view>
+                <view class="time">营业时间：{{shopinfo.businessHours}}</view>
+                <!-- <text class="icon ico-clock"></text> -->
+            </view>
+        </view>
+
+        <view class="head-bar">
+            <view class="head-bar-line">
+                <view class="location">{{shopinfo.shoplocation}}</view>
+                <!-- <text class="icon ico-local"></text> -->
+                <!-- <view class="time"><text class="icon ico-clock"></text>{{shopinfo.businessHours}}</view> -->
+            </view>
+
+            <view class="contact">
+                <view class="navigation"><view class="icon ico-fav"></view></view>
+                <view class="phone" bindtap="callShop" data-phone="{{shopinfo.shoptel}}"><view class="icon ico-phone"></view></view>
+            </view>
+
+        </view>
+    </view>
+
+
+    <!-- <view class="indexad">
         <view class="head-img">
             <image src="{{shopinfo.shopimg}}" mode="aspectFill"></image>
         </view>
@@ -15,7 +45,7 @@
             </view>
             <view class="phone" bindtap="callShop" data-phone="{{shopinfo.shoptel}}"><view class="icon ico-phone"></view></view>
         </view>
-    </view>
+    </view> -->
     <view class="indexlist index-grid">
         <navigator class="list-item" url="/pages/orders/orders">
             <view class="list-first">
