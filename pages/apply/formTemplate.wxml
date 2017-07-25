@@ -18,7 +18,7 @@
             value="{{item.data.selected}}"
             disabled="{{item.data.disabled}}"
             rang="{{item.data.rang}}">
-                <view class="picker">{{item.data.selected}} </view>
+                <view class="picker">{{item.data.selected}}</view>
             </picker>
             <picker wx:elif="{{item.data.mode == 'multiSelector'}}" 
             mode="{{item.data.mode}}" 
