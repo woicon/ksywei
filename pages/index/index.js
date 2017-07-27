@@ -317,10 +317,12 @@ Page({
     onLoad: function (options) {
         var that = this;
         wx.setNavigationBarTitle({
-            title: '西少爷'
+            title: '哲哥小面'
         });
+        
         //加载tabBar菜单
         app.setTab();
+
         wx.getLocation({
             success: function (res) {
                 var latitude = res.latitude
