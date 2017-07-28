@@ -1,0 +1,11 @@
+<!--pages/giftcard/giftcard.wxml-->
+
+<view class="card">
+    <view class=""></view>
+    <view class="bg"></view>
+</view>
+<view class="title">选择一张卡片送给朋友</view>
+
+<view class="name">
+    
+</view>

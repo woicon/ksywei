@@ -20,7 +20,8 @@
     "pages/interests/interests",
     "pages/comment/comment",
     "pages/scanorder/scanorder",
-    "pages/apply/apply"
+    "pages/apply/apply",
+    "pages/giftcard/giftcard"
   ],
   "window":{
     "backgroundTextStyle":"#444",
