@@ -21,7 +21,8 @@
     "pages/comment/comment",
     "pages/scanorder/scanorder",
     "pages/apply/apply",
-    "pages/giftcard/giftcard"
+    "pages/giftcard/giftcard",
+    "pages/giftget/giftget"
   ],
   "window":{
     "backgroundTextStyle":"#444",

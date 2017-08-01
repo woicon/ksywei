@@ -1,11 +1,32 @@
 <!--pages/giftcard/giftcard.wxml-->
-
-<view class="card">
-    <view class=""></view>
-    <view class="bg"></view>
+<view class="card-head">
+    <block wx:for="{{giftCard}}" wx:key="head">
+        <block wx:if="{{item.coverShow}}">
+            <view class="head-img">
+                <image src="{{item.showCoverImg}}"></image>
+            </view>
+        </block>
+    </block>
 </view>
-<view class="title">选择一张卡片送给朋友</view>
 
-<view class="name">
-    
+<view class="page-title">选择一张礼品卡送给朋友</view>
+<view class="card-list">
+    <view wx:for="{{giftCard}}" wx:key="cardlist" class="card-item" id="{{index}}" bindtap="selectCard">
+        <view class="card-cover">
+            <image src="{{item.themeCover}}"></image>
+        </view>
+        <view class="name">{{item.themeName}}</view>
+    </view>
+</view>
+
+<view class="pop-up">
+    <view class="close" bindtap="closePop"><view class="ico-del"></view></view>
+    <view class="fname">
+    <image src="{{getGiftInfo.userImg}}"></image>{{getGiftInfo.userName}}</view>
+    <view class="card-icon">
+        <view class="icon ico-gift"></view>
+    </view>
+    <view class="uptitle">送您一张礼品卡</view>
+    <view class="card"></view>
+    <view class="button">领取</view>
 </view>
