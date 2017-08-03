@@ -57,14 +57,17 @@ page{
     left:10%;
     right:10%;
     top:20%;
-    bottom:20%;
     background:#fff;
+    padding:30rpx;
 }
 
 .pop-up .close{
     position:absolute;
     right:0;
     top:0;
+}
+.pop-up .close .icon{
+    font-size:40rpx;
 }
 
 .card-icon{
@@ -79,4 +82,21 @@ page{
 .card-icon .icon{
     font-size:32px;
     color:#fff;
+}
+
+.finfo{
+    display:flex;
+    align-items:center;
+}
+.userimg{
+    width:80rpx;
+    height:80rpx;
+    border-radius:400px;
+}
+
+.block-btn{
+
+}
+.getbutton{
+
 }

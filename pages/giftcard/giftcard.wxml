@@ -10,6 +10,7 @@
 </view>
 
 <view class="page-title">选择一张礼品卡送给朋友</view>
+
 <view class="card-list">
     <view wx:for="{{giftCard}}" wx:key="cardlist" class="card-item" id="{{index}}" bindtap="selectCard">
         <view class="card-cover">
@@ -21,12 +22,12 @@
 
 <view class="pop-up">
     <view class="close" bindtap="closePop"><view class="ico-del"></view></view>
-    <view class="fname">
-    <image src="{{getGiftInfo.userImg}}"></image>{{getGiftInfo.userName}}</view>
+    <view class="finfo">
+    <image src="{{getGiftInfo.userImg}}" class="userimg"></image>{{getGiftInfo.userName}}</view>
+    <view class="uptitle">送您一张礼品卡</view>
     <view class="card-icon">
         <view class="icon ico-gift"></view>
     </view>
-    <view class="uptitle">送您一张礼品卡</view>
     <view class="card"></view>
-    <view class="button">领取</view>
+    <view class="block-btn">领取</view>
 </view>

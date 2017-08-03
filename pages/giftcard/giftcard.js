@@ -8,7 +8,7 @@ Page({
       giftCard: giftData,
       getGiftInfo:{
           userName:'王程',
-          userImg:'../../pages/images/giftimg.jpg',
+          userImg:'../../pages/images/gifimg.jpg',
           cardDetail:{
               cardLimit:'666',
               cardTitle: 'you are amazing',
@@ -22,8 +22,11 @@ Page({
 
   },
 
-  selectCard:function(){
-    
+  selectCard:function(e){
+    console.log(e);
+    wx.navigateTo({
+        url: '/pages/giftget/giftget?id='+e.currentTarget.id,
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -35,7 +38,7 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 生命周期函数--监听页面初次渲染完成8
    */
   onReady: function () {
   

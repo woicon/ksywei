@@ -1,194 +1,203 @@
 module.exports = [
     {
-        themeName: '@送给好朋友',
+        themeName: '@生日快乐',
         themeQuota: ['50', '100', '200', '400', '800', '1000', '1500'],
-        themeCover: '../../cardImg/cover01.jpg',
+        themeCover: '../../pages/images/cover01.jpg',
         coverShow:true,
-        showCoverImg:'../../cardImg/showcover.jpg',
+        showCoverImg:'../../pages/images/showcover.jpg',
         themteStyle: [
             {
                 cardTitle: 'you are amazing',
-                cardImg: '../../cardImg/card01.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card02.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card03.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card04.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card05.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card06.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
         ]
     },
     {
-        themeName: '@送给好朋友',
+        themeName: '@国庆节快乐',
         themeQuota: ['50', '100', '200', '400', '800', '1000', '1500'],
-        themeCover: '../../cardImg/cover02.jpg',
+        themeCover: '../../pages/images/cover01.jpg',
+        coverShow: false,
+        showCoverImg:'',
         themteStyle: [
             {
                 cardTitle: 'you are amazing',
-                cardImg: '../../cardImg/card01.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card02.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card03.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card04.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card05.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card06.jpg',
-            },
-        ]
-    },
-
-    {
-        themeName: '@送给好朋友',
-        themeQuota: ['50', '100', '200', '400', '800', '1000', '1500'],
-        themeCover: '../../cardImg/cover03.jpg',
-        themteStyle: [
-            {
-                cardTitle: 'you are amazing',
-                cardImg: '../../cardImg/card01.jpg',
-            },
-            {
-                cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card02.jpg',
-            },
-            {
-                cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card03.jpg',
-            },
-            {
-                cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card04.jpg',
-            },
-            {
-                cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card05.jpg',
-            },
-            {
-                cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card06.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
         ]
     },
     {
-        themeName: '@送给好朋友',
+        themeName: '@祝福你',
         themeQuota: ['50', '100', '200', '400', '800', '1000', '1500'],
-        themeCover: '../../cardImg/cover04.jpg',
+        themeCover: '../../pages/images/cover01.jpg',
+        coverShow: false,
+        showCoverImg: '',
         themteStyle: [
             {
                 cardTitle: 'you are amazing',
-                cardImg: '../../cardImg/card01.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card02.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card03.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card04.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card05.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card06.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
         ]
     },
     {
-        themeName: '@送给好朋友',
+        themeName: '@谢谢您',
         themeQuota: ['50', '100', '200', '400', '800', '1000', '1500'],
-        themeCover: '../../cardImg/cover05.jpg',
+        themeCover: '../../pages/images/cover01.jpg',
+        coverShow: false,
+        showCoverImg: '',
         themteStyle: [
             {
                 cardTitle: 'you are amazing',
-                cardImg: '../../cardImg/card01.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card02.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card03.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card04.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card05.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card06.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
         ]
     },
-
     {
-        themeName: '@送给好朋友',
+        themeName: '@新春快乐',
         themeQuota: ['50', '100', '200', '400', '800', '1000', '1500'],
-        themeCover: '../../cardImg/cover06.jpg',
+        themeCover: '../../pages/images/cover01.jpg',
+        coverShow: false,
+        showCoverImg: '',
         themteStyle: [
             {
                 cardTitle: 'you are amazing',
-                cardImg: '../../cardImg/card01.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card02.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card03.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card04.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card05.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
             {
                 cardTitle: 'Nice to meet you',
-                cardImg: '../../cardImg/card06.jpg',
+                cardImg: '../../pages/images/card08.jpg',
             },
         ]
     },
+    {
+        themeName: '@送您一份心意',
+        themeQuota: ['50', '100', '200', '400', '800', '1000', '1500'],
+        themeCover: '../../pages/images/cover01.jpg',
+        coverShow: false,
+        showCoverImg: '',
+        themteStyle: [
+            {
+                cardTitle: 'you are amazing',
+                cardImg: '../../pages/images/card08.jpg',
+            },
+            {
+                cardTitle: 'Nice to meet you',
+                cardImg: '../../pages/images/card08.jpg',
+            },
+            {
+                cardTitle: 'Nice to meet you',
+                cardImg: '../../pages/images/card08.jpg',
+            },
+            {
+                cardTitle: 'Nice to meet you',
+                cardImg: '../../pages/images/card08.jpg',
+            },
+            {
+                cardTitle: 'Nice to meet you',
+                cardImg: '../../pages/images/card08.jpg',
+            },
+            {
+                cardTitle: 'Nice to meet you',
+                cardImg: '../../pages/images/card08.jpg',
+            },
+        ]
+    },
+    
 
 
 ]

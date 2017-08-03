@@ -57,20 +57,20 @@ Page({
         comment: [{
             userName: "JSON Broke",
             stars: 4,
-            userImage: '../../pages/images/userimg.jpg',
+            userImage: '../../pages/images/gifimg.jpg',
             time: '2017-12-12 9:00',
             content: '东四四条胡同里，走50米左右就能看到了。奔着他家紫姜江团来的，看着就好吃。一进门，古香古色的，很有北京味道。每个椅子上都有一个坐垫，很贴心。店里有一个大鱼缸，里面有两......'
         }, {
             userName: "JSON Broke",
             stars: 4,
             time: '2017-12-12 9:00',
-            userImage: '../../pages/images/userimg.jpg',
+            userImage: '../../pages/images/gifimg.jpg',
             content: '东四四条胡同里，走50米左右就能看到了。奔着他家紫姜江团来的，看着就好吃。一进门，古香古色的，很有北京味道。每个椅子上都有一个坐垫，很贴心。店里有一个大鱼缸，里面有两......'
         }, {
             userName: "JSON Broke",
             stars: 4,
             time: '2017-12-12 9:00',
-            userImage: '../../pages/images/userimg.jpg',
+            userImage: '../../pages/images/gifimg.jpg',
             content: '东四四条胡同里，走50米左右就能看到了。奔着他家紫姜江团来的，看着就好吃。一进门，古香古色的，很有北京味道。每个椅子上都有一个坐垫，很贴心。店里有一个大鱼缸，里面有两......'
         }],
         couponlist: {
