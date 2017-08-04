@@ -218,7 +218,7 @@ view, text, navigator {
     color: #fff;
 }
 
-.coupontype {
+.type {
     font-size:32rpx;
     line-height:1.8;
     color: #fff;
