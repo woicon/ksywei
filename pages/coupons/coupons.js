@@ -311,6 +311,16 @@ Page({
     wx.setNavigationBarTitle({
       title: '我的卡券'
     });
+    const requestTask = wx.request({
+        url: app.apiServer.host +'couponList.htm',
+        data:{
+            json: app.apiServer.parmas,
+        },
+        success: function (res) {
+            console.log(res.data)
+        }
+    });
+
 
     // //设置优惠券显示隐藏状态
     // var _couponStat = {};

@@ -32,6 +32,8 @@ Page({
             return Number(prev) + Number(cur);
         });
 
+        
+
         var _totalPrice = that.data.totalPrice;
         _totalPrice[_currId] = Number(that.data.giftData[that.data.currId].themeQuota[_currId]) * _numberList[_currId];
 

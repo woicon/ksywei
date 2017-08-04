@@ -529,67 +529,67 @@ content:'';display:block;
 
 .ico-add:before {
   content: "\e96b";
-  color: #626262;
+  
 }
 .ico-adds:before {
   content: "\e96c";
-  color: #626262;
+  
 }
 .ico-min:before {
   content: "\e96d";
-  color: #626262;
+  
 }
 .ico-mins:before {
   content: "\e96e";
-  color: #626262;
+  
 }
 .ico-clock:before {
   content: "\e92d";
-  color: #626262;
+  
 }
 .ico-diamond:before {
   content: "\e964";
-  color: #626262;
+  
 }
 .ico-errores:before {
   content: "\e965";
-  color: #626262;
+  
 }
 .ico-errors:before {
   content: "\e966";
-  color: #626262;
+  
 }
 .ico-gift:before {
   content: "\e967";
-  color: #626262;
+  
 }
 .ico-levels:before {
   content: "\e968";
-  color: #626262;
+  
 }
 .ico-moneyr:before {
   content: "\e969";
-  color: #626262;
+  
 }
 .ico-oks:before {
   content: "\e96a";
-  color: #626262;
+  
 }
 .ico-fav:before {
   content: "\e900";
-  color: #626262;
+  
 }
 .ico-local:before {
   content: "\e901";
-  color: #626262;
+  
 }
 .ico-phone:before {
   content: "\e902";
-  color: #626262;
+  
 }
 .ico-ok:before {
   content: "\e903";
-  color: #626262;
+  
 }
 .ico-alpay:before {
   content: "\e904";
@@ -697,7 +697,7 @@ content:'';display:block;
 }
 .ico-del:before {
   content: "\e91e";
-  color: #626262;
+  
 }
 .ico-delico:before {
   content: "\e91f";
@@ -745,7 +745,7 @@ content:'';display:block;
 }
 .ico-help:before {
   content: "\e92a";
-  color: #626262;
+  
 }
 .ico-home-s:before {
   content: "\e92b";

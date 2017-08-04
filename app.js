@@ -3,11 +3,43 @@ App({
   onLaunch: function () {
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-  },
+    logs.unshift(Date.now());
+    wx.setStorageSync('logs', logs);
 
-  
+    wx.login({
+        success: function (res) {
+            if (res.code) {
+                //发起网络请求
+                // wx.request({
+                //     url: 'https://test.com/onLogin',
+                //     data: {
+                //         code: res.code
+                //     }
+                // })
+            } else {
+                console.log('获取用户登录态失败！' + res.errMsg);
+            }
+        }
+    });
+
+
+  },
+  apiServer:{
+    //   host:'https://club.liantuobank.com/api/',
+      host: 'https://open.liantuobank.cn/api/',
+    //   parmas:{
+    //     merchantId: '10265244',
+    //     superMerchantId: '10265239',
+    //     openId: 'od-est3bYmVySSuaJPitZrL3pr6g',
+    //     memberId: '266171'
+    //   },
+      parmas:{
+          openId: 'od-est3bYmVySSuaJPitZrL3pr6g',
+          memberId: '62166',
+          superMerchantId: '10104677',
+          merchantId: '10104679',
+      }
+  },
   getUserInfo: function (cb) {
     var that = this
     if(this.globalData.userInfo){
