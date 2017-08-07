@@ -6,10 +6,10 @@ page{
     margin:10% 4%;
     padding:30rpx;
     border-radius:8rpx;
-    animation:easyin .5s .2s ease-in both;
+   /* // animation:easyin .5s .2s ease-in both; */
 }
 .coupon-infos{
-    margin:40rpx 0;
+    margin:40rpx 0 0;
     border-bottom:1px dashed #eee;
     padding-bottom:30rpx;
 }
@@ -38,27 +38,32 @@ page{
 .coupon-name{
     font-size:36rpx;margin:30rpx 0;text-align:center;
 }
-.ewm-img{
-    height:400rpx;
-}
-.ewm-img image{
-    width:100%;
-    height:100%;
+.ewm-img image,
+.ewm-img canvas{
+    margin:0 auto;
 }
 .coupons-logo{
-    width:60rpx;
-    height:60rpx;
+    width:120rpx;
+    height:120rpx;
     margin:0 auto;
-    margin-top:-60rpx;
-    border-radius:90rpx;
+    margin-top:-100rpx;
+    border-radius:920rpx;
     overflow:hidden;
 }
 .coupons-logo image{
     width:100%;
     height:100%;
 }
-.rqcode{text-align:center;margin:30rpx 0;}
-.couponno{line-height:2;color:#666;text-align:center;}
+.rqcode{
+    text-align:center;
+    margin:30rpx 0;
+}
+.couponno{
+    line-height:2;
+    color:#666;
+    text-align:center;
+    margin-top:-50rpx;
+}
 .rqcode-img{
     height:90rpx;width:100%;
 }

@@ -7,27 +7,19 @@
             toggle="false" 
             class="couponsCard {{couponStat[item.couponNo]?'open':''}}" 
             data-id="{{index}}" 
-            id="{{item.cardTemplate.couponNo}}" 
+            id="{{item.couponNo}}"
             style="background:{{item.cardTemplate.color}}" 
             bindtap="couponDescription">
-            
             <view wx:if="{{item.cardTemplate.type == 1}}" class="coupons-value"> {{item.cardTemplate.discount}}<text>折</text></view>
             <view wx:else class="coupons-value">{{item.cardTemplate.reduceCost}}<text>元</text></view>
             <view class="couponsinfo">
-            <view class="type"> {{item.cardTemplate.couponName}}</view>
+                <view class="type"> {{item.cardTemplate.title}}</view>
                 <view class="time">有效期至：{{item.cardTemplate.endTime}}</view>
                 <view class="coupondescription" data-open="false">
                     <view class="couponname">{{item.cardTemplate.couponName}}</view>
-
-                    <view class="type" wx:if="{{item.cardTemplate.type==0}}">代金券</view>
-                    <view class="type" wx:elif="{{item.cardTemplate.type==1}}">折扣券</view>
-                    <view class="type" wx:elif="{{item.cardTemplate.type==2}}">兑换券</view>
-                    <view class="type" wx:elif="{{item.cardTemplate.type==3}}">优惠券</view>
-                    <view class="type" wx:elif="{{item.cardTemplate.type==4}}">团购券</view>
-                    <view class="type" wx:elif="{{item.cardTemplate.type==5}}">单品代金券</view>
-                    <view class="type" wx:elif="{{item.cardTemplate.type==6}}">会员卡</view>
-                    <view class="type" wx:elif="{{item.cardTemplate.type==7}}">单品折扣</view>
-
+                    <block wx:for="{{couponType}}" wx:for-item ="sItem" wx:for-index = "sindex" wx:key="types">
+                       <view class="type" wx:if="{{item.cardTemplate.type == sindex}}">{{sItem}}</view> 
+                    </block>
                     <view class="notice">{{item.cardTemplate.notice}}</view>
                     <view class="description">{{item.cardTemplate.description}}</view>
                     <view class="servicePhone" wx:if="{{item.cardTemplate.servicePhone}}">客服电话：{{item.cardTemplate.servicePhone}}</view>
@@ -35,7 +27,6 @@
             </view>
         </view>
     </block>
-
     <!-- 失效的优惠券列表 -->
     <block wx:elif="{{status==3 && item.couponStatus != 1 && item.couponStatus != 0}}">
         <view data-couponsNo="{{item.couponNo}}}" 
@@ -49,10 +40,9 @@
             <view wx:if="{{item.cardTemplate.type == 1}}" class="coupons-value"> {{item.cardTemplate.discount}}<text>折</text></view>
             <view wx:else class="coupons-value">{{item.cardTemplate.reduceCost}}<text>元</text></view>
             <view class="couponsinfo">
-            <view class="type"> {{item.cardTemplate.couponName}}</view>
+            <view class="type"> {{item.cardTemplate.title}}</view>
                 <view class="time">有效期至：{{item.cardTemplate.endTime}}</view>
             </view>
-
             <block wx:for="{{couponStatus}}" wx:for-item="sitem">
                 <block wx:if="{{index == item.cardTemplate.couponStatus}}">
                     <view class="tag"><text>{{sitem}}</text></view>

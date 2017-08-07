@@ -27,25 +27,18 @@ Page({
           failure: false
       });   
   },
-
   //查看优惠券详情
   couponDescription:function(e){
-    //   var __couponStat = this.data.couponStat;
-    //   console.log(e);
-   
-    //   var cstat = __couponStat[e.currentTarget.id];
-    //   cstat = !cstat?true:false;
-    //   __couponStat[e.currentTarget.id] = cstat;
-    //   this.setData({
-    //     couponStat: __couponStat
-    //   });
-
     wx.navigateTo({
-        url: '/pages/couponsdetail/couponsdetail',
+        url: '/pages/couponsdetail/couponsdetail?id=' + e.currentTarget.id,
     })
   },
 
   onLoad: function (options) {
+    console.log('433333333load');
+    wx.showLoading({
+        title: '加载中',
+    })
     var that = this;
     var elmStat = {};
     app.setTab();
@@ -53,19 +46,35 @@ Page({
       title: '我的卡券'
     });
 
-    wx.request({
-        url: app.apiServer.host +'couponList.htm',
-        data:{
-            json: app.apiServer.parmas,
-        },
+    wx.getStorage({
+        key: 'COUPONS',
         success: function (res) {
-            console.log(res.data);
-
+            console.log(res);
             that.setData({
                 couponlist: res.data
             });
+        },
+        fail:function(){
+            wx.request({
+                url: app.apiServer.host + 'couponList.htm',
+                data: {
+                    json: app.apiServer.parmas,
+                },
+                success: function (res) {
+                    console.log(res.data);
+                    wx.setStorage({
+                        key: "COUPONS",
+                        data: res.data
+                    });
+                    that.setData({
+                        couponlist: res.data
+                    });
+                }
+            });
         }
-    });
+    })
+    
+
 
     // //设置优惠券显示隐藏状态
     // var _couponStat = {};
@@ -89,10 +98,10 @@ Page({
   },
 
   onReady: function () {
-
+        wx.hideLoading();
   },
   onShow: function () {
-
+      console.log('2222');
   },
   onHide: function () {
 

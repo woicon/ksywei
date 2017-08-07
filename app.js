@@ -22,7 +22,7 @@ App({
                             'content-type': 'application/json'
                         },
                         success: function (openIdRes) {
-                            console.info("登录成功返回的openId：" + openIdRes.data.openid);
+                            console.log("登录成功返回的openId：" + openIdRes.data.openid);
                             console.log(that.weChatUserInfo);
                             that.weChatUserInfo.openId = openIdRes.data.openid;
                             // 判断openId是否获取成功
@@ -70,8 +70,8 @@ App({
         //     memberId: '266171'
         //   },
         parmas: {
-            openId: this.weChatUserInfo.openId,
-            //   openId: 'od-est14Vpd4tUnOuy6HarvoubGw',
+            // openId: this.weChatUserInfo.openId,
+               openId: 'od-est14Vpd4tUnOuy6HarvoubGw',
             //   memberId: '62166',
             //   superMerchantId: '10104677',
             //   merchantId: '10104679',
