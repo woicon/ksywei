@@ -1,5 +1,4 @@
 <!-- empty.wxml -->
-
 <template name="empty">
  <view class="empty">
     <view class="icon {{icon}}"></view>

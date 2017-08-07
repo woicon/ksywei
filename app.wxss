@@ -1,5 +1,4 @@
 /**app.wxss**/
-
 .show {
     display: block;
 }
@@ -769,7 +768,6 @@ content:'';display:block;
 }
 .ico-logo:before {
   content: "\e931";
-  color: #faa640;
 }
 .ico-mall-s:before {
   content: "\e932"
