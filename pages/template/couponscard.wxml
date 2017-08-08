@@ -10,7 +10,7 @@
             id="{{item.couponNo}}"
             style="background:{{item.cardTemplate.color}}" 
             bindtap="couponDescription">
-            <view wx:if="{{item.cardTemplate.type == 1}}" class="coupons-value"> {{item.cardTemplate.discount}}<text>折</text></view>
+            <view wx:if="{{item.cardTemplate.type == 1 || item.cardTemplate.type == 7}}" class="coupons-value"> {{item.cardTemplate.discount}}<text>折</text></view>
             <view wx:else class="coupons-value">{{item.cardTemplate.reduceCost}}<text>元</text></view>
             <view class="couponsinfo">
                 <view class="type"> {{item.cardTemplate.title}}</view>

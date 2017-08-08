@@ -144,9 +144,9 @@ view, text, navigator {
     position: relative;
     padding:10rpx 32rpx;
     padding-left: 0;
-    animation:sliderInUp .5s .5s ease-in both;
+    /* animation:sliderInUp .5s .5s ease-in both; */
 }
-.couponsCard:nth-child(1){
+/* .couponsCard:nth-child(1){
     animation:sliderInUp .5s .1s ease-in;
 }
 .couponsCard:nth-child(2){
@@ -161,7 +161,7 @@ view, text, navigator {
 
 .couponsCard:nth-child(5){
     animation:sliderInUp .5s .5s ease-in;
-}
+} */
 
 .couponsCard:after, .couponsCard:before {
     content: '';
@@ -192,7 +192,7 @@ view, text, navigator {
     border-right: 1px dashed rgba(255, 255, 255, 0.5);
     text-align: center;
     display:flex;
-    font-size:68rpx;
+    font-size:40rpx;
     color: #fff;
     align-items:center;
     justify-content:center;
@@ -204,12 +204,13 @@ view, text, navigator {
 }
 
 .couponsinfo {
-    padding-left: 30rpx;
+    padding: 20rpx 0 20rpx 30rpx;
 }
 
 .couponsinfo .time {
     color: #fff;
     font-size: 22rpx;
+    line-height:2;
 }
 
 .couponname {
@@ -217,9 +218,9 @@ view, text, navigator {
     color: #fff;
 }
 
-.type {
-    font-size:32rpx;
-    line-height:1.8;
+.couponsinfo .type {
+    font-size:30rpx;
+    line-height:2;
     color: #fff;
 }
 .coupondescription {

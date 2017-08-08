@@ -55,6 +55,9 @@ Page({
             });
         },
         fail:function(){
+            var parmas = {
+                openId: app.weChatUserInfo.openId
+            }
             wx.request({
                 url: app.apiServer.host + 'couponList.htm',
                 data: {
