@@ -38,10 +38,10 @@ Page({
             frontColor: '#ffffff',
             backgroundColor: app.globalData.color,
         })
-        app.getUserInfo(function (userInfo) {
-            that.setData({
-                userInfo: userInfo,
-            });
+
+        that.setData({
+            userInfo: app.weChatUserInfo.userInfo,
         });
+
     }
 });

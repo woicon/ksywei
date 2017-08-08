@@ -73,8 +73,8 @@ App({
             // openId: this.weChatUserInfo.openId,
                openId: 'od-est14Vpd4tUnOuy6HarvoubGw',
             //   memberId: '62166',
-            //   superMerchantId: '10104677',
-            //   merchantId: '10104679',
+            //    superMerchantId: '10104677',
+            //    merchantId: '10104677',
         }
     },
     setTab: function () {

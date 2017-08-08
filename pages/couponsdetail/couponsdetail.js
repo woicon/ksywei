@@ -71,7 +71,6 @@ Page({
             json:parmas,
         },
         success: function (res) {
-            console.log(res.data);
             wx.setNavigationBarColor({
                 frontColor: '#ffffff',
                 backgroundColor: res.data.coupon.cardTemplate.color,
@@ -81,20 +80,13 @@ Page({
             })
             var _businessService = res.data.coupon.cardTemplate.businessService;
             var businessService = _businessService.split(',');
-            var qrcode = options.id || "909904101945614509";
-            var size = that.setCanvasSize();
-            //绘制二维码与条形码
-            that.createQrCode(qrcode, "qrcodecav", size.w, size.h);
-            that.createBarCode(qrcode, "barcodecav", size.w, 60);
-
             that.setData({
                 coupon: res.data.coupon.cardTemplate,
                 color: res.data.coupon.cardTemplate.color,
                 couponNo: res.data.coupon.couponNo,
                 service: businessService,
             });
-
-            
+            that.setCanvasSize();
         }
     });
     
@@ -112,7 +104,17 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log('11111111111111111')
+        var that = this;
+        console.log('11111111111111111');
+        that.setData({
+            pageloading: true
+        });
+
+        var qrcode = that.data.couoponNo || "909904101945614509";
+        var size = that.setCanvasSize();
+        //绘制二维码与条形码
+        that.createQrCode(qrcode, "qrcodecav", size.w, size.h);
+        that.createBarCode(qrcode, "barcodecav", size.w, 60);
   },
 
   /**
@@ -120,10 +122,6 @@ Page({
    */
   onShow: function () {
       console.log('2222222222222222222')
-      var that = this;
-      that.setData({
-          pageloading:true
-      });
   },
 
   /**

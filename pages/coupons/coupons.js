@@ -1,5 +1,6 @@
 // pages/coupons/coupons.js
 var app = getApp();
+var rgba = require('../../utils/common.js');
 Page({
   data: {
       winWidth: 0,
@@ -22,6 +23,7 @@ Page({
         failure:true
     });
   },
+
   effectiveCoupons:function(){
       this.setData({
           failure: false
@@ -35,7 +37,6 @@ Page({
   },
 
   onLoad: function (options) {
-    console.log('433333333load');
     wx.showLoading({
         title: '加载中',
     })
@@ -65,13 +66,22 @@ Page({
                 },
                 success: function (res) {
                     console.log(res.data);
+
                     wx.setStorage({
                         key: "COUPONS",
                         data: res.data
                     });
+                    // res.data.items.cardTemplate.color;
+                    var colorList = [], datas = res.data.items;
+                    for (var i in datas){
+                        let colors = datas[i].cardTemplate.color
+                        colorList.push(colors.colorRgb());
+                    }
                     that.setData({
-                        couponlist: res.data
+                        couponlist: res.data,
+                        colorList: colorList
                     });
+                    console.log(that.data);
                 }
             });
         }
