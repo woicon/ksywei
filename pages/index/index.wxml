@@ -79,7 +79,7 @@
             </view>
             <view class="list-btn">买单</view>
         </navigator>
-        <navigator class="list-item" url="/pages/pay/pay">
+        <navigator class="list-item" url="/pages/giftcard/giftcard">
             <view class="list-first">
                 <view class="icon ico-gift"></view>
                 <text class="list-text">礼品卡</text>

@@ -1,0 +1,38 @@
+<!--pages/giftget/giftget.wxml-->
+<view class="sendcard">
+    <block wx:for="{{giftData}}" wx:key="getcard">
+        <block wx:if="{{index==currId}}">
+            <view class="card-head">
+                <image src="{{item.themteStyle[styleId].cardImg || item.themeCover }}"></image>
+            </view>
+            <view class="pagetitle">选择一张卡片风格</view>
+            <view class="theme">
+                <block wx:for="{{item.themteStyle}}" wx:for-item="itm" wx:key="themestyle" wx:for-index="_index">
+                    <view class="theme-item {{styleStat[_index]?'active':''}}"  id="{{_index}}" bindtap="selectStyle">
+                        <view class="theme-img">
+                            <image src="{{itm.cardImg}}"></image>
+                        </view>
+                        <!-- <view class="title">{{itm.cardTitle}}</view> -->
+                    </view>
+                </block>
+            </view>
+            <view class="pagetitle">选择礼品面额</view>
+            <view class="topup">
+                <view class="value-item" wx:for="{{item.themeQuota}}" wx:for-item="_item" wx:for-index="_index" wx:key="valuelist">
+                    <view class="value">{{_item}}</view>
+                    <view class="cart" data-id="{{_index}}" bindtap="cartNumber" data-total='{{numberList[_index]||0}}'>
+                        <view class="min ico-min {{numberList[_index] == 0 ? 'hide' : ''}}" data-id="min"></view>
+                        <view class="cartvalue {{numberList[_index] == 0 ? 'hide' : ''}}" data-value='cartNumber'>{{numberList[_index]||0}}</view>
+                        <view class="add ico-add" data-id="add"></view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </block>
+
+    <view class="total">
+        <view class="total-bar {{total == '0' ? '' :'show'}}"> 共 {{total}}份  <view class="total-price">¥<text>{{allPrice}}</text></view></view>
+        <view class="block-btn buycard">购买并赠送</view>
+    </view>
+
+</view>
