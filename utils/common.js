@@ -14,7 +14,7 @@ String.prototype.colorRgb = function () {
         for (var i = 1; i < 7; i += 2) {
             sColorChange.push(parseInt("0x" + sColor.slice(i, i + 2)));
         }
-        return "RGB(" + sColorChange.join(",") + ")";
+        return "rgba(" + sColorChange.join(",") + ",.5)";
     } else {
         return sColor;
     }

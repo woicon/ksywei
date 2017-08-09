@@ -35,70 +35,63 @@ Page({
         url: '/pages/couponsdetail/couponsdetail?id=' + e.currentTarget.id,
     })
   },
-
   onLoad: function (options) {
+    var that = this;
     wx.showLoading({
         title: '加载中',
-    })
-    var that = this;
-    var elmStat = {};
-    app.setTab();
-    wx.setNavigationBarTitle({
-      title: '我的卡券'
     });
-
+    wx.setNavigationBarTitle({
+        title: '我的卡券'
+    });
+    var elmStat = {};
+    var couponList ;
+    app.setTab();
     wx.getStorage({
         key: 'COUPONS',
         success: function (res) {
-            console.log(res);
-            that.setData({
-                couponlist: res.data
-            });
+            couponList = res.data;
+            console.log(couponList);
         },
         fail:function(){
-            var parmas = {
-                openId: app.weChatUserInfo.openId
-            }
+            // var parmas = {
+            //     openId:app.weChatUserInfo.openId
+            // }
             wx.request({
                 url: app.apiServer.host + 'couponList.htm',
                 data: {
                     json: app.apiServer.parmas,
                 },
                 success: function (res) {
-                    console.log(res.data);
-
                     wx.setStorage({
                         key: "COUPONS",
                         data: res.data
                     });
-                    // res.data.items.cardTemplate.color;
-                    var colorList = [], datas = res.data.items;
-                    for (var i in datas){
-                        let colors = datas[i].cardTemplate.color
-                        colorList.push(colors.colorRgb());
-                    }
-                    that.setData({
-                        couponlist: res.data,
-                        colorList: colorList
-                    });
-                    console.log(that.data);
+                    couponList = res.data;
                 }
             });
         }
-    })
-    
-
-
+    });
+    console.log(couponList.items);
+     var colorList = [];
+    //     colorData = couponList.items;
+    // for (let i in colorData) {
+    //     let colors = colorData[i].cardTemplate.color;
+    //     colorList.push(colors.colorRgb());
+    // }
+    that.setData({
+        couponList: couponList,
+        colorList: colorList
+    });
+    console.log(that.data);
     // //设置优惠券显示隐藏状态
     // var _couponStat = {};
     // var couponsitm = this.data.couponlist.coupons;
     // for (var i in couponsitm){
     //  // _couponStat[e.currentTarget.id] = false;
-    // }
+    // }=
     // this.setData({
     //     couponStat: _couponStat
     // });
-
     //获取系统信息 
     wx.getSystemInfo({
         success: function (res) {
