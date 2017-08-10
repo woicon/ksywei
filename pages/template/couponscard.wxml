@@ -10,7 +10,10 @@
             id="{{item.couponNo}}"
             style="background-image: linear-gradient(-180deg, {{colorList[index]}} 0%, {{item.cardTemplate.color}} 100%)"
             bindtap="couponDescription">
-            <view wx:if="{{item.cardTemplate.type == 1 || item.cardTemplate.type == 7}}" class="coupons-value"> {{item.cardTemplate.discount}}<text>折</text></view>
+            <view wx:if="{{item.cardTemplate.type == 1 || item.cardTemplate.type == 7}}" class="coupons-value"> 
+                {{item.cardTemplate.discount}}
+                <text>折</text>
+            </view>
             <view wx:else class="coupons-value">{{item.cardTemplate.reduceCost}}<text>元</text></view>
             <view class="couponsinfo">
                 <view class="type"> {{item.cardTemplate.title}}</view>
@@ -52,19 +55,37 @@
     </block>
 
     <!-- 待领取的优惠券列表 -->
-    <block wx:elif="{{status==2 && item.cardTemplate.couponStatus == 0}}">
-        <view class="couponsCard {{coupstat[event.currentTarget.dataset.open]?'oepn':'close'}}" 
-        data-open="{{event.currentTarget.id}}" id="{{item.cardTemplate.couponNo}}" 
-        style="background:{{item.cardTemplate.color}}" 
+    <block wx:elif="{{ status == 2}}">
+        <view 
+        class="couponsCard" 
+        data-open="{{event.currentTarget.id}}" 
+        id="{{item.cardTemplateId}}" 
+        style="background:{{item.color||'#1cc16f'}}" 
         bindtap="couponDescription">
-            <view wx:if="{{item.cardTemplate.type == 1}}" class="coupons-value"> {{item.cardTemplate.discount}}<text>折</text></view>
-            <view wx:else class="coupons-value">{{item.cardTemplate.reduceCost}}<text>¥</text></view>
+
+            <view wx:if="{{item.type == 1 || item.type == 7}}" class="coupons-value"> 
+                {{item.discount}}
+                <text>折</text>
+            </view>
+            <view wx:else class="coupons-value">{{item.reduceCost}}<text>元</text></view>
 
             <view class="couponsinfo">
-                <view class="type">{{item.cardTemplate.couponName}}</view>
-                <view class="time">{{item.cardTemplate.endTime}}</view>
-                <view class="status" class="couponfav" bindtap="obtainCoupon">领取</view>
+                <view class="type">{{item.title}}</view>
+                <view class="time">{{item.subTitle}} 
+                    <block wx:if="{{item.leastCost != 0}}">
+                        ，满{{item.leastCost}}元使用
+                    </block>
+                </view>
+                <view wx:if="{{!item.receiveStatus}}" class="couponfav" id="{{item.cardTemplateId}}" bindtap="getCoupon">领取</view>
+                <view wx:else class="status">
+                    <block wx:for="{{receiveStatus}}" wx:key="receiveStatus" wx:for-item = "_item" wx:for-index ="_index">
+                        <block wx:if="{{item.receiveStatus == _index}}">
+                            <text style="color:{{item.color}}">{{_item}}</text>
+                        </block>
+                    </block>
+                </view>
             </view>
+
         </view>
     </block>
 </block>

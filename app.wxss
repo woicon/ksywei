@@ -580,6 +580,46 @@ view, text, navigator {
     font-size: 22rpx;
     line-height:2;
 }
+.couponsinfo .status{
+    position:absolute;
+    right:10px;
+    top:10px;
+    width:110rpx;
+    height:110rpx;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:.5;
+}
+.couponsinfo text{
+    padding:8rpx 0;
+    background:#fff;
+    color:#555;
+    display:block;
+    text-align:center;
+    width:116rpx;
+    border-radius:8rpx;
+    position:relative;
+    font-size:24rpx;
+    z-index:2;
+}
+.couponsinfo .status:before,
+.couponsinfo .status:after{
+    content:'';
+    display:block;
+    border:1px dotted #fff;
+    border-radius:90px;
+    box-sizing:border-box;
+    position:absolute;
+    left:16rpx;right:16rpx;top:16rpx;bottom:16rpx;
+}
+.couponsinfo .status:after{
+    left:10rpx !important;
+    right:10rpx !important;
+    top:10rpx !important;
+    bottom:10rpx !important;
+    border:1px solid #fff;
+}   
 
 .couponname {
     font-size: 28rpx;

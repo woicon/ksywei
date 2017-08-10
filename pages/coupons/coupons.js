@@ -75,18 +75,20 @@ Page({
           title: '我的卡券'
       });
       app.setTab();
-      app.getData('couponList', 'COUPONS', app.apiServer.parmas).then( function (res) {
+      var parmas= {};
+      parmas.openId = app.apiServer.parmas.openId;
+      app.getData('couponList', 'COUPONS', parmas).then( function (res) {
         var colorList = [];
         var colorData = res.items;
         for (let i in colorData) {
             let colors = colorData[i].cardTemplate.color;
             colorList.push(colors.colorRgb());
         }
-          that.setData({
-              couponList: res,
-              colorList: colorList
-          });
-          console.log(that.data)
+        that.setData({
+            couponList: res,
+            colorList: colorList
+        });
+        console.log(that.data)
       });
   },
 

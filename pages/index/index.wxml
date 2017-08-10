@@ -32,8 +32,6 @@
 
         </view>
     </view>
-
-
     <!-- <view class="indexad">
         <view class="head-img">
             <image src="{{shopinfo.shopimg}}" mode="aspectFill"></image>
@@ -124,7 +122,7 @@
 
       <view class="couplist">
           <import src="../../pages/template/couponscard.wxml" />
-          <template is="couponscard" data="{{couponlist:couponlist,status:2}}" />
+          <template is="couponscard" data="{{couponlist:couponlist,status:2,receiveStatus:receiveStatus}}" />
       </view>
 
      <view class="pagetitle">热门评价</view>

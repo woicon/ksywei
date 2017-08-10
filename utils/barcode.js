@@ -21,7 +21,6 @@ var CODESET = {
     B: 4,
     C: 5
 };
-
 function getBytes(str) {
     var bytes = [];
     for (var i = 0; i < str.length; i++) {
@@ -29,7 +28,6 @@ function getBytes(str) {
     }
     return bytes;
 }
-
 exports.code128 = function (ctx, text, width, height) {
 
     width = parseInt(width);

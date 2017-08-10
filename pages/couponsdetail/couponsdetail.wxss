@@ -74,7 +74,7 @@
     height:100%;
 }
 .rqcode{
-    margin:30rpx auto 0;
+    margin:30rpx auto -20px;
     overflow:hidden;
 }
 .rqcode .couponno{
@@ -91,7 +91,7 @@
 }
 .couponno{
     text-align:center;
-    margin-top:-20px;
+    margin-top:-14px;
     color:#999;
 }
 .nos{

@@ -75,6 +75,8 @@ App({
             memberId: '61852',
             //superMerchantId: '10104677',
             merchantId: '10104677',
+            coreMerchantId:'10104677',
+            memberCode: 'od-est14Vpd4tUnOuy6HarvoubGw'
         }
     },
     setTab: function () {
