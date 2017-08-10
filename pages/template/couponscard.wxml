@@ -1,14 +1,14 @@
 <!-- couponsCard.wxml -->
 <template name="couponscard">
 <block wx:for="{{couponlist.items}}"  wx:key="couponslist">
-    <!-- 可用的优惠券列表 -->
+    <!-- 可用的优惠券列表 style="background:{{item.cardTemplate.color}}"-->
     <block wx:if="{{status == 1 && item.couponStatus == 1}}">
         <view data-couponsNo="{{item.couponNo}}}" 
             toggle="false" 
             class="couponsCard {{couponStat[item.couponNo]?'open':''}}" 
             data-id="{{index}}" 
             id="{{item.couponNo}}"
-            style="background:{{item.cardTemplate.color}}" 
+            style="background-image: linear-gradient(-180deg, {{colorList[index]}} 0%, {{item.cardTemplate.color}} 100%)"
             bindtap="couponDescription">
             <view wx:if="{{item.cardTemplate.type == 1 || item.cardTemplate.type == 7}}" class="coupons-value"> {{item.cardTemplate.discount}}<text>折</text></view>
             <view wx:else class="coupons-value">{{item.cardTemplate.reduceCost}}<text>元</text></view>

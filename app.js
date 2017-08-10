@@ -71,10 +71,10 @@ App({
         //   },
         parmas: {
             // openId: this.weChatUserInfo.openId,
-               openId: 'od-est14Vpd4tUnOuy6HarvoubGw',
-            //   memberId: '62166',
-            //    superMerchantId: '10104677',
-            //    merchantId: '10104677',
+            openId: 'od-est14Vpd4tUnOuy6HarvoubGw',
+            memberId: '61852',
+            //superMerchantId: '10104677',
+            merchantId: '10104677',
         }
     },
     setTab: function () {
@@ -94,6 +94,35 @@ App({
         _curPage.setData({
             tabBar: tabBar
         });
+    },
+    getData: function (url,key,parmas) {
+      var that = this;
+      var promise = new Promise(function (resolve, reject) {
+        wx.getStorage({
+          key:key,
+          success: function (res) {
+            resolve(res.data);
+            console.log(res);
+          },
+          fail: function () {
+            wx.request({
+              url: that.apiServer.host + url+'.htm',
+              data: {
+                json: parmas,
+              },
+              success: function (res) {
+                wx.setStorage({
+                  key:key,
+                  data: res.data
+                });
+                resolve(res.data);
+                console.log(res);
+              }
+            });
+          }
+        });
+      });
+      return promise;
     },
     tabBar: {
         list: [

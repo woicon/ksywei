@@ -1,74 +1,51 @@
 // pages/ewmpay/ewmpay.js
 var app = getApp();
+var code = require("../../utils/code.js");
 Page({
+    data: {
+        color:'#1CC16F',
+    },
+    onLoad: function (options) {
+        var that = this;
+        wx.setNavigationBarTitle({
+            title: '会员支付',
+        });
+        wx.setNavigationBarColor({
+            frontColor: '#ffffff',
+            backgroundColor:this.data.color,
+        });
+        app.getData('getPayCode', 'PAYCODE', app.apiServer.parmas).then(function(res){
+            console.log(res);
+            var size = code.size();
+            that.setData({
+                payCode: res,
+                width:size.w,
+                height:size.h
+            });
+            code.qr(res.payCode, 'qr', size.w,size.h);
+            code.bar(res.payCode,'bar', size.w+10,40);
+            console.log(that.data)
+        });
+    },
+    onReady: function () {
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-      color:'#1CC16F',
-  },
+    },
+    onShow: function () {
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    wx.setNavigationBarTitle({
-        title: '会员支付',
-    });
-    wx.setNavigationBarColor({
-        frontColor: '#ffffff',
-        backgroundColor:this.data.color,
-    });
-    
-  },
+    },
+    onHide: function () {
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
+    },
+    onUnload: function () {
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
+    },
+    onPullDownRefresh: function () {
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
+    },
+    onReachBottom: function () {
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
+    },
+    onShareAppMessage: function () {
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+    }
 })

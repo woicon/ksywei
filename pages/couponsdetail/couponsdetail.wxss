@@ -10,8 +10,6 @@
 }
 .coupon-info{
     margin:40rpx 0 0;
-    border-bottom:1px dashed #eee;
-    padding-bottom:30rpx;
     border-top:1px dashed #eee;
     position:relative;
 }
@@ -55,7 +53,9 @@
     font-size:80rpx;
 }
 .coupon-name{
-    font-size:36rpx;margin:30rpx 0;text-align:center;
+    font-size:36rpx;
+    margin:20rpx 0;
+    text-align:center;
 }
 .ewm-img image,
 .ewm-img canvas{
@@ -79,7 +79,7 @@
 }
 .rqcode .couponno{
     line-height:2;
-    color:#666;
+    color:#999;
     text-align:center;
     margin-top:0;
 }
@@ -92,9 +92,12 @@
 .couponno{
     text-align:center;
     margin-top:-20px;
+    color:#999;
 }
 .nos{
-    letter-spacing:14rpx;font-size:26rpx;
+    letter-spacing:14rpx;
+    font-size:26rpx;
+    
 }
 .coupons-detail{
     background:#fff;
@@ -103,7 +106,11 @@
     display:flex;
     align-items: center;
     justify-content:space-between;
+    margin-bottom:20rpx;
 
+}
+.ewm{
+  padding-bottom:30rpx;
 }
 .sku-name{
     font-size:32rpx;line-height:2.5;
@@ -111,38 +118,36 @@
 .sku-text{
     font-size:24rpx;color:#999;
 }
+.sku.hide{
+  display:none;
+}
 .title{
-    border-top:1px dashed #eee;line-height:3;margin-top:30rpx; font-size:30rpx;
+    border-top:1px dashed #eee;
+    line-height:3;
+    font-size:30rpx;
     color:#1cc16f;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.title:after{
+  content:'';
+  display:block;
+  width:10rpx;
+  height:10rpx;
+  border:2px solid #999;
+  border-left:none;
+  border-bottom:none;
+  transform:rotate(45deg);
+  transition:.4s;
+}
+.title.open:after{
+  transform:rotate(135deg);
 }
 .description{
-    padding:10rpx 0 20rpx 0;
     position:relative;
 }
-.description-text{
-    line-height:1.6;
-    margin:16rpx 0;
-    color:#666;
-    padding-left:130rpx;
-    position:relative;
-}
-.description-text .tag{
-    display:inline-block;
-    padding:2rpx 16rpx;
-    font-size:22rpx;
-    background:#eee;
-    margin-right:14rpx;
-    border-radius:6rpx;
-}
-.description-title{
-    color:#555;
-    position:absolute;
-    left:0;
-    top:0;
-}
-.description-text text{
-    color:#888;
-}
+
 .cbg{
     position:fixed;
     top:0;

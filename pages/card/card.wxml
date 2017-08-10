@@ -1,20 +1,68 @@
 <!--pages/card/card.wxml-->
-<view class="vipcard">
-    <view class="cardinfo">
-    <view class="icon ico-crown"></view>
-    <text>西少爷肉夹馍</text>
+ <view class="vipcard" style="background-color:{{card.color}}" id="{{card.colorClass}}"> 
+    <view class="card-page">
+        <view class="card-info">
+            <!-- <view class="icon ico-crown"></view> -->
+            <view class="logo">
+                <image src="{{card.logo}}"></image>
+            </view>
+            <text>{{card.title}}{{card.subTitle}}</text>
+        </view>
+
     </view>
-    <view class="cardid">NO:28329392932</view>
+    <!-- <view class="cardid">NO:28329392932</view> -->
+    <view class="bgimg">
+        <image src="{{card.cardBgImg}}"></image>
+    </view>
+    
+    <view class="payico ico-ewm"></view>
 </view>
 
 <view class="member-col">
-    <view class="col-item">积分 <view class="value">2</view> </view>
-    <view class="col-item">等级 <view class="value">2</view> </view>
+    <view class="col-item">积分 <view class="value">{{cardInfo.point}}</view> </view>
+    <view class="col-item">等级 <view class="value">{{cardInfo.exp}}</view> </view>
     <view class="col-item">优惠券 <view class="value">4</view> </view>
 </view>
 
 <view class="card-list">
-    <navigator url="url"> <text>个人信息</text></navigator>
-    <navigator url="pages/carddetail/carddetail"> <text>会员权益</text></navigator>
-    <navigator url="url"> <text>适用门店</text></navigator>
+    <navigator class="info-title" url="url"> <text>会员信息</text></navigator>
+    <view class="info" wx:for="{{card.baseMemberInfo}}" wx:key="baseMemberInfo">
+        <view class="info-item">
+            <view class="attr">{{item.name}}</view>
+            <view class="value">{{item.status}}</view>
+        </view>
+    </view>
+    <navigator class="info-title"  url="pages/carddetail/carddetail"> <text>会员权益</text></navigator>
+
+    <navigator class="info-title" url="url"> <text>适用门店</text></navigator>
+    
+
+
+    <navigator class="info-title" url="url"><text>会员卡信息</text></navigator>
+
+    <view class="description-content">
+        <view class="description-text">
+            <view class="description-title">使用提示：</view> 
+            <text class="text">{{card.notice}}</text>
+        </view>
+         <view class="description-text">
+            <view class="description-title">会员卡说明：</view> 
+            <text class="text">{{card.prerogative}}</text>
+        </view>
+
+        <view class="description-text">
+            <view class="description-title">会员特权说明：</view> 
+            <text class="text">{{card.featureDescriptions}}</text>
+        </view>
+
+         <view class="description-text">
+            <view class="description-title">使用须知：</view> 
+            <text class="text">{{card.description}}</text>
+        </view>
+        <view class="description-text">
+            <view class="description-title">客服电话：</view> 
+            <text class="text">{{card.description}}</text>
+        </view>
+
+    </view>
 </view>

@@ -16,6 +16,374 @@ view, text, navigator {
     margin-bottom: 150rpx;
 }
 
+
+
+#card1 {
+    background-color: #63b359;
+    background: -webkit-linear-gradient(#8ac683 0%, #63b359 50%);
+}
+
+#card1 .brandlogo i {
+    color: #63b359
+}
+
+#card1 .setpNode.active i {
+    color: #63b359
+}
+
+#card1 .tag {
+    color: #63b359
+}
+
+#card1 .stepLine {
+    background: #63b359
+}
+
+#card1 .stepLocal {
+    background-color: #63b359
+}
+
+#card2 {
+    background-color: #2c9f67;
+    background: -webkit-linear-gradient(#3eca86 0, #2c9f67 50%);
+}
+
+#card2 .brandlogo i {
+    color: #2c9f67
+}
+
+#card2 .setpNode.active i {
+    color: #2c9f67
+}
+
+#card2 .tag {
+    color: #2c9f67
+}
+
+#card2 .stepLine {
+    background: #2c9f67
+}
+
+#card2 .stepLocal {
+    background-color: #2c9f67
+}
+
+#card3 {
+    background-color: #509fc9;
+    background: -webkit-linear-gradient(#7fb9d7 0, #509fc9 50%);
+}
+
+#card3 .brandlogo i {
+    color: #509fc9
+}
+
+#card3 .setpNode.active i {
+    color: #509fc9
+}
+
+#card3 .tag {
+    color: #509fc9
+}
+
+#card3 .stepLine {
+    background: #509fc9
+}
+
+#card3 .stepLocal {
+    background-color: #509fc9
+}
+
+#card4 {
+    background-color: #5885cf;
+    background: -webkit-linear-gradient(#88a8dd 0, #5885cf 50%);
+}
+
+#card4 .brandlogo i {
+    color: #5885cf
+}
+
+#card4 .setpNode.active i {
+    color: #5885cf
+}
+
+#card4 .tag {
+    color: #5885cf
+}
+
+#card4 .stepLine {
+    background: #5885cf
+}
+
+#card4 .stepLocal {
+    background-color: #5885cf
+}
+
+#card5 {
+    background-color: #9062c0;
+    background: -webkit-linear-gradient(#af8ed2 0, #9062c0 50%);
+}
+
+#card5 .brandlogo i {
+    color: #9062c0
+}
+
+#card5 .setpNode.active i {
+    color: #9062c0
+}
+
+#card5 .tag {
+    color: #9062c0
+}
+
+#card5 .stepLine {
+    background: #9062c0
+}
+
+#card5 .stepLocal {
+    background-color: #9062c0
+}
+
+#card6 {
+    background-color: #d09a45;
+    background: -webkit-linear-gradient(#dcb576 0, #d09a45 50%);
+}
+
+#card6 .brandlogo i {
+    color: #d09a45
+}
+
+#card6 .setpNode.active i {
+    color: #d09a45
+}
+
+#card6 .tag {
+    color: #d09a45
+}
+
+#card6 .stepLine {
+    background: #d09a45
+}
+
+#card6 .stepLocal {
+    background-color: #d09a45
+}
+
+#card7 {
+    background-color: #e4b138;
+    background: -webkit-linear-gradient(#ebc66e 0, #e4b138 50%);
+}
+
+#card7 .brandlogo i {
+    color: #e4b138
+}
+
+#card7 .setpNode.active i {
+    color: #e4b138
+}
+
+#card7 .tag {
+    color: #e4b138
+}
+
+#card7 .stepLine {
+    background: #e4b138
+}
+
+#card7 .stepLocal {
+    background-color: #e4b138
+}
+
+#card8 {
+    background-color: #ee903c;
+    background: -webkit-linear-gradient(#f3b074 0, #ee903c 50%);
+}
+
+#card8 .brandlogo i {
+    color: #ee903c
+}
+
+#card8 .setpNode.active i {
+    color: #ee903c
+}
+
+#card8 .tag {
+    color: #ee903c
+}
+
+#card8 .stepLine {
+    background: #ee903c
+}
+
+#card8 .stepLocal {
+    background-color: #ee903c
+}
+
+#card9 {
+    background-color: #a9d92d;
+    background: -webkit-linear-gradient(#bee261 0, #a9d92d 50%);
+}
+
+#card9 .brandlogo i {
+    color: #a9d92d
+}
+
+#card9 .setpNode.active i {
+    color: #a9d92d
+}
+
+#card9 .tag {
+    color: #a9d92d
+}
+
+#card9 .stepLine {
+    background: #a9d92d
+}
+
+#card9 .stepLocal {
+    background-color: #a9d92d
+}
+
+#card10 {
+    background-color: #dd6549;
+    background: -webkit-linear-gradient(#e7917d 0, #dd6549 50%);
+}
+
+#card10 .brandlogo i {
+    color: #dd6549
+}
+
+#card10 .setpNode.active i {
+    color: #dd6549
+}
+
+#card10 .tag {
+    color: #dd6549
+}
+
+#card10 .stepLine {
+    background: #dd6549
+}
+
+#card10 .stepLocal {
+    background-color: #dd6549
+}
+
+#card11 {
+    background-color: #cc463d;
+    background: -webkit-linear-gradient(#d9746d 0, #cc463d 50%);
+}
+
+#card11 .brandlogo i {
+    color: #cc463d
+}
+
+#card11 .setpNode.active i {
+    color: #cc463d
+}
+
+#card11 .tag {
+    color: #cc463d
+}
+
+#card11 .stepLine {
+    background: #cc463d
+}
+
+#card11 .stepLocal {
+    background-color: #cc463d
+}
+
+#cards1 {
+    background: #63b359
+}
+
+#cards1 .card:before,#cards1 .card:after {
+    background: #63b359
+}
+
+#cards2 {
+    background: #2c9f67
+}
+
+#cards2 .card:before,#cards2 .card:after {
+    background: #2c9f67
+}
+
+#cards3 {
+    background: #509fc9
+}
+
+#cards3 .card:before,#cards3 .card:after {
+    background: #509fc9
+}
+
+#cards4 {
+    background: #5885cf
+}
+
+#cards4 .card:before,#cards4 .card:after {
+    background: #5885cf
+}
+
+#cards5 {
+    background: #9062c0
+}
+
+#cards5 .card:before,#cards5 .card:after {
+    background: #9062c0
+}
+
+#cards6 {
+    background: #d09a45
+}
+
+#cards6 .card:before,#cards6 .card:after {
+    background: #d09a45
+}
+
+#cards7 {
+    background: #e4b138
+}
+
+#cards7 .card:before,#cards7 .card:after {
+    background: #e4b138
+}
+
+#cards8 {
+    background: #ee903c
+}
+
+#cards8 .card:before,#cards8 .card:after {
+    background: #ee903c
+}
+
+#cards9 {
+    background: #a9d92d
+}
+
+#cards9 .card:before,#cards9 .card:after {
+    background: #a9d92d
+}
+
+#cards10 {
+    background: #dd6549
+}
+
+#cards10 .card:before,#cards10 .card:after {
+    background: #dd6549
+}
+
+#cards11 {
+    background: #cc463d
+}
+
+#cards11 .card:before,#cards11 .card:after {
+    background: #cc463d
+}
+
+
+
+
 .cards1 {
     background: #63b359;
 }
@@ -503,6 +871,31 @@ content:'';display:block;
 .cardinfo .icon{width:60rpx;height:60rpx;background:yellow;color:#333;border-radius:400rpx;text-align:center;line-height:60rpx;font-size:44rpx;margin-right:12rpx;}
 .cardid{align-self:flex-end;color:#fff;position:absolute;left:30rpx;bottom:32rpx;}
 
+.description-text{
+    line-height:1.6;
+    margin:16rpx 0 20rpx 0;
+    color:#666;
+    padding-left:130rpx;
+    position:relative;
+}
+.description-text .tag{
+    display:inline-block;
+    padding:2rpx 16rpx;
+    font-size:22rpx;
+    background:#eee;
+    margin-right:14rpx;
+    border-radius:6rpx;
+}
+.description-title{
+    color:#555;
+    position:absolute;
+    left:0;
+    top:0;
+}
+.description-text text{
+    color:#888;
+}
+
 
 @font-face {
 	font-family: 'ksico';
@@ -515,7 +908,6 @@ content:'';display:block;
 [class^="ico-"], [class*=" ico-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'ksico' !important;
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;

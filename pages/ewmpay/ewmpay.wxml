@@ -3,13 +3,14 @@
     
     <view class="ewmpay">
         <view class="ewmcard">
-            <view class="barcode"> 
-            <!--style="background-image:url(../../pages/images/rcCode.png)"-->
-                <image mode="aspectFill" src="../../pages/images/rcCode.png"></image>
+            <view class="barcode">
+                <canvas  canvas-id="bar" style="width:{{width+10}}px;height:40px" />
+                <view class="paycode">
+                    {{payCode.payCode}}
+                </view>
             </view>
-            <view class="qrcode">
-                <image mode="aspectFit" src="../../pages/images/1499668706.png"></image>
-                
+            <view class="qrcode" style="height:{{height-20}}px">
+                <canvas style="width:{{width}}px;height:{{height}}px" canvas-id="qr" />
             </view>
             <view class="restime">1后自动刷新</view>
             <view class="ewmbar">
