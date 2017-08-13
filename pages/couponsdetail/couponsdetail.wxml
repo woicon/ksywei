@@ -7,8 +7,8 @@
         <image mode="scaleToFill" src="{{coupon.logo}}"></image>
     </view>
     <view class="coupon-name">{{coupon.title}}</view>
-    <view wx:if="{{coupon.type == 1 || coupon.type == 7}}"  class="cost"><text class="price">{{coupon.discount}}</text>折</view>
-    <view wx:else class="cost">¥<text class="price">{{coupon.reduceCost}}</text></view>
+    <!-- <view wx:if="{{coupon.type == 1 || coupon.type == 7}}"  class="cost"><text class="price">{{coupon.discount}}</text>折</view>
+    <view wx:else class="cost">¥<text class="price">{{coupon.reduceCost}}</text></view> -->
     <!-- <view class="coupon-infos">
         <!-- {{coupon.beginTime}}至 
         <view class="classname"> <text class="icon ico-clock"></text> 有效期：{{coupon.endTime}}</view>

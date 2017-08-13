@@ -56,6 +56,7 @@ App({
             }
         });
     },
+
     weChatUserInfo: {
         openId: null,
         userInfo: null,
@@ -126,6 +127,23 @@ App({
       });
       return promise;
     },
+
+    request:function(url,parmas){
+        var that = this;
+        var promise = new Promise(function (resolve, reject) {
+            wx.request({
+                url: that.apiServer.host + url + '.htm',
+                data: {
+                    json: parmas,
+                },
+                success: function (res) {
+                    resolve(res.data);
+                }
+            });
+        });
+        return promise;
+    },
+
     tabBar: {
         list: [
             {

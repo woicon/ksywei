@@ -77,6 +77,7 @@ Page({
       app.setTab();
       var parmas= {};
       parmas.openId = app.apiServer.parmas.openId;
+      parmas.pageSize = 12;
       app.getData('couponList', 'COUPONS', parmas).then( function (res) {
         var colorList = [];
         var colorData = res.items;
@@ -105,10 +106,17 @@ Page({
 
     },
     onPullDownRefresh: function () {
-
+        console.log('pullDownRefresh');
     },
     onReachBottom: function () {
-
+        var that = this;
+        var parmas = {};
+        parmas.openId = app.apiServer.parmas.openId;
+        parmas.currentPage = 2;
+        parmas.pageSize = 1;
+        app.request('couponList', parmas).then(function(data){
+            console.log(data);
+        });
     },
     onShareAppMessage: function () {
 

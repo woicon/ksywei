@@ -91,7 +91,7 @@
             </view>
             <view class="list-btn">优惠券</view>
         </navigator>
-        <navigator class="list-item" url="/pages/pay/pay">
+        <navigator class="list-item" url="/pages/res/res">
             <view class="list-first">
                 <view class="icon ico-redbag-s"></view>
                 <text class="list-text">红包</text>

@@ -1,5 +1,5 @@
 <!--pages/coupons/coupons.wxml-->
-
+<scroll-view scroll-y='true' style="position:absolute;left:0;right:0;top:0;bottom:50px;">
 <view class="container">
     <block wx:if="{{!failure}}">
         <block wx:if="{{couponlist.items.length == 0}}">
@@ -28,5 +28,5 @@
         </view>
     </block>
 </view>
-
+</scroll-view>
 <include src="../../pages/common/tabbar.wxml"/>

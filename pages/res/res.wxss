@@ -1,0 +1,101 @@
+/**indexwxss**/
+.scan{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.step{
+    margin:0 20rpx;
+}
+.step .icon{
+    font-size:60rpx;
+    display:block;
+    text-align:center;
+    margin-bottom:40rpx;
+}
+.scan-step{
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    margin:0 0 50rpx 0;
+}
+.scan-step.hide{
+    display:none;
+}
+.step{
+    width:20%;
+    line-height:1.6;
+}
+.scansku{
+    width:100%;
+    padding:28rpx 0;
+    text-align:center;
+    background:#444;
+    color:#fff;
+    font-size:32rpx;
+    margin:0 auto;
+    position:fixed;left:0;right:0;bottom:0;
+}
+.scansku-hover{
+    background:#222;
+    color:#fff;
+}
+.goods{
+    margin:0 40rpx;
+}
+.goods-name{
+    margin-bottom:10rpx;
+}
+.goods-item{
+    display:flex;
+    justify-content:space-between;
+    padding:30rpx 0;
+}
+
+.goods-price{
+    font-size:24rpx;
+    color:#FF5C3B;
+}
+
+.goods-price text{
+    font-size:40rpx;
+}
+
+.goods-cart{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+}
+
+.goods-cart{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:90px;
+}
+.goods-cart .icon{
+    font-size:28rpx;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:38rpx;
+    height:38rpx;
+    background:#1CC16F;
+    color:#fff;
+    border-radius:90px;
+}
+.goods-cart>view{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:16rpx;
+}
+.goods-cart .min .icon{
+    background:transparent;
+    border:1px solid #1CC16F;
+    color:#1CC16F;
+}

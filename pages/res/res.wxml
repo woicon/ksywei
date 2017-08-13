@@ -1,0 +1,26 @@
+<!--indexwxml-->
+<view class="goods">
+    <view class="goods-item" wx:for="{{goods}}" wx:key="goods">
+        <view class="classname">
+            <view class="goods-name">{{item.name}}</view>
+            <view class="goods-price">¥<text>{{item.price}}</text></view>
+        </view>
+        <view class="goods-cart" bindtap="cartTap" data-id="index">
+            <view class="min" data-name="min"><view class="icon ico-min"></view></view>
+            <view class="value">{{item.amount}}</view>
+            <view class="add" data-name="add"><view class="icon ico-add"></view></view>
+        </view>
+    </view>
+</view>
+<view class="scan">
+    <view class="scan-step {{stepStat?'hide':''}}">
+        <view class="step"> <view class="icon ico-diamond"></view> 扫一扫商品条形码</view>
+        <view class="step"> <view class="icon ico-wxpay"></view> 手机支付获得凭证</view>
+        <view class="step"> <view class="icon ico-ok"></view> 出示凭证快速通道离店</view>
+    </view>
+</view>
+<view class="cart  {stepStat?'hide':''}}">
+    <view class="ico-cart"></view>
+    <view class="cart-total">{{cartTotal}}</view>
+</view>
+<view class="scansku" bindtap="skuScan" hover="true" hover-class="scansku-hover">{{buttonTxt}}</view>

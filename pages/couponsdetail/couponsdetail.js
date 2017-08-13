@@ -56,8 +56,11 @@ Page({
                 service: businessService,
                 qrSize: size.w
             });
-            
-            
+            var size = that.data.qrSize;
+            var qrcode = that.data.couoponNo || "900914208204184931";
+            //绘制二维码与条形码
+            code.qr(qrcode, "qrcodecav", size, size);
+            code.bar(qrcode, "barcodecav", size, 40);
         }
     });
   },
@@ -66,14 +69,13 @@ Page({
         that.setData({
             pageloading: true
         });
-        var qrcode = that.data.couoponNo || "900914208204184931";
-        var size = that.data.qrSize;
-        //绘制二维码与条形码
-        code.qr(qrcode, "qrcodecav", size, size);
-        code.bar(qrcode, "barcodecav", size, 40);
+        
+        
   },
     onShow: function () {
-        console.log('2222222222222222222')
+        console.log('2222222222222222222');
+        var that = this;
+        
     },
     onHide: function () {
 
