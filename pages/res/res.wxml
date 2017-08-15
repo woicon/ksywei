@@ -5,10 +5,10 @@
             <view class="goods-name">{{item.name}}</view>
             <view class="goods-price">¥<text>{{item.price}}</text></view>
         </view>
-        <view class="goods-cart" bindtap="cartTap" data-id="index">
-            <view class="min" data-name="min"><view class="icon ico-min"></view></view>
+        <view class="goods-cart" bindtap="totalChange" id="{{index}}">
+            <view class="min icon ico-min" data-name="min"></view>
             <view class="value">{{item.amount}}</view>
-            <view class="add" data-name="add"><view class="icon ico-add"></view></view>
+            <view class="add icon ico-add" data-name="add"></view>
         </view>
     </view>
 </view>
@@ -19,8 +19,20 @@
         <view class="step"> <view class="icon ico-ok"></view> 出示凭证快速通道离店</view>
     </view>
 </view>
-<view class="cart  {stepStat?'hide':''}}">
-    <view class="ico-cart"></view>
-    <view class="cart-total">{{cartTotal}}</view>
+
+<view class="cart-bar {{stepStat?'':'hide'}}">
+
+
+    <view class="cart">
+        <view class="icon ico-cart"></view>
+        <!-- <view class="cart-total">{{cartTotal}}</view> -->
+    </view>
+
+    <view class="totalbar">
+        <view class="total">共{{cartTotal}}件商品</view>
+        <view class="price">{{allPrice}}元</view>
+    </view>
+
+    <view class="topay" bindtap="getPayment">付款</view>
 </view>
-<view class="scansku" bindtap="skuScan" hover="true" hover-class="scansku-hover">{{buttonTxt}}</view>
+<view class="scansku {{stepStat?'scanbtn':''}}" bindtap="skuScan" hover="true" hover-class="scansku-hover">{{buttonTxt}}</view>

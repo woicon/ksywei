@@ -1,14 +1,81 @@
 // pages/pay/paycomplete/paycomplete.js
 var app = getApp();
 Page({
-    /**
-     * 页面的初始数据
-     */
     data: {
        goods:[],
        buttonTxt:'商品扫码',
        stepStat:false,
-       barCodeList:[]
+       barCodeList:[],
+       cartTotal:0,
+       allPrice:0,
+    },
+    stepStat:function(){
+        var that = this;
+        var _stepStat = that.data.stepStat;
+        _stepStat = (_goods.length == 0) ? false : true;
+
+    },
+    totalChange:function(e){
+        console.log(e);
+        var that = this;
+        var _id = e.currentTarget.id;
+        var _goods = that.data.goods;
+        var _cartTotal = that.data.cartTotal;
+        var _allPrice = that.data.allPrice;
+        var _cartTotal = that.data.cartTotal;
+        var _stepStat = that.data.stepStat;
+        console.log(_goods);
+        if (e.target.dataset.name =='add'){
+            _goods[_id].amount +=1;
+            _goods[_id].subtotal += _goods[_id].price;
+            _cartTotal += 1;
+            _allPrice += _goods[_id].price;
+        } else if (e.target.dataset.name == 'min'){
+            if (_goods[_id].amount == 1) {
+                wx.showModal({
+                    title: '确认删除商品？',
+                    content: '确认后将从购物车中删除该商品，需要重新扫描',
+                    success: function (res) {
+                        if (res.confirm) {
+                            console.log('用户点击确定');
+                            _cartTotal -= 1;
+                            _allPrice -= _goods[_id].price;
+                            _goods.splice(_id,1);
+                            if (_cartTotal == 0) {
+                                _stepStat = false;
+                            }
+                            that.setData({
+                                goods: _goods,
+                                cartTotal: _cartTotal,
+                                allPrice:_allPrice,
+                                stepStat: _stepStat
+                            });
+                        } else if (res.cancel) {
+                            
+                        }
+                    }
+                });
+            }else{
+                _goods[_id].amount -= 1;
+                _goods[_id].subtotal -= _goods[_id].price;
+                _cartTotal -= 1;
+                _allPrice -= _goods[_id].price;
+            }
+            if (_cartTotal == 0) {
+                _stepStat = true;
+            }
+        }
+
+        console.log(_goods);
+        that.setData({
+             goods: _goods,
+             cartTotal: _cartTotal,
+             allPrice: _allPrice,
+             cartTotal: _cartTotal,
+             stepStat: _stepStat
+        });
+        console.log(that.data)
+
     },
     skuScan:function(){
         var that = this;
@@ -39,21 +106,29 @@ Page({
                             var _goods = that.data.goods;
                             var _stepStat = that.data.stepStat;
                             var _barCodeList = that.data.barCodeList;
+                            var _allPrice = that.data.allPrice;
+                            var _cartTotal = that.data.cartTotal;
+
                             if( _barCodeList.in_array(res.data.goods.barcode)){
                                 console.log(_barCodeList.indexOf(res.data.goods.barcode));
                                 var _index = _barCodeList.indexOf(res.data.goods.barcode);
                                 _goods[_index].amount += 1;
                                 _goods[_index].subtotal = Number(_goods[_index].price) * Number(_goods[_index].amount);
+                                _allPrice += _goods[_index].subtotal;
                             }else{
                                 res.data.goods.amount = 1;
                                 res.data.goods.subtotal = res.data.goods.price;
                                 _barCodeList.push(res.data.goods.barcode);
                                 _goods.push(res.data.goods);
+                                _allPrice += res.data.goods.price;
                             }
                             _stepStat = (_goods.length == 0) ? false : true;
+                            _cartTotal += 1;
                             that.setData({
                                 goods:_goods,
-                                stepStat: _stepStat
+                                stepStat: _stepStat,
+                                allPrice:_allPrice,
+                                cartTotal:_cartTotal
                             });
                         }else{
                             wx.showModal({
@@ -84,6 +159,9 @@ Page({
         // that.setData({
         //     starItem: _starItem
         // });
+        wx.setNavigationBarTitle({
+            title: '自助扫码购物',
+        })
     },
 
     /**

@@ -37,7 +37,6 @@
     background:#444;
     color:#fff;
     font-size:32rpx;
-    margin:0 auto;
     position:fixed;left:0;right:0;bottom:0;
 }
 .scansku-hover{
@@ -82,11 +81,35 @@
     display:flex;
     justify-content:center;
     align-items:center;
-    width:38rpx;
-    height:38rpx;
+    color:#fff;
+}
+.goods-cart .min{
+    color:#1CC16F;
+}
+
+.goods-cart .add:after,
+.goods-cart .min:after{
+    content:'';
+    display:block;
+    width:40rpx;
+    height:40rpx;
+    border-radius:90px;
+    position:absolute;
+    z-index:0;
+    
+}
+.goods-cart .add:after{
     background:#1CC16F;
     color:#fff;
-    border-radius:90px;
+}
+.goods-cart .min:after{
+    border:1px solid #1CC16F;
+    color:#1CC16F;
+
+}
+.goods-cart .icon:before{
+    position:relative;
+    z-index:2;
 }
 .goods-cart>view{
     display:flex;
@@ -98,4 +121,65 @@
     background:transparent;
     border:1px solid #1CC16F;
     color:#1CC16F;
+}
+.scanbtn{
+    position:fixed;
+    left:20rpx;
+    bottom:120rpx;
+    width:120rpx;
+    height:120rpx;
+    line-height:120rpx;
+    background:#444;
+    font-size:24rpx;
+    border-radius:100px;
+    text-align:center;
+    padding:0;
+}
+.cart{
+    width:80rpx;
+    color:#fff;
+    font-size:40rpx;
+    position:absolute;
+    left:0;
+    top:0;
+    text-align:center;
+    
+}
+.cart .icon{
+    font-size:54rpx;
+    line-height:100rpx;
+}
+.cart-bar{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#444;
+    display:flex;
+    justify-content:space-between;
+    height:100rpx;
+}
+.totalbar{
+    display:flex;
+    padding:0 20rpx;
+    align-items:left;
+    flex-direction:column;
+    justify-content:center;
+    text-align:left;
+    height:100rpx;
+    margin-left:80rpx;
+    color:#fff;
+}
+.totalbar{
+    line-height:1.6;
+}
+.cart-bar.hide{
+    display:none;
+}
+.topay{
+    width:40%;
+    text-align:center;
+    line-height:100rpx;
+    background:#1CC16F;color:#fff;
+    font-size:32rpx;
 }
