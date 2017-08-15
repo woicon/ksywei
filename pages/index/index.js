@@ -1,5 +1,6 @@
 // pages/index/index.js
 var app = getApp();
+var apiHost = "http://192.168.5.158:8050/api/apiJsConfig.do";
 Page({
     data: {
         shopinfo: {
@@ -83,23 +84,57 @@ Page({
     },
     //领取优惠券
     getCoupon:function(e){
+        var that = this;
         var parmas ={};
         parmas.cardIds = e.currentTarget.id; 
         parmas.openId = app.apiServer.parmas.openId;
+        parmas.merchantId = app.apiServer.parmas.merchantId;
         parmas.memberId = app.apiServer.parmas.memberId;
         var _parmas = JSON.stringify(parmas);
         wx.request({
             url: app.apiServer.host + 'couponGet.htm?json=' + _parmas,
             method:'POST',
-            success:function(data){
-                wx.removeStorage({
-                    key: 'CARDLIST',
-                    success: function (res) {
-                        
+            success:function(res){
+                console.log(res);
+                var cid = res.data.coupons[0].cardId;
+                var _parmas = {
+                    cardNo: res.data.coupons[0].couponNo,
+                    cardId: res.data.coupons[0].cardId,
+                    merchantId: app.apiServer.parmas.merchantId
+                }
+                //同步到微信接口  + '?cardNo = '+res.data.coupons[0].couponNo + '&' + 'cardId='+e.currentTarget.id + '&' + 'merchantId=' + app.apiServer.parmas.merchantId,
+                wx.request({
+                    url: apiHost,
+                    method:'POST',
+                    data: _parmas,
+                    header:{
+                        'content-type':'application/x-www-form-urlencoded'
+                    },
+                    success:function(data){
+                        console.log(data);
+                        if (data.code == '0') {
+                            wx.addCard({
+                                cardList: [{
+                                    cardId: res.data.coupons[0].cardId,
+                                    cardExt: data.result
+                                }],
+                                success: function (res) {
+                                                        
+                                },
+                                cancel: function (res) {
+
+                                }
+                            });
+                        } else {
+                            wx.showToast({
+                                title: '同步到微信卡包失败',
+                            });
+                        }
                     }
                 })
+                
                 wx.showToast({
-                    title: '会员卡领取成功',
+                    title: '领取成功',
                     icon: 'success',
                     duration: 2000
                 });  
@@ -108,6 +143,8 @@ Page({
                         couponlist: res
                     });
                 });
+                wx.removeStorageSync('INDEX_COUPONS');
+                wx.removeStorageSync('COUPONS');
             }
         });
     },
@@ -127,14 +164,13 @@ Page({
             //console.log(res);
         });
 
-        app.getData('cardTemplateList', 'CARDLIST', app.apiServer.parmas).then(function (res) {
+        app.getData('cardTemplateList', 'INDEX_COUPONS', app.apiServer.parmas).then(function (res) {
             that.setData({
                 couponlist:res
             });
         });
         //加载tabBar菜单
         app.setTab();
-
         wx.getLocation({
             success: function (res) {
                 var latitude = res.latitude
@@ -144,11 +180,10 @@ Page({
                 console.log(accuracy)
             }
         });
-
         this.setData({
             pageloading: true
         });
-        
+        console.log(that.data)
     },
     
     onReady: function () {

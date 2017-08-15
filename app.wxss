@@ -15,9 +15,6 @@ view, text, navigator {
 .pagescroll {
     margin-bottom: 150rpx;
 }
-
-
-
 #card1 {
     background-color: #63b359;
     background: -webkit-linear-gradient(#8ac683 0%, #63b359 50%);

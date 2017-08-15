@@ -39,9 +39,19 @@ Page({
             backgroundColor: app.globalData.color,
         })
 
+        app.getData('memberCardInfo', 'CARDINFO', app.apiServer.parmas).then(function (res) {
+            that.setData({
+                cardInfo: res
+            });
+        });
+        app.getData('memberCardTemplate', 'CARD', app.apiServer.parmas).then(function (res) {
+            that.setData({
+                card: res
+            });
+        });
         that.setData({
             userInfo: app.weChatUserInfo.userInfo,
         });
-
+        console.log(that.data)
     }
 });

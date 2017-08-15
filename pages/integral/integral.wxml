@@ -2,10 +2,8 @@
 
 <view class="integral">
     <view class="integral-head" style="background:{{}}">
-            <view class="points">92012</view>
+            <view class="points">{{cardInfo.data.point}}</view>
             <view class="icon">?</view>
-
-
             <view class="lsimg">
             <image src="../../pages/images/anmin.svg" mode="aspectFit"></image>
             </view>
@@ -17,12 +15,15 @@
             </view>
     </view>
     <view class="integral-list">
-        <view class="integral-item" wx:for="{{integral}}" wx:key="inegral">
+        <view class="integral-item" wx:for="{{pointsList}}" wx:key="pointsList">
             <view class="">
-                <view class="type"> {{item.type}}</view>
-                <view class="time">{{item.time}}</view>  
+                <block wx:for="{{increaseType}}" wx:key="increaseType" wx:for-item="_item" wx:for-index="_index">
+                    <view class="type" wx:if="{{item.increaseType == _index}}"> {{_item}}</view>
+                </block>
+                
+                <view class="time">{{item.createDate}}</view>  
             </view>
-            <text class="number">{{item.number}}</text>
+            <text class="number">+{{item.point}}</text>
         </view>
     </view>
 </view>

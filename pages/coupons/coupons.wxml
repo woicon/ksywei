@@ -1,8 +1,8 @@
 <!--pages/coupons/coupons.wxml-->
-<scroll-view scroll-y='true' style="position:absolute;left:0;right:0;top:0;bottom:50px;">
+<scroll-view scroll-y='true' style="position:absolute;left:0;right:0;top:0;bottom:50px;" bindscrolltolower="tolower">
 <view class="container">
     <block wx:if="{{!failure}}">
-        <block wx:if="{{couponlist.items.length == 0}}">
+        <block wx:if="{{couponList.items.length == 0}}">
             <import src="../../pages/template/empty.wxml"/>
             <template is="empty" data="{{icon:'ico-coup',text:'还没有优惠券'}}"></template>
         </block>

@@ -18,7 +18,7 @@
     </view>
 
     <view class="member-col">
-        <view class="col-item" bindtap="viewIntegral">积分<view class="value">2</view> </view>
+        <view class="col-item" bindtap="viewIntegral">积分<view class="value">{{cardInfo.point}}</view> </view>
         <view class="col-item">余额 <view class="value">2</view> </view>
         <view class="col-item">优惠券 <view class="value">4</view> </view>
     </view>

@@ -4,12 +4,16 @@
     <!-- 可用的优惠券列表 style="background:{{item.cardTemplate.color}}"-->
     <block wx:if="{{status == 1 && item.couponStatus == 1}}">
         <view data-couponsNo="{{item.couponNo}}}" 
-            toggle="false" 
+            toggle="false"
+            
             class="couponsCard {{couponStat[item.couponNo]?'open':''}}" 
             data-id="{{index}}" 
             id="{{item.couponNo}}"
             style="background-image: linear-gradient(-180deg, {{colorList[index]}} 0%, {{item.cardTemplate.color}} 100%)"
-            bindtap="couponDescription">
+            bindtap="couponDescription" 
+            bindtouchstart="touchStart" 
+            bindtouchend="touchEnd"
+            >
             <view wx:if="{{item.cardTemplate.type == 1 || item.cardTemplate.type == 7}}" class="coupons-value"> 
                 {{item.cardTemplate.discount}}
                 <text>折</text>
@@ -55,14 +59,15 @@
     </block>
 
     <!-- 待领取的优惠券列表 -->
-    <block wx:elif="{{ status == 2}}">
+    <block wx:elif="{{ status == 2 && item.receive}}">
         <view 
         class="couponsCard" 
         data-open="{{event.currentTarget.id}}" 
-        id="{{item.cardTemplateId}}" 
+        id="{{item.cardTemplateId}}"
+        data-cardId="{{item.cardTemplateId}}"
+        data-id="{{index}}"
         style="background:{{item.color||'#1cc16f'}}" 
         bindtap="couponDescription">
-
             <view wx:if="{{item.type == 1 || item.type == 7}}" class="coupons-value"> 
                 {{item.discount}}
                 <text>折</text>
