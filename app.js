@@ -23,7 +23,6 @@ App({
                         },
                         success: function (openIdRes) {
                             console.log("登录成功返回的openId：" + openIdRes.data.openid);
-                            console.log(that.weChatUserInfo);
                             that.weChatUserInfo.openId = openIdRes.data.openid;
                             // 判断openId是否获取成功
                             if (openIdRes.data.openid != null & openIdRes.data.openid != undefined) {
@@ -60,6 +59,7 @@ App({
     strDate: function (fmt){
         Date.prototype.Format = function (fmt) { //author: meizz   
             var o = {
+                "Y+": this.getFullYear(),                //年
                 "M+": this.getMonth() + 1,               //月份   
                 "d+": this.getDate(),                    //日   
                 "h+": this.getHours(),                   //小时   

@@ -1,6 +1,9 @@
 // pages/index/index.js
 var app = getApp();
-var apiHost = "http://192.168.5.158:8050/api/apiJsConfig.do";
+var apiHost = "http://wxcs.liantuo.com/api/apiJsConfig.do";
+var s = new Date('2017-09-08 23:59:59');
+console.log(s.getFullYear())
+
 Page({
     data: {
         shopinfo: {
@@ -90,6 +93,7 @@ Page({
         parmas.openId = app.apiServer.parmas.openId;
         parmas.merchantId = app.apiServer.parmas.merchantId;
         parmas.memberId = app.apiServer.parmas.memberId;
+        var cardid = e.currentTarget.id;
         var _parmas = JSON.stringify(parmas);
         wx.request({
             url: app.apiServer.host + 'couponGet.htm?json=' + _parmas,
@@ -97,9 +101,10 @@ Page({
             success:function(res){
                 console.log(res);
                 var cid = res.data.coupons[0].cardId;
+                var cids = res.data.coupons[0].wechatCardId;
                 var _parmas = {
                     cardNo: res.data.coupons[0].couponNo,
-                    cardId: res.data.coupons[0].cardId,
+                    cardId: cids,
                     merchantId: app.apiServer.parmas.merchantId
                 }
                 //同步到微信接口  + '?cardNo = '+res.data.coupons[0].couponNo + '&' + 'cardId='+e.currentTarget.id + '&' + 'merchantId=' + app.apiServer.parmas.merchantId,
@@ -111,18 +116,20 @@ Page({
                         'content-type':'application/x-www-form-urlencoded'
                     },
                     success:function(data){
-                        console.log(data);
-                        if (data.code == '0') {
+                        console.log(data.data);
+                        var result = data.data.result;
+                        if (data.data.code == 0) {
+                            console.log('ss');
                             wx.addCard({
                                 cardList: [{
-                                    cardId: res.data.coupons[0].cardId,
-                                    cardExt: data.result
+                                    cardId: cids,
+                                    cardExt: result
                                 }],
                                 success: function (res) {
-                                                        
+                                    console.log(res);
                                 },
                                 cancel: function (res) {
-
+                                    console.log(res);
                                 }
                             });
                         } else {
@@ -131,14 +138,14 @@ Page({
                             });
                         }
                     }
-                })
+                });
                 
                 wx.showToast({
                     title: '领取成功',
                     icon: 'success',
                     duration: 2000
                 });  
-                app.getData('cardTemplateList', 'CARDLIST', app.apiServer.parmas).then(function (res) {
+                app.getData('cardTemplateList', 'INDEX_COUPONS', app.apiServer.parmas).then(function (res) {
                     that.setData({
                         couponlist: res
                     });
@@ -160,11 +167,13 @@ Page({
         wx.setNavigationBarTitle({
             title: '哲哥小面'
         });
+
         app.getData('getMember', 'MEMBER', app.apiServer.parmas).then(function(res){
             //console.log(res);
         });
-
-        app.getData('cardTemplateList', 'INDEX_COUPONS', app.apiServer.parmas).then(function (res) {
+        var couponsParmas = app.apiServer.parmas;
+        couponsParmas.pageSize = 100;
+        app.getData('cardTemplateList', 'INDEX_COUPONS', couponsParmas).then(function (res) {
             that.setData({
                 couponlist:res
             });

@@ -4,7 +4,7 @@
     <view class="ewmpay">
         <view class="ewmcard">
             <view class="barcode">
-                <canvas  canvas-id="bar" style="width:{{width+10}}px;height:40px" />
+                <canvas  canvas-id="bar" style="width:{{width+10}}px;height:60px" />
                 <view class="paycode">
                     {{payCode.payCode}}
                 </view>
@@ -12,13 +12,12 @@
             <view class="qrcode" style="height:{{height-20}}px">
                 <canvas style="width:{{width}}px;height:{{height}}px" canvas-id="qr" />
             </view>
-            <view class="restime">1后自动刷新</view>
+            <view class="restime">{{endtime}}s后自动刷新</view>
             <view class="ewmbar">
                 <view class="money">
                     <view class="icon ico-pig"></view>
                     <view class="ewmmoney">余额 
-                        <view class="balance">800.00
-                        </view>
+                        <view class="balance">800.00</view>
                     </view>
                 </view>
             <navigator url="/pages/topup/topup" open-type="redirect" class="gotop">充值</navigator>

@@ -53,7 +53,7 @@
     width:100%;
 }
 .barcode {
-    margin:30rpx 0 -20px;
+    margin:30rpx 0 -20rpx;
 }
 .barcode canvas {
     margin:0 auto;

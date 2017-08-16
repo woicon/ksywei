@@ -34,8 +34,9 @@
             </view>
         </view>
     </block>
+
     <!-- 失效的优惠券列表 -->
-    <block wx:elif="{{status==3 && item.couponStatus != 1 && item.couponStatus != 0}}">
+    <block wx:elif="{{status==3 && item.couponStatus == 4}}">
         <view data-couponsNo="{{item.couponNo}}}" 
             toggle="false" 
             class="couponsCard disable {{couponStat[item.couponNo]?'open':''}}" 

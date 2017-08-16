@@ -16,17 +16,17 @@ Page({
         });
     },
     
-    // failureCoupons: function () {
-    //   this.setData({
-    //     failure: true
-    //   });
-    // },
+    failureCoupons: function () {
+      this.setData({
+        failure: true
+      });
+    },
 
-    // effectiveCoupons: function () {
-    //   this.setData({
-    //     failure: false
-    //   });
-    // },
+    effectiveCoupons: function () {
+      this.setData({
+        failure: false
+      });
+    },
   
     //查看优惠券详情
     couponDescription:function(e){
