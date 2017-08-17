@@ -9,7 +9,7 @@
         <block wx:else>
             <view class="couponslist">
                 <import src="../../pages/template/couponscard.wxml"/>
-                <template is="couponscard" data="{{couponlist:couponList,status:1,couponStat:couponStat,couponType:couponType,colorList:colorList}}"></template>
+                <template is="couponscard" data="{{couponlist:couponList,status:1,colorList:colorList}}"></template>
                 <view class="coupinfo"> <view class="viewrules" bindtap="viewRules"> 
                 <view class="ico-help"></view> 使用规则</view> 
                 <view>没有更多可用券 <view class="viewcoupons" bindtap="failureCoupons">查看失效优惠</view></view>

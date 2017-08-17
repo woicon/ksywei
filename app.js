@@ -1,57 +1,73 @@
 App({
-    onLaunch: function () {
+    onLaunch: function (options) {
         //调用API从本地缓存中获取数据
-        var logs = wx.getStorageSync('logs') || []
-        logs.unshift(Date.now());
-        wx.setStorageSync('logs', logs);
-        var that = this;
-        wx.login({
-            success: function (res) {
-                if (res.code) {
-                    //获取openId
-                    wx.request({
-                        url: 'https://api.weixin.qq.com/sns/jscode2session',
-                        data: {
-                            appid: 'wx11c5c3d22d5fedf3', //小程序唯一标识
-                            secret: '4a757085e73833537e9d91b44e1c33ef', //小程序的 app secret
-                            grant_type: 'authorization_code',
-                            js_code: res.code
+        // var logs = wx.getStorageSync('logs') || []
+        // logs.unshift(Date.now());
+        // wx.setStorageSync('logs', logs);
+        let that = this;
+        let api = that.apiServer.host;
+        that.apiServer.parmas.superMerchantId = options.query.superMerchantId;
+        var initialize = new Promise(function (res, rej) {
+            wx.login({
+                success: function (data) {
+                    res(data);
+                },
+            });
+        })
+        .then((res) => {
+            //wx719f7f7aad2c0ccc  wx11c5c3d22d5fedf3
+            let parmas = {
+                appid: 'wx719f7f7aad2c0ccc',
+                secret: '4a757085e73833537e9d91b44e1c33ef',
+                code: res.code
+            }
+            return that.request(api + 'microappToOpenid.htm', parmas);
+        })
+        .then((res) => {
+            console.log(res);
+            //console.log("登录成功返回的openId：" + res.data.wechatVo.openId);
+            that.weChatUserInfo.openId = res.data.wechatVo.openId;
+            that.apiServer.parmas.openId = res.data.wechatVo.openId;
+            if (res.data.wechatVo.openId != null & res.data.wechatVo.openId != undefined) {
+                if (that.weChatUserInfo.userInfo) {
+                    typeof cb == "function" && cb(that.weChatUserInfo.userInfo)
+                } else {
+                    wx.getUserInfo({
+                        withCredentials: false,
+                        success: function (res) {
+                            that.weChatUserInfo.userInfo = res.userInfo
+                            typeof cb == "function" && cb(that.weChatUserInfo.userInfo)
                         },
-                        method: 'GET',
-                        header: {
-                            'content-type': 'application/json'
-                        },
-                        success: function (openIdRes) {
-                            console.log("登录成功返回的openId：" + openIdRes.data.openid);
-                            that.weChatUserInfo.openId = openIdRes.data.openid;
-                            // 判断openId是否获取成功
-                            if (openIdRes.data.openid != null & openIdRes.data.openid != undefined) {
-                                // 有一点需要注意 询问用户 是否授权 那提示 是这API发出的
-                                if (that.weChatUserInfo.userInfo) {
-                                    typeof cb == "function" && cb(that.weChatUserInfo.userInfo)
-                                } else {
-                                    //调用登录接口
-                                    wx.getUserInfo({
-                                        withCredentials: false,
-                                        success: function (res) {
-                                            that.weChatUserInfo.userInfo = res.userInfo
-                                            typeof cb == "function" && cb(that.weChatUserInfo.userInfo)
-                                        },
-                                        fail: function (failData) {
-                                            console.info("用户拒绝授权");
-                                        }
-                                    })
-                                }
-                            } else {
-                                console.info("获取用户openId失败");
-                            }
-                        },
-                        fail: function (error) {
-                            console.info("获取用户openId失败");
-                            console.info(error);
+                        fail: function (failData) {
+                            console.info("用户拒绝授权");
                         }
                     })
                 }
+            } else {
+                console.info("获取用户openId失败");
+            }
+            return res.data.wechatVo.openId;
+        })
+        .then((res)=>{
+            console.log(res);
+            let parmas = {
+                openId:res,
+                superMerchantId:that.apiServer.parmas.superMerchantId
+            }
+            return that.request('http://shopcashiertest.liantuobank.com/ShopCashier/microapp/memberInfo.in', parmas)
+        })
+        .then((res)=>{
+            console.log(res);
+        })
+
+        return initialize;
+
+        wx.getLocation({
+            success: function (res) {
+                var latitude = res.latitude
+                var longitude = res.longitude
+                var speed = res.speed
+                var accuracy = res.accuracy
             }
         });
     },
@@ -77,21 +93,13 @@ App({
         }
     },
     weChatUserInfo: {
-        openId: null,
         userInfo: null,
     },
     apiServer: {
         //   host:'https://club.liantuobank.com/api/',
         host: 'http://open.liantuobank.cn/api/',
-        //   parmas:{
-        //     merchantId: '10265244',
-        //     superMerchantId: '10265239',
-        //     openId: 'od-est3bYmVySSuaJPitZrL3pr6g',
-        //     memberId: '266171'
-        //   },
         parmas: {
-            // openId: this.weChatUserInfo.openId,
-            openId: 'od-est14Vpd4tUnOuy6HarvoubGw',
+            //openId: 'od-est9be0uFiLjDKyfPKwY9eFkA',
             memberId: '61852',
             merchantId: '10104677',
             coreMerchantId:'10104677',
@@ -125,7 +133,6 @@ App({
           key:key,
           success: function (res) {
             resolve(res.data);
-            console.log(res);
           },
           fail: function () {
             wx.request({
@@ -139,7 +146,6 @@ App({
                   data: res.data
                 });
                 resolve(res.data);
-                console.log(res);
               }
             });
           }
@@ -148,16 +154,14 @@ App({
       return promise;
     },
 
-    request:function(url,parmas){
-        var that = this;
+    request:function(url,parmas,rtype){
         var promise = new Promise(function (resolve, reject) {
             wx.request({
-                url: that.apiServer.host + url + '.htm',
-                data: {
-                    json: parmas,
-                },
+                url:url,
+                data: parmas,
+                method:rtype||'GET',
                 success: function (res) {
-                    resolve(res.data);
+                    resolve(res);
                 }
             });
         });

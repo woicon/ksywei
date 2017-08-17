@@ -49,13 +49,11 @@ Page({
                             if (res.data.returnCode == 'S'){
                                 _couponList.items.splice(e.currentTarget.dataset.id, 1);
                                 _colorList.splice(e.currentTarget.dataset.id,1);
-
                                 wx.showToast({
                                     title: '已删除',
                                     icon: 'success',
                                     duration: 2000
                                 })
-
                                 that.setData({
                                     couponList:_couponList,
                                     colorList: _colorList,
@@ -100,10 +98,33 @@ Page({
             title: '我的卡券'
         });
         app.setTab();
-        var parmas= {};
+       
+    },
+    touchStart: function (e) {
+        let that = this;
+        that.setData({
+            touchStart: e.timeStamp
+        });
+        //console.log(e.timeStamp + '- touch-start')
+    },
+
+    touchEnd: function (e) {
+        let that = this;
+        that.setData({
+            touchEnd: e.timeStamp
+        })
+        //console.log(e.timeStamp + '- touch-end')
+    },  
+    onReady: function () {
+
+        var that = this;
+        wx.hideLoading();
+
+        var parmas = {};
         parmas.openId = app.apiServer.parmas.openId;
         parmas.pageSize = 100;
-        app.getData('couponList', 'COUPONS', parmas).then( function (res) {
+        console.log(parmas);
+        app.getData('couponList', 'COUPONS', parmas).then(function (res) {
             console.log(res);
             var colorList = [];
             var colorData = res.items;
@@ -116,24 +137,8 @@ Page({
                 colorList: colorList
             });
         });
-    },
-    touchStart: function (e) {
-        let that = this;
-        that.setData({
-            touchStart: e.timeStamp
-        })
-        //console.log(e.timeStamp + '- touch-start')
-    },
 
-    touchEnd: function (e) {
-        let that = this;
-        that.setData({
-            touchEnd: e.timeStamp
-        })
-        //console.log(e.timeStamp + '- touch-end')
-    },  
-    onReady: function () {
-        wx.hideLoading();
+
     },
     onShow: function () {
         console.log('2222');

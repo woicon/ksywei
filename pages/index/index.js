@@ -2,8 +2,6 @@
 var app = getApp();
 var apiHost = "http://wxcs.liantuo.com/api/apiJsConfig.do";
 var s = new Date('2017-09-08 23:59:59');
-console.log(s.getFullYear())
-
 Page({
     data: {
         shopinfo: {
@@ -37,28 +35,7 @@ Page({
                 skuName: '精品肉夹馍'
             }
         ],
-        coupons: [{
-            type: 1,
-            value: 20,
-            stat: false,
-            range: "2017-07-12至2017-12-22",
-            time: '2017-12-12',
-            color: 'cards3'
-        }, {
-            type: 2,
-            value: 20,
-            stat: true,
-            range: "2017-07-12至2017-12-22",
-            time: '2017-12-12',
-            color: 'cards1'
-        }, {
-            type: 1,
-            value: 20,
-            stat: true,
-            range: "2017-07-12至2017-12-22",
-            time: '2017-12-12',
-            color: 'cards2'
-        }],
+        
         comment: [{
             userName: "JSON Broke",
             stars: 4,
@@ -107,7 +84,7 @@ Page({
                     cardId: cids,
                     merchantId: app.apiServer.parmas.merchantId
                 }
-                //同步到微信接口  + '?cardNo = '+res.data.coupons[0].couponNo + '&' + 'cardId='+e.currentTarget.id + '&' + 'merchantId=' + app.apiServer.parmas.merchantId,
+                //同步到微信接口
                 wx.request({
                     url: apiHost,
                     method:'POST',
@@ -119,7 +96,6 @@ Page({
                         console.log(data.data);
                         var result = data.data.result;
                         if (data.data.code == 0) {
-                            console.log('ss');
                             wx.addCard({
                                 cardList: [{
                                     cardId: cids,
@@ -145,6 +121,7 @@ Page({
                     icon: 'success',
                     duration: 2000
                 });  
+                console.log(app.apiServer.parmas);
                 app.getData('cardTemplateList', 'INDEX_COUPONS', app.apiServer.parmas).then(function (res) {
                     that.setData({
                         couponlist: res
@@ -152,6 +129,7 @@ Page({
                 });
                 wx.removeStorageSync('INDEX_COUPONS');
                 wx.removeStorageSync('COUPONS');
+                
             }
         });
     },
@@ -180,19 +158,11 @@ Page({
         });
         //加载tabBar菜单
         app.setTab();
-        wx.getLocation({
-            success: function (res) {
-                var latitude = res.latitude
-                var longitude = res.longitude
-                var speed = res.speed
-                var accuracy = res.accuracy
-                console.log(accuracy)
-            }
-        });
+        
         this.setData({
             pageloading: true
         });
-        console.log(that.data)
+        //console.log(that.data)
     },
     
     onReady: function () {
