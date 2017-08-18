@@ -1,3 +1,4 @@
+let QQMapWX = require('libs/qqmap-wx-jssdk.min.js');
 App({
     onLaunch: function (options) {
         //调用API从本地缓存中获取数据
@@ -15,9 +16,9 @@ App({
             });
         })
         .then((res) => {
-            //wx719f7f7aad2c0ccc  wx11c5c3d22d5fedf3
+            //wx719f7f7aad2c0ccc  //wx11c5c3d22d5fedf3
             let parmas = {
-                appid: 'wx719f7f7aad2c0ccc',
+                appid: 'wx11c5c3d22d5fedf3',
                 secret: '4a757085e73833537e9d91b44e1c33ef',
                 code: res.code
             }
@@ -58,39 +59,37 @@ App({
         })
         .then((res)=>{
             console.log(res);
-        })
-
+        });
         return initialize;
-
+    },
+    getLocation:function(that){
+        // 实例化API核心类
+        let myLocation = new QQMapWX({
+            key: 'RKABZ-R6DK6-BBSSZ-EW2BY-IFRA7-VHFU7' // 必填
+        });
         wx.getLocation({
             success: function (res) {
                 var latitude = res.latitude
                 var longitude = res.longitude
                 var speed = res.speed
                 var accuracy = res.accuracy
+                myLocation.reverseGeocoder({
+                    location: {
+                        latitude: res.latitude,
+                        longitude: res.longitude
+                    },
+                    success: function (res) {
+                        that.address = res.result;
+                    },
+                    fail: function (res) {
+                        console.log(res);
+                    },
+                    complete: function (res) {
+                        console.log(res);
+                    }
+                });
             }
         });
-    },
-    
-    strDate: function (fmt){
-        Date.prototype.Format = function (fmt) { //author: meizz   
-            var o = {
-                "Y+": this.getFullYear(),                //年
-                "M+": this.getMonth() + 1,               //月份   
-                "d+": this.getDate(),                    //日   
-                "h+": this.getHours(),                   //小时   
-                "m+": this.getMinutes(),                 //分   
-                "s+": this.getSeconds(),                 //秒  
-                "q+": Math.floor((this.getMonth() + 3) / 3), //季度   
-                "S": this.getMilliseconds()             //毫秒   
-            };
-            if (/(y+)/.test(fmt))
-                fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-            for (var k in o)
-                if (new RegExp("(" + k + ")").test(fmt))
-                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-            return fmt;
-        }
     },
     weChatUserInfo: {
         userInfo: null,

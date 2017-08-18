@@ -145,13 +145,10 @@ Page({
         wx.setNavigationBarTitle({
             title: '哲哥小面'
         });
-
-        app.getData('getMember', 'MEMBER', app.apiServer.parmas).then(function(res){
-            //console.log(res);
-        });
         var couponsParmas = app.apiServer.parmas;
         couponsParmas.pageSize = 100;
         app.getData('cardTemplateList', 'INDEX_COUPONS', couponsParmas).then(function (res) {
+            console.log(res);
             that.setData({
                 couponlist:res
             });
@@ -160,9 +157,10 @@ Page({
         app.setTab();
         
         this.setData({
-            pageloading: true
+            pageloading: true,
+            address: app.weChatUserInfo.address
         });
-        //console.log(that.data)
+        console.log(that.data)
     },
     
     onReady: function () {

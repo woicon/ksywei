@@ -3,9 +3,14 @@
     <loading hidden="{{pageloading}}">加载中...</loading>
 </view>
 <block wx:else>
+<view class="localtion">
+    <view class="ico-local"></view>
+    <view class="address">
+    {{address}}
+    </view>
+</view>
 <view class="container">
     <view class="shop-head">
-
         <view class="shop-info">
             <view class="img">
                 <image src="{{shopinfo.shopimg}}" mode="aspectFill"></image>
@@ -17,19 +22,16 @@
                 <!-- <text class="icon ico-clock"></text> -->
             </view>
         </view>
-
         <view class="head-bar">
             <view class="head-bar-line">
                 <view class="location">{{shopinfo.shoplocation}}</view>
                 <!-- <text class="icon ico-local"></text> -->
                 <!-- <view class="time"><text class="icon ico-clock"></text>{{shopinfo.businessHours}}</view> -->
             </view>
-
             <view class="contact">
                 <view class="navigation"><view class="icon ico-fav"></view></view>
                 <view class="phone" bindtap="callShop" data-phone="{{shopinfo.shoptel}}"><view class="icon ico-phone"></view></view>
             </view>
-
         </view>
     </view>
     <!-- <view class="indexad">
